@@ -1,0 +1,794 @@
+<p class="header-p mt-4 mb-4">
+  6. Number of Complaints on the following made by employees and workers:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            ‘Sexual Harassment’ includes any one or more of the following
+            unwelcome acts or behaviour (whether directly or by implication)
+            namely:
+            <ul>
+              <li>Physical contact and advances</li>
+              <li>A demand or request for sexual favours</li>
+              <li>Making sexually coloured remarks</li>
+              <li>Showing pornography</li>
+              <li>
+                Any other unwelcome physical, verbal or non-verbal conduct of
+                sexual nature
+              </li>
+            </ul>
+          </li>
+          <li>
+            ‘Discrimination’ refers to unjust or prejudicial treatment of
+            people, especially on the grounds of, but not limited to, caste,
+            creed, sex, race, ethnicity, age, colour, religion, disability,
+            socio-economic status or sexual orientation.
+          </li>
+          <li>
+            As per Sec 2(ii) of the Child Labour (Prohibition & Regulation) Act,
+            1986 (as amended), ‘Child’ means a person who has not completed is
+            14th year of age. It prohibits the employment of adolescents in the
+            age group of 14 to 18 years in hazardous occupations and processes
+            and regulates their working conditions where they are not
+            prohibited. Ref-<a
+              href="https://labour.gov.in/sites/default/files/act_3.pdf"
+              target="_blank"
+              >https://labour.gov.in/sites/default/files/act_3.pdf</a
+            >
+            and
+            <a
+              href="https://labour.gov.in/whatsnew/child-labour-prohibition-and-regulation-amendment-act-2016"
+              target="_blank"
+              >https://labour.gov.in/whatsnew/child-labour-prohibition-and-regulation-amendment-act-2016</a
+            >
+          </li>
+          <li>
+            ‘Forced Labour’ or ‘Involuntary Labour’ refers to all work or
+            service that is extracted under the menace of penalty. It also
+            includes terms such as, bonded labour and modern slavery. It also
+            includes any labour for which the worker receives less than the
+            government- stipulated minimum wage.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="3">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="3">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th>Filed during the year</th>
+      <th>Pending resolution at the end of year</th>
+      <th>Remarks</th>
+      <th>Filed during the year</th>
+      <th>Pending resolution at the end of year</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sexual Harassment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.sexual_harassment
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.sexual_harassment
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.sexual_harassment
+                .remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.sexual_harassment
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.sexual_harassment
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.sexual_harassment
+                .remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Discrimination at workplace</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year
+                .discrimination_at_workplace.filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year
+                .discrimination_at_workplace
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year
+                .discrimination_at_workplace.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year
+                .discrimination_at_workplace.filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year
+                .discrimination_at_workplace
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year
+                .discrimination_at_workplace.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Child Labour</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.child_labour
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.child_labour
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.child_labour.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.child_labour
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.child_labour
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.child_labour.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Forced Labour/Involuntary Labour</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.forced_labour
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.forced_labour
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.forced_labour.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.forced_labour
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.forced_labour
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.forced_labour.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Wages</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.wages
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.wages
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.wages.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.wages
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.wages
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.wages.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Other human rights related issues</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year
+                .others_human_rights_related_issued.filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year
+                .others_human_rights_related_issued
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year
+                .others_human_rights_related_issued.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year
+                .others_human_rights_related_issued.filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year
+                .others_human_rights_related_issued
+                .pending_resolution_at_the_end_of_year
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year
+                .others_human_rights_related_issued.remarks
+            "
+            (keypress)="_utilities.textLimit($event, 1000)"
+            (blur)="_utilities.trimExtra($event, 1000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  7. Mechanisms to prevent adverse consequences to the complainant in
+  discrimination and harassment cases.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="
+      mechanisms_to_prevent_adverse_consequences_to_the_complainant_in_discrimination_and_harassment_cases
+    "
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-9">
+    <label style="font-size: 16px; font-weight: 500"
+      >8. Do human rights requirements form part of your business agreements and
+      contracts?</label
+    ><br />
+  </div>
+  <div class="sm:col-span-4">
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="
+          do_human_rights_requirements_form_part_of_your_business_agreements_and_contracts
+        "
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">9. Assessments for the year:</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        % of your plants and offices that were assessed<br />
+        (by entity or statutory authorities or third parties)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Child labour</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessments_for_the_year.child_labour_percentage_of_your_plants_and_offices
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            (blur)="_utilities.trimExtra($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Forced/involuntary labour</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessments_for_the_year.involuntary_labour_percentage_of_your_plants_and_offices
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            (blur)="_utilities.trimExtra($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Sexual harassment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessments_for_the_year.sexual_harassment_percentage_of_your_plants_and_offices
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            (blur)="_utilities.trimExtra($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Discrimination at workplace</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessments_for_the_year.discrimination_at_workplace_percentage_of_your_plants_and_offices
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            (blur)="_utilities.trimExtra($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Wages</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessments_for_the_year.wages_percentage_of_your_plants_and_offices
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            (blur)="_utilities.trimExtra($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Others – please specify</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessments_for_the_year.others_percentage_of_your_plants_and_offices
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            (blur)="_utilities.trimExtra($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  10. Provide details of any corrective actions taken or underway to address
+  significant risks / concerns arising from the assessments at Question 9 above.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="provide_details_of_any_corrective_actions_taken"
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

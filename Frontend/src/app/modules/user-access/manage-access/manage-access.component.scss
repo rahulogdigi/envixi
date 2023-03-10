@@ -1,0 +1,45 @@
+.dowload_file {
+  visibility: hidden;
+}
+.mat-form-field.mat-form-field-appearance-fill {
+  width: 100% !important;
+}
+.error {
+  color: red;
+  margin-top: -10px;
+}
+.example-month-picker .mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.example-month-picker .mat-calendar-arrow {
+  display: none;
+}
+.scollable-container {
+  position: relative;
+  overflow-x: scroll;
+}
+.en-alert {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  z-index: 99;
+}
+.en-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  thead tr {
+    border-bottom: 1px solid #e2e8f0;
+    th {
+      padding: 15px 10px;
+    }
+  }
+  tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    td {
+      padding: 15px 20px;
+      text-align: center;
+    }
+  }
+}

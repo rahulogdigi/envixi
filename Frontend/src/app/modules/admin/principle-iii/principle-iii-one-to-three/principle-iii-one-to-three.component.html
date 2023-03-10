@@ -1,0 +1,3075 @@
+<p class="header-p mt-4 mb-4">
+  1. a. Details of measures for the well-being of employees:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        In case the entity desires to disclose any benefits other than those
+        specified in this field, additional columns may be added for such
+        disclosures.
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th colspan="12">% of employees covered by</th>
+    </tr>
+    <tr>
+      <th rowspan="2">Category</th>
+      <th rowspan="2">Total<br />(A)</th>
+      <th colspan="2">Health insurance</th>
+      <th colspan="2">Accident insurance</th>
+      <th colspan="2">Maternity benefits</th>
+      <th colspan="2">Paternity Benefits</th>
+      <th colspan="2">Day Care<br />facilities</th>
+    </tr>
+    <tr class="sub-sub-header">
+      <th>Number(B)</th>
+      <th>%(B / A)</th>
+      <th>Number(C)</th>
+      <th>%(C / A)</th>
+      <th>Number(D)</th>
+      <th>%(D / A)</th>
+      <th>Number(E)</th>
+      <th>%(E / A)</th>
+      <th>Number(F)</th>
+      <th>%(F / A)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="12" class="table-subheader">
+        <b>Permanent employees</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male.total_a
+            "
+            type="number"
+            min="0"
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (ngModelChange)="
+              sumUp('1', 'permanent_employees', 'total_a', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'health_insurance',
+                'male',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'health_insurance',
+                'male',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'accident_insurance',
+                'male',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'accident_insurance',
+                'male',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'maternity_benifits',
+                'male',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'maternity_benifits',
+                'male',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'paternity_benifits',
+                'male',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'paternity_benifits',
+                'male',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'day_care_facilities',
+                'male',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.male
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'day_care_facilities',
+                'male',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('1', 'permanent_employees', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'health_insurance',
+                'female',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'health_insurance',
+                'female',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'accident_insurance',
+                'female',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'accident_insurance',
+                'female',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'maternity_benifits',
+                'female',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'maternity_benifits',
+                'female',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'paternity_benifits',
+                'female',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'paternity_benifits',
+                'female',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'day_care_facilities',
+                'female',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.female
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'permanent_employees',
+                'day_care_facilities',
+                'female',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .health_insurance.number_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .accident_insurance.number_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .maternity_benifits.number_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .paternity_benifits.number_e
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .day_care_facilities.number_f
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.permanent_employees.total
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="12"><b>Other than Permanent employees</b></td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('1', 'other_than_permanent_employees', 'total_a', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'health_insurance',
+                'male',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'health_insurance',
+                'male',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'accident_insurance',
+                'male',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'accident_insurance',
+                'male',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'maternity_benifits',
+                'male',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'maternity_benifits',
+                'male',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'paternity_benifits',
+                'male',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'paternity_benifits',
+                'male',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'day_care_facilities',
+                'male',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .male.day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'day_care_facilities',
+                'male',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('1', 'other_than_permanent_employees', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'health_insurance',
+                'female',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'health_insurance',
+                'female',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'accident_insurance',
+                'female',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'accident_insurance',
+                'female',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'maternity_benifits',
+                'female',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'maternity_benifits',
+                'female',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'paternity_benifits',
+                'female',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'paternity_benifits',
+                'female',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'day_care_facilities',
+                'female',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .female.day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'other_than_permanent_employees',
+                'day_care_facilities',
+                'female',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.health_insurance.number_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.health_insurance.percent_of_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.accident_insurance.number_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.accident_insurance.percent_of_c_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.maternity_benifits.number_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.maternity_benifits.percent_of_d_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.paternity_benifits.number_e
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.paternity_benifits.percent_of_e_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.day_care_facilities.number_f
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_employees_covered.other_than_permanent_employees
+                .total.day_care_facilities.percent_of_f_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  b. Details of measures for the well-being of workers:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        In case the entity desires to disclose any benefits other than those
+        specified in this field, additional columns may be added for such
+        disclosures.
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th colspan="12">% of workers covered by</th>
+    </tr>
+    <tr>
+      <th rowspan="2">Category</th>
+      <th rowspan="2">Total<br />(A)</th>
+      <th colspan="2">Health insurance</th>
+      <th colspan="2">Accident insurance</th>
+      <th colspan="2">Maternity benefits</th>
+      <th colspan="2">Paternity Benefits</th>
+      <th colspan="2">Day Care<br />facilities</th>
+    </tr>
+    <tr class="sub-sub-header">
+      <th>Number(B)</th>
+      <th>%(B / A)</th>
+      <th>Number(C)</th>
+      <th>%(C / A)</th>
+      <th>Number(D)</th>
+      <th>%(D / A)</th>
+      <th>Number(E)</th>
+      <th>%(E / A)</th>
+      <th>Number(F)</th>
+      <th>%(F / A)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="12" class="table-subheader">
+        <b>Permanent workers</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="sumUp('2', 'permanent_workers', 'total_a', 'male')"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'health_insurance',
+                'male',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'health_insurance',
+                'male',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'accident_insurance',
+                'male',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'accident_insurance',
+                'male',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'maternity_benifits',
+                'male',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'maternity_benifits',
+                'male',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'paternity_benifits',
+                'male',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'paternity_benifits',
+                'male',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'day_care_facilities',
+                'male',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.male
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'day_care_facilities',
+                'male',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_workers', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'health_insurance',
+                'female',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'health_insurance',
+                'female',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'accident_insurance',
+                'female',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'accident_insurance',
+                'female',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'maternity_benifits',
+                'female',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'maternity_benifits',
+                'female',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'paternity_benifits',
+                'female',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'paternity_benifits',
+                'female',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'day_care_facilities',
+                'female',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.female
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'permanent_workers',
+                'day_care_facilities',
+                'female',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .health_insurance.number_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .accident_insurance.number_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .maternity_benifits.number_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .paternity_benifits.number_e
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .day_care_facilities.number_f
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.permanent_workers.total
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="12"><b>Other than Permanent workers</b></td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'other_than_permanent_workers', 'total_a', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'health_insurance',
+                'male',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'health_insurance',
+                'male',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'accident_insurance',
+                'male',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'accident_insurance',
+                'male',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'maternity_benifits',
+                'male',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'maternity_benifits',
+                'male',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'paternity_benifits',
+                'male',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'paternity_benifits',
+                'male',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'day_care_facilities',
+                'male',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.male
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'day_care_facilities',
+                'male',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'other_than_permanent_workers', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .health_insurance.number_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'health_insurance',
+                'female',
+                'number_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'health_insurance',
+                'female',
+                'percent_of_b_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .accident_insurance.number_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'accident_insurance',
+                'female',
+                'number_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'accident_insurance',
+                'female',
+                'percent_of_c_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .maternity_benifits.number_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'maternity_benifits',
+                'female',
+                'number_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'maternity_benifits',
+                'female',
+                'percent_of_d_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .paternity_benifits.number_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'paternity_benifits',
+                'female',
+                'number_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'paternity_benifits',
+                'female',
+                'percent_of_e_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .day_care_facilities.number_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'day_care_facilities',
+                'female',
+                'number_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.female
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'other_than_permanent_workers',
+                'day_care_facilities',
+                'female',
+                'percent_of_f_divided_by_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .health_insurance.number_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .health_insurance.percent_of_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .accident_insurance.number_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .accident_insurance.percent_of_c_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .maternity_benifits.number_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .maternity_benifits.percent_of_d_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .paternity_benifits.number_e
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .paternity_benifits.percent_of_e_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .day_care_facilities.number_f
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              percentage_of_workers_covered.other_than_permanent_workers.total
+                .day_care_facilities.percent_of_f_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  2. Details of retirement benefits, for Current FY and Previous Financial Year.
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Benefits</th>
+      <th colspan="3">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="3">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th>No. of employees covered as a % of total employees</th>
+      <th>No. of workers covered as a % of total workers</th>
+      <th>Deducted and deposited with the authority (Y/N/N.A.)</th>
+      <th>No. of employees covered as a % of total employees</th>
+      <th>No. of workers covered as a % of total workers</th>
+      <th>Deducted and deposited with the authority (Y/N/N.A.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PF</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.pf
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.pf
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.pf
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.pf
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.pf
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.pf
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Gratutity</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.gratutity
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.gratutity
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.gratutity
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.gratutity
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.gratutity
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.gratutity
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>ESI</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.esi
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.esi
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.esi
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.esi
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.esi
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.esi
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Others – please specify</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.others
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.others
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.current_financial_year.others
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.others
+                .no_of_employees_covered_as_a_percentage_of_total_employees
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.others
+                .no_of_workers_covered_as_a_percentage_of_total_workers
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              details_of_retirement_benefits.previous_financial_year.others
+                .deducted_and_deposited_with_the_authority
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+            <mat-option [value]="'N.A'">N.A</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-8 mb-6 border-t"></div>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >3. Are the premises / offices of the entity accessible to differently
+      abled employees and workers, as per the requirements of the Rights of
+      Persons with Disabilities Act, 2016?
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            Accessibility refers to physical accessibility such as wheelchair
+            ramps, braille signage and accessible restrooms, and digital
+            accessibility, where information and communication technology is
+            accessible to all and/or compatible with assistive technology
+            devices.
+          </div>
+        </div>
+      </span> </label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="is_accessibility_of_workplaces"
+        (selectionChange)="setConditionValue('accessibility_of_workplaces')"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="sm:col-span-5" *ngIf="is_accessibility_of_workplaces == 'No'">
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>What percentage of inputs were sourced sustainably?</mat-label
+      ><textarea
+        matInput
+        [(ngModel)]="accessibility_of_workplaces"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="5"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-8 mb-6 border-t"></div>

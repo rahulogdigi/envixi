@@ -1,0 +1,200 @@
+<div class="w-full">
+  <!-- Form -->
+
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Names of holding / subsidiary / associate companies / joint ventures:
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                As defined under Sec 2(10) of the Companies Act 2013, "associate
+                company", in relation to another company, means a company in
+                which that other company has a significant influence, but which
+                is not a subsidiary company of the company having such influence
+                and includes a joint venture company. Explanation—For the
+                purpose of this clause—
+                <ul>
+                  <li>
+                    the expression "significant influence" means control of at
+                    least twenty per cent of total voting power, or control of
+                    or participation in business decisions under an agreement;
+                  </li>
+                  <li>
+                    the expression "joint venture" means a joint arrangement
+                    wherebythe parties that have joint control of the
+                    arrangement have rights to the netassets of the arrangement;
+                  </li>
+                </ul>
+              </li>
+              <li>
+                As defined under Sec 2 (46) of the Companies Act 2013, holding
+                company", in relation to one or more other companies, means a
+                company of which such companies are subsidiary companies;
+                Explanation—For the purposes of this clause, the expression
+                "company" includes any body corporate
+              </li>
+              <li>
+                As defined under Sec 2(87) of the Companies Act 2013, subsidiary
+                company or subsidiary, in relation to any other company (that is
+                to say the holding company), means a company in which the
+                holding company—
+                <ul>
+                  <li>
+                    controls the composition of the Board of Directors; or
+                  </li>
+                  <li>
+                    exercises or controls more than one-half of the total voting
+                    power either at its own or together with one or more of its
+                    subsidiary companies: Explanation—For the purposes of this
+                    clause, —
+                    <p>
+                      (a) a company shall be deemed to be a subsidiary company
+                      of the holding company even if the control referred to in
+                      sub- clause (i) or sub-clause (ii) is of another
+                      subsidiary company of the holding company;
+                    </p>
+                    <p>
+                      (b) the composition of a company's Board of Directors
+                      shall be deemed to be controlled by another company if
+                      that other company by exercise of some power exercisable
+                      by it at its discretion can appoint or remove all or a
+                      majority of the directors;
+                    </p>
+                    <p>
+                      (c) the expression "company" includes any body corporate;
+                      (d) "layer" in relation to a holding company means its
+                      subsidiary or subsidiaries.
+                    </p>
+                  </li>
+                </ul>
+                Ref.-<a
+                  href="http://ebook.mca.gov.in/default.aspx"
+                  target="_blank"
+                >
+                  http://ebook.mca.gov.in/default.aspx
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="w-full mt-8">
+    <button
+      class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-8"
+      type="button"
+      (click)="addField()"
+    >
+      Add New Detail
+    </button>
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>
+            Name of the holding / subsidiary / associate companies / joint
+            ventures (A)
+          </th>
+          <th>
+            Indicate whether holding/ Subsidiary/ Associate/ Joint Venture
+          </th>
+          <th>% of shares held by listed entity</th>
+          <th>
+            Does the entity indicated at column A, participate in the Business
+            Responsibility initiatives of the listed entity?
+          </th>
+
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachValue of v_associate_companies; let i = index"
+        >
+          <tr>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachValue.name_of_holding_or_associate_companies"
+                  (keypress)="_utilities.textLimit($event, 80)"
+                  (blur)="_utilities.trimExtra($event, 80)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    eachValue.indicate_whether_holding_or_subsidiary_or_associate_joint_venture
+                  "
+                  (keypress)="_utilities.textLimit($event, 80)"
+                  (blur)="_utilities.trimExtra($event, 80)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    eachValue.percentage_of_shares_held_by_listed_entity
+                  "
+                  (keypress)="_utilities.numberOnly($event, 3)"
+                  (blur)="_utilities.trimExtra($event, 3)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="
+                    eachValue.does_the_entity_indicated_at_column_A_participate_in_the_business_esponsibility_initiatives_of_the_listed_entity
+                  "
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="'Yes'">Yes</mat-option>
+                  <mat-option [value]="'No'">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <button
+                class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                type="button"
+                (click)="removeField(i)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Update profile
+    </button>
+  </div>
+</div>

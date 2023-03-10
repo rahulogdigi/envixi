@@ -1,0 +1,60 @@
+.d-flex {
+  background: #008080;
+  margin-bottom: 20px;
+}
+.modal-title-name {
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  padding-top: 10px;
+}
+.re-close {
+  float: right;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.color-fff {
+  color: #fff !important;
+  padding: 5px 5px 0 0px;
+}
+.mat-dialog-actions {
+  margin-top: 20px !important;
+  margin-bottom: 0 !important;
+  padding: 10px 10px 0px 10px !important;
+  border-top: 1px solid #ccc;
+  button {
+    font-weight: 500;
+    font-family: "Rubik", sans-serif;
+  }
+  .mat-raised-button.mat-warn {
+    background-color: #d23200;
+  }
+}
+.padd-15 {
+  padding: 15px !important;
+}
+.mat-button-base:hover {
+  background: #ccc;
+}
+.re-errortext {
+  color: #01010b;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.7;
+  position: relative;
+  margin-top: 30px;
+  min-height: 30px;
+}
+.re-errortext .img {
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+.re-errortext p {
+  margin: 0;
+}
+.re-call-delete {
+  color: red;
+  font-weight: 500;
+}

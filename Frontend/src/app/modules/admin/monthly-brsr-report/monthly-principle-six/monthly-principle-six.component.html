@@ -1,0 +1,68 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 6
+        </h2>
+        <p>
+          Businesses should respect and make efforts to protect and restore the
+          environment
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="scollable-container">
+        <h4><u>Essential Indicators</u></h4>
+        <app-principle-vi-one-to-three
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-vi-one-to-three>
+        <app-principle-vi-four-to-six
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-vi-four-to-six>
+        <app-principle-vi-seven-to-nine
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-vi-seven-to-nine>
+        <app-principle-vi-ten-to-twelve
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-vi-ten-to-twelve>
+        <h4><u>Leadership Indicators</u></h4>
+        <app-principle-vi-thirteen-to-fiften
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-vi-thirteen-to-fiften>
+        <app-principle-vi-sixteen-to-twentyone
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-vi-sixteen-to-twentyone>
+      </div>
+    </div>
+  </div>
+</div>

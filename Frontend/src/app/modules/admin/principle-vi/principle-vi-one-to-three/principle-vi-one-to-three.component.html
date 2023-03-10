@@ -1,0 +1,828 @@
+<p class="header-p mt-4 mb-4">
+  1. Details of total energy consumption (in Joules or multiples) and energy
+  intensity, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            The entity shall report the total electricity consumed, fuel
+            consumed and energy consumed from other sources during the reporting
+            period, as applicable. Entities may also specify the other sources,
+            in case the same are significant.
+          </li>
+          <li>
+            Energy can be purchased from sources external to the organization or
+            produced by the organization itself (self-generated). If the
+            organization generates electricity from a non-renewable or renewable
+            fuel source and then consumes the generated electricity, the energy
+            consumption shall be counted only once.
+          </li>
+          <li>
+            The above data shall be reported in terms of Joules or multiples
+            such as Giga Joules. Entities should consistently apply conversion
+            factors, for converting fuel consumption into Joules, for the data
+            disclosed. In case, different standards and methodologies are used,
+            the same should be disclosed. Entities should also disclose any
+            contextual information necessary to understand how the data has been
+            compiled, such as any standards, methodologies, assumptions and/or
+            calculation tools used.
+          </li>
+          <li>
+            Energy intensity per rupee of turnover shall be calculated as the
+            total energy consumed divided by the total turnover in rupees.
+          </li>
+          <li>
+            Apart from turnover, entities may on a voluntary basis, provide
+            energy intensity ratio, based on other metrics, such as:
+            <ul>
+              <li>Units of product;</li>
+              <li>Production volume (such as metric tons, litres, or MWh);</li>
+              <li>Size (such as m2 floor space);</li>
+              <li>Number of full-time employees</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }}<br />
+        (Current Financial Year)<br />(in Joules)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}<br />
+        (Previous Financial Year)<br />(in Joules)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Total electricity consumption (A)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.total_electricity_consumption
+                .current_financial_year
+            "
+            (ngModelChange)="sumUp('1', 'current_financial_year')"
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.total_electricity_consumption
+                .previous_financial_year
+            "
+            (ngModelChange)="sumUp('1', 'previous_financial_year')"
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Total fuel consumption (B)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.total_fuel_consumption
+                .current_financial_year
+            "
+            (ngModelChange)="sumUp('1', 'current_financial_year')"
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.total_fuel_consumption
+                .previous_financial_year
+            "
+            (ngModelChange)="sumUp('1', 'previous_financial_year')"
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Energy consumption through other sources (C)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption
+                .energy_consumption_through_other_sources.current_financial_year
+            "
+            (ngModelChange)="sumUp('1', 'current_financial_year')"
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption
+                .energy_consumption_through_other_sources
+                .previous_financial_year
+            "
+            (ngModelChange)="sumUp('1', 'previous_financial_year')"
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total energy consumption (A+B+C)</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.total_energy_consumption
+                .current_financial_year
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.total_energy_consumption
+                .previous_financial_year
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Energy intensity per rupee of turnover<br />
+        (Total energy consumption/ turnover in rupees)
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.energy_intensity_per_rupee
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.energy_intensity_per_rupee
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Energy intensity (optional) – the relevant metric may be selected by the
+        entity
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.energy_intensity_optional
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_total_energy_consumption.energy_intensity_optional
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            (blur)="_utilities.trimExtra($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="indicate_if_any_independent_assessment_essential_1"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_essential_1 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="independent_assessment_agency_name_essential_1"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 5000)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label
+      >2. Does the entity have any sites / facilities identified as designated
+      consumers (DCs) under the Performance, Achieve and Trade (PAT) Scheme of
+      the Government of India?
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            Perform Achieve and Trade (PAT) scheme (“Scheme”) has been launched
+            by Bureau of Energy Efficiency under the National Mission for
+            Enhanced Energy Efficiency (NMEEE) [details available at the
+            following link:
+            <a href="https://beeindia.gov.in/content/pat-3]" target="_blank"
+              >https://beeindia.gov.in/content/pat-3]</a
+            >. Under the Scheme, certain sites / facilities are identified as
+            designated consumers and targets are set for such entities in
+            related to the energy consumption.
+          </div>
+        </div>
+      </span></label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="is_dcs">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="sm:col-span-2" *ngIf="is_dcs == 'Yes'">
+    <label>Whether targets set under the PAT scheme have been achieved?</label>
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="targets_under_pat_achieved">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="sm:col-span-3" *ngIf="targets_under_pat_achieved == 'No'">
+    <label>Provide the remedial action taken</label>
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <textarea
+        matInput
+        [(ngModel)]="remedial_action_taken"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 5000)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  3. Provide details of the following disclosures related to water, in the
+  following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            The entity shall report the total water withdrawn for any use,
+            along-with a break-up of its source into the following:
+            <ul>
+              <li>
+                Surface water- refers to water that occurs naturally on the
+                Earth’s surface in ice sheets, ice caps, glaciers, icebergs,
+                bogs, ponds, lakes, rivers, and streams
+              </li>
+              <li>
+                Ground water – refers to water that is being held in, and that
+                can be recovered from, an underground formation
+              </li>
+              <li>
+                Third party water – refers to municipal water and other private
+                suppliers of water
+              </li>
+              <li>
+                Sea-water / desalinated water – refers to water in a sea or
+                ocean
+              </li>
+              <li>
+                Other sources - Entities may specify the other sources, in case
+                the same are significant.
+              </li>
+            </ul>
+          </li>
+          <li>
+            The entity shall report the total water consumption. Total water
+            consumption is a measure of water used by an organization, that it
+            is no longer available for use by the ecosystem or local community,
+            such as water that has been withdrawn and incorporated into products
+            or has evaporated or is polluted to the point of being unusable by
+            other users, and is therefore not released back to surface water,
+            groundwater, seawater, or a third party. It also includes water that
+            has been stored during the reporting period for use or discharge in
+            a subsequent reporting period. If the entity cannot directly measure
+            its water consumption, it may calculate this using the following
+            formula:
+            <p>
+              Total water consumption = Total water withdrawal – total water
+              discharge.
+            </p>
+          </li>
+          <li>
+            Water intensity per rupee of turnover shall be calculated as the
+            total water consumed divided by the total turnover in rupees.
+          </li>
+          <li>
+            Apart from turnover, entities may on a voluntary basis, provide
+            water intensity ratio, based on other metrics, such as:
+            <ul>
+              <li>Units of product;</li>
+              <li>Production volume (such as metric tons, litres, or MWh);</li>
+              <li>Size (such as m2 floor space);</li>
+              <li>Number of full-time employees</li>
+            </ul>
+          </li>
+          <li>
+            Entities should also disclose any contextual information necessary
+            to understand how the data has been compiled, such as any standards,
+            methodologies, assumptions and/or calculation tools used.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}
+        (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Water withdrawal by source (in kilolitres)</b></td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>(i) Surface water</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water.surface_water
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'current_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water.surface_water
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'previous_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(ii) Groundwater</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water.groundwater
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'current_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water.groundwater
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'previous_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(iii) Third party water</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .third_party_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'current_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .third_party_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'previous_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(iv) Seawater / desalinated water</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .desalinated_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'current_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .desalinated_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'previous_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(v) Others</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water.others
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'current_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water.others
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            (ngModelChange)="sumUp('2', 'previous_financial_year')"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b
+          >Total volume of water withdrawal (in kilolitres) (i + ii + iii + iv +
+          v)</b
+        >
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .total_volume_of_water_withdrawal.current_financial_year
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .total_volume_of_water_withdrawal.previous_financial_year
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total volume of water consumption (in kilolitres)</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .total_volume_of_water_consumption.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .total_volume_of_water_consumption.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Water intensity per rupee of turnover (Water consumed / turnover)</b>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .water_intensity_per_rupee.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .water_intensity_per_rupee.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Water intensity (optional) – </b>the relevant metric may be selected
+        by the entity
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .water_intensity_optional.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_following_disclosures_related_to_water
+                .water_intensity_optional.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="indicate_if_any_independent_assessment_essential_3"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_essential_3 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="independent_assessment_agency_name_essential_3"
+        (keypress)="_utilities.textLimit($event, 200)"
+        (blur)="_utilities.trimExtra($event, 200)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

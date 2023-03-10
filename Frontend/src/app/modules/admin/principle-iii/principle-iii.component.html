@@ -1,0 +1,96 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">{{
+            _utilities.selectedCompany?.company_name
+          }}</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Principle 3</a>
+        </div>
+      </div>
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 3
+        </h2>
+        <p>
+          Businesses should respect and promote the well-being of all employees,
+          including those in their value chains
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="scollable-container">
+        <h4><u>Essential Indicators</u></h4>
+        <app-principle-iii-one-to-three
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-one-to-three>
+        <app-principle-iii-four-to-six
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-four-to-six>
+        <app-principle-iii-seven-to-nine
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-seven-to-nine>
+        <app-principle-iii-ten-to-twelve
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-ten-to-twelve>
+        <app-principle-iii-thirteen-to-fifteen
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-thirteen-to-fifteen>
+        <h4><u>Leadership Indicators</u></h4>
+        <app-principle-iii-leaderhip-indicator
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-leaderhip-indicator>
+      </div>
+      <!-- Divider -->
+      <div class="mt-11 mb-4 border-t"></div>
+      <!-- Actions -->
+      <div class="flex items-center justify-end save-footer">
+        <button
+          class="ml-4"
+          mat-flat-button
+          type="button"
+          [color]="'primary'"
+          (click)="submitForm()"
+        >
+          Save Form
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

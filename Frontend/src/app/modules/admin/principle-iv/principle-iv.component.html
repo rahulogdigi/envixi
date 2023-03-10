@@ -1,0 +1,384 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">{{
+            _utilities.selectedCompany?.company_name
+          }}</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Principle 4</a>
+        </div>
+      </div>
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 4
+        </h2>
+        <p>
+          Businesses should respect the interests of and be responsive to all
+          its stakeholders
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="scollable-container">
+        <h4><u>Essential Indicators</u></h4>
+
+        <p class="header-p mt-4 mb-4">
+          1. Describe the processes for identifying key stakeholder groups of
+          the entity.
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                Under this field, the entity shall disclose the basis for
+                determining stakeholders and determining the groups with whom to
+                engage or not to engage.
+              </div>
+            </div>
+          </span>
+        </p>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <textarea
+            matInput
+            [(ngModel)]="
+              describe_the_processes_for_identifying_key_stakeholder_groups_of_the_entity
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            (blur)="_utilities.trimExtra($event, 5000)"
+            cdkTextareaAutosize
+            [cdkAutosizeMinRows]="5"
+          ></textarea>
+        </mat-form-field>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mb-4">
+          2. List stakeholder groups identified as key for your entity and the
+          frequency of engagement with each stakeholder group.
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                <ol>
+                  <li>
+                    The listed entity shall specify the channels of through
+                    which stakeholders can access relevant information and if
+                    applicable, whether such information is available in
+                    regional / local languages.
+                  </li>
+                  <li>
+                    Vulnerable and Marginalized Groups refers to group of
+                    individuals who are unable to realize their rights or enjoy
+                    opportunities due to adverse physical, mental, social,
+                    economic, cultural, political, geographic or health
+                    circumstances. These groups in India can be identified on
+                    the basis, inter alia, of the following:
+                    <ul>
+                      <li>Gender and transgender (women, girls et al.)</li>
+                      <li>Age (children, elderly et al.)</li>
+                      <li>
+                        Descent/identity/ethnicity (caste, religion, scheduled
+                        castes, scheduled tribes, et al.)
+                      </li>
+                      <li>
+                        Occupation (displaced, landless small / marginal
+                        farmers, migrant workers, et al.)
+                      </li>
+                      <li>Persons with disability</li>
+                      <li>Political or religious beliefs</li>
+                    </ul>
+                    (Reference: National Guidelines for Responsible Business
+                    Conduct, available at the following link:
+                    <a
+                      href="https://www.mca.gov.in/Ministry/pdf/NationalG uildeline_15032019.pdf"
+                      target="_blank"
+                      >https://www.mca.gov.in/Ministry/pdf/NationalG
+                      uildeline_15032019.pdf</a
+                    >)
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </span>
+        </p>
+        <ng-container>
+          <button
+            class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+            type="button"
+            (click)="addField()"
+          >
+            Add New Detail
+          </button>
+          <table class="en-table">
+            <thead>
+              <tr>
+                <th>Stakeholder Group</th>
+                <th>
+                  Whether identified as Vulnerable & Marginalized Group (Yes/No)
+                </th>
+                <th>
+                  Channels of communication (Email, SMS, Newspaper, Pamphlets,
+                  Advertisement, Community Meetings, Notice Board, Website),
+                  Other
+                </th>
+                <th>
+                  Frequency of engagement (Annually/ Half yearly/ Quarterly /
+                  others)
+                </th>
+                <th>
+                  Purpose and scope of engagement including key topics and
+                  concerns raised during such engagement
+                </th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let eachValue of list_stakeholder_groups; let i = index"
+              >
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="eachValue.stakeholder_group"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="eachValue.whether_identified_as_vulnerable"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Yes'">Yes</mat-option>
+                      <mat-option [value]="'No'">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="eachValue.channel_of_the_communication"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="eachValue.frequency_of_the_engagement"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Others'">Others</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="
+                        eachValue.purpose_and_scope_of_engagement_including_key
+                      "
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+
+                <td style="width: 10%">
+                  <button
+                    class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                    type="button"
+                    (click)="removeField(i)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+        <!-- Divider -->
+        <div class="mt-8 mb-6 border-t"></div>
+        <h4><u>Leadership Indicators</u></h4>
+        <p class="header-p mt-4 mb-4">
+          1. Provide the processes for consultation between stakeholders and the
+          Board on economic, environmental, and social topics or if consultation
+          is delegated, how is feedback from such consultations provided to the
+          Board.
+        </p>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <textarea
+            matInput
+            [(ngModel)]="
+              provide_the_processes_for_consultation_between_stakeholders_and_the_board
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            (blur)="_utilities.trimExtra($event, 5000)"
+            cdkTextareaAutosize
+            [cdkAutosizeMinRows]="5"
+          ></textarea>
+        </mat-form-field>
+        <!-- Divider -->
+        <div class="mt-8 mb-6 border-t"></div>
+        <div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+          <!-- Title -->
+          <div class="sm:col-span-4">
+            <label style="font-size: 16px; font-weight: 500"
+              >2. Whether stakeholder consultation is used to support the
+              identification and management of environmental, and social topics?
+              <span class="re-tooltip">
+                <mat-icon
+                  svgIcon="heroicons_solid:information-circle"
+                  class="icon-size-4"
+                ></mat-icon>
+                <div class="re-tooltiptext">
+                  <div class="content">
+                    The entity can indicate if stakeholder engagement is used to
+                    support the identification and management of environmental,
+                    and social topics. If so, the entity can disclose the key
+                    concerns that have been raised through stakeholder
+                    engagement and how the organization has responded to this
+                    concern, including through changes or modifications in its
+                    policies or in its activities.
+                    <p>
+                      For each concern, the entity should mention the
+                      stakeholder group that raised the concern.
+                    </p>
+                  </div>
+                </div>
+              </span> </label
+            ><br />
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  is_whether_stakeholder_consultation_is_used_to_support_the_identification
+                "
+                (selectionChange)="onChangeSelect()"
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="'Yes'">Yes</mat-option>
+                <mat-option [value]="'No'">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div
+            class="sm:col-span-5"
+            *ngIf="
+              is_whether_stakeholder_consultation_is_used_to_support_the_identification ==
+              'Yes'
+            "
+          >
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-label
+                >Provide details of instances as to how the inputs received from
+                stakeholders on these topics were incorporated into policies and
+                activities of the entity
+              </mat-label>
+              <textarea
+                matInput
+                [(ngModel)]="
+                  whether_stakeholder_consultation_is_used_to_support_the_identification
+                "
+                (keypress)="_utilities.textLimit($event, 5000)"
+                (blur)="_utilities.trimExtra($event, 5000)"
+                cdkTextareaAutosize
+                [cdkAutosizeMinRows]="3"
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="mt-8 mb-6 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          3. Provide details of instances of engagement with, and actions taken
+          to, address the concerns of vulnerable/ marginalized stakeholder
+          groups.
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                The entity can disclose the key concerns that have been raised
+                through engagement with vulnerable/marginalized groups and how
+                the organization has responded to this concern, including
+                through changes or modifications in its policies or in its
+                activities.
+              </div>
+            </div>
+          </span>
+        </p>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <textarea
+            matInput
+            [(ngModel)]="provide_details_of_instances_of_engagement"
+            cdkTextareaAutosize
+            (keypress)="_utilities.textLimit($event, 5000)"
+            (blur)="_utilities.trimExtra($event, 5000)"
+            [cdkAutosizeMinRows]="5"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <!-- Divider -->
+      <div class="mt-11 mb-4 border-t"></div>
+      <!-- Actions -->
+      <div class="flex items-center justify-end save-footer">
+        <button
+          class="ml-4"
+          mat-flat-button
+          type="button"
+          [color]="'primary'"
+          (click)="submitForm()"
+        >
+          Save Form
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

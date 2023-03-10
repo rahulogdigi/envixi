@@ -1,0 +1,664 @@
+<div class="w-full">
+  <!-- Form -->
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 2:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <p>
+      1. Percentage of R&D and capital expenditure (capex) investments in
+      specific technologies to improve the environmental and social impacts of
+      product and processes to total R&D and capex investments made by the
+      entity, respectively.
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>Current Financial Year (Rs.)</th>
+          <th>Previous Financial Year (Rs.)</th>
+          <th>Details of improvements in environmental and social impacts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>R&D</p></td>
+          <td>
+            <p>
+              {{
+                one_capital_expenditure?.r_and_d?.current_year >= 0
+                  ? one_capital_expenditure?.r_and_d?.current_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                one_capital_expenditure?.r_and_d?.previous_year >= 0
+                  ? one_capital_expenditure?.r_and_d?.previous_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                one_capital_expenditure?.r_and_d?.details_of_improvements ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Capex</p></td>
+          <td>
+            <p>
+              {{
+                one_capital_expenditure?.capex?.current_year >= 0
+                  ? one_capital_expenditure?.capex?.current_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                one_capital_expenditure?.capex?.previous_year >= 0
+                  ? one_capital_expenditure?.capex?.previous_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                one_capital_expenditure?.capex?.details_of_improvements || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label style="font-weight: bold"
+      >2. Does the entity have procedures in place for sustainable
+      sourcing?</label
+    >
+    <p style="font-size: 14px">{{ two_a }}</p>
+    <ng-container *ngIf="two_a == 'Yes'">
+      <p style="font-weight: 500">
+        What percentage of inputs were sourced sustainably?
+      </p>
+      <p style="font-size: 14px">{{ two_b }}</p>
+    </ng-container>
+
+    <label style="font-weight: bold">
+      3. Describe the processes in place to safely reclaim your products for
+      reusing, recycling and disposing at the end of life, for:</label
+    >
+    <label style="font-weight: bold"> (a) Plastics(including packaging)</label>
+    <p style="font-size: 14px">
+      {{ three_describe_the_processes_in_place_to_safely_reclaim?.a || "--" }}
+    </p>
+    <label style="font-weight: bold"> (b) E-waste</label>
+    <p style="font-size: 14px">
+      {{ three_describe_the_processes_in_place_to_safely_reclaim?.b || "--" }}
+    </p>
+    <label style="font-weight: bold"> (c) Hazardous waste</label>
+    <p style="font-size: 14px">
+      {{ three_describe_the_processes_in_place_to_safely_reclaim?.c || "--" }}
+    </p>
+    <label style="font-weight: bold"> (d) Other waste</label>
+    <p style="font-size: 14px">
+      {{ three_describe_the_processes_in_place_to_safely_reclaim?.d || "--" }}
+    </p>
+    <label style="font-weight: bold">
+      4. Whether Extended Producer Responsibility (EPR) is applicable to the
+      entity’s activities?</label
+    >
+    <p style="font-size: 14px">
+      {{
+        four_extended_producer_responsibility?.if_yes
+          ? "Yes"
+          : four_extended_producer_responsibility?.if_yes == false
+          ? "No"
+          : "--"
+      }}
+    </p>
+    <ng-container *ngIf="four_extended_producer_responsibility?.if_yes">
+      <label style="font-weight: bold">
+        Whether the waste collection plan is in line with the Extended Producer
+        Responsibility (EPR) plan submitted to Pollution Control Boards?</label
+      >
+      <p style="font-size: 14px">
+        {{
+          four_extended_producer_responsibility?.if_no
+            ? "Yes"
+            : four_extended_producer_responsibility?.if_no == false
+            ? "No"
+            : "--"
+        }}
+      </p>
+    </ng-container>
+    <ng-container
+      *ngIf="four_extended_producer_responsibility?.if_yes === false"
+    >
+      <label style="font-weight: bold"> Steps taken to address the same.</label>
+      <p style="font-size: 14px">
+        {{ four_extended_producer_responsibility?.epr || "--" }}
+      </p>
+    </ng-container>
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Has the entity conducted Life Cycle Perspective / Assessments (LCA) for
+      any of its products (for manufacturing industry) or for its services (for
+      service industry)? If yes, provide details in the following format?</label
+    >
+    <p style="font-size: 14px">
+      {{
+        entity_conducted_life_cycle_perspective &&
+        entity_conducted_life_cycle_perspective.length
+          ? "Yes"
+          : "No"
+      }}
+    </p>
+    <table
+      style="width: 100%"
+      *ngIf="
+        entity_conducted_life_cycle_perspective &&
+        entity_conducted_life_cycle_perspective.length
+      "
+    >
+      <thead>
+        <tr>
+          <th>NIC Code</th>
+          <th>Name of Product /Service</th>
+          <th>% of total Turnover contributed</th>
+          <th>
+            Boundary for which the Life Cycle Perspective / Assessment was
+            conducted
+          </th>
+          <th>Whether conducted by independent external agency</th>
+          <th>
+            Results communicated in public domain?<br />
+            If yes, provide the web-link.
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of entity_conducted_life_cycle_perspective;
+            let i = index
+          "
+        >
+          <td>
+            <p>{{ eachValue?.nic_code || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.name_of_the_product_or_service || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.percetage_of_total_turnover >= 0
+                  ? eachValue?.percetage_of_total_turnover
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ eachValue?.assesment_was_conducted || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.whether_conducted_by_independent_external_agency
+                  ? "Yes"
+                  : eachValue?.whether_conducted_by_independent_external_agency ==
+                    false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.result_communucated_in_public_domain
+                  ? "Yes"
+                  : eachValue?.result_communucated_in_public_domain == false
+                  ? "No"
+                  : "--"
+              }}
+              <span *ngIf="eachValue?.result_communucated_in_public_domain">
+                {{ eachValue?.url }}
+              </span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-weight: bold">
+      2. If there are any significant social or environmental concerns and/or
+      risks arising from production or disposal of your products / services, as
+      identified in the Life Cycle Perspective / Assessments (LCA) or through
+      any other means, briefly describe the same along-with action taken to
+      mitigate the same.
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Name of Product / Service</th>
+          <th>Description of the risk / concern</th>
+          <th>Action Taken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of significant_social_or_environmental_concerns;
+            let i = index
+          "
+        >
+          <td>
+            <p>{{ eachValue?.name_of_the_product_or_service || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.description_of_the_risk || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.action_taken || "--" }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-weight: bold">
+      3. Percentage of recycled or reused input material to total material (by
+      value) used in production (for manufacturing industry) or providing
+      services (for service industry).
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2">Indicate input material</th>
+          <th colspan="2">
+            Recycled or re-used input material to total material
+          </th>
+        </tr>
+        <tr>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year (%)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year (%)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of percentage_of_recycled_or_reused_input_material;
+            let i = index
+          "
+        >
+          <td>
+            <p>{{ eachValue?.indicate_input_material || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.current_year || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.previous_year || "--" }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-weight: bold">
+      4. Of the products and packaging reclaimed at end of life of products,
+      amount (in metric tonnes) reused, recycled, and safely disposed, as per
+      the following format:
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Re-Used (metric tonnes)</th>
+          <th>Recycled (metric tonnes)</th>
+          <th>Safely Disposed (metric tonnes)</th>
+          <th>Re-Used (metric tonnes)</th>
+          <th>Recycled (metric tonnes)</th>
+          <th>Safely Disposed (metric tonnes)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>Plastics (including packaging)</p></td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.plastic?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.plastic?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.plastic?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.plastic?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.plastic?.safely_disposed >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.plastic?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.plastic?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.plastic?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.plastic?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.plastic?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.plastic?.safely_disposed >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.plastic?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>E-waste</p></td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.e_waste?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.e_waste?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.e_waste?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.e_waste?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.e_waste?.safely_disposed >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.e_waste?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.e_waste?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.e_waste?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.e_waste?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.e_waste?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.e_waste?.safely_disposed >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.e_waste?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Hazardous waste</p></td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.hazardous_waste?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.hazardous_waste?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.hazardous_waste?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.hazardous_waste?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.hazardous_waste?.safely_disposed >=
+                0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.hazardous_waste?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.hazardous_waste?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.hazardous_waste?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.hazardous_waste?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.hazardous_waste?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.hazardous_waste?.safely_disposed >=
+                0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.hazardous_waste
+                      ?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Other waste</p></td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.other_waste?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.other_waste?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.other_waste?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.other_waste?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.current_financial_year?.other_waste?.safely_disposed >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.current_financial_year?.other_waste?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.other_waste?.re_used >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.other_waste?.re_used
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.other_waste?.recycled >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.other_waste?.recycled
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                products_and_packaging_reclaimed_at_end_of_life
+                  ?.previous_financial_year?.other_waste?.safely_disposed >= 0
+                  ? products_and_packaging_reclaimed_at_end_of_life
+                      ?.previous_financial_year?.other_waste?.safely_disposed
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-weight: bold">
+      5. Reclaimed products and their packaging materials (as percentage of
+      products sold) for each product category.
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Indicate product category</th>
+          <th>
+            Reclaimed products and their packaging materials as % of total
+            products sold in respective category
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eachValue of reclaimed_products; let i = index">
+          <td>
+            {{ eachValue?.indicate_product_category || "--" }}
+          </td>
+          <td>
+            {{
+              eachValue?.packaging_materials_as_percentage >= 0
+                ? eachValue?.packaging_materials_as_percentage
+                : "--"
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+</div>

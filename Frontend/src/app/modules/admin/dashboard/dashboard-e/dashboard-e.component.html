@@ -1,0 +1,229 @@
+<div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
+  <div class="w-full max-w-screen-xl mx-auto p-6">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0"
+    >
+      <!-- Summary -->
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Total no. of Awareness Programs
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-blue-500"
+          >
+            {{ _utilities.numberToKMB(data1?.total_no_of_awareness_programs) }}
+          </div>
+        </div>
+      </div>
+      <!-- Overdue -->
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Total no. of R & D
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-blue-500"
+          >
+            {{ _utilities.numberToKMB(data1?.total_no_of_r_and_d) }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Total Energy Consumption (in J)
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-red-500"
+          >
+            {{ _utilities.numberToKMB(data1?.total_energy_consumption) }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Total Waste Generation (in MT)
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-red-500"
+          >
+            {{ _utilities.numberToKMB(data1?.total_waste_generation) }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0 pt-4">
+      <!-- Budget distribution -->
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Scope of Emission
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart1" *ngIf="chartOptions1?.series">
+            <apx-chart
+              [series]="chartOptions1.series"
+              [chart]="chartOptions1.chart"
+              [xaxis]="chartOptions1.xaxis"
+              [dataLabels]="chartOptions1.dataLabels"
+              [grid]="chartOptions1.grid"
+              [stroke]="chartOptions1.stroke"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Total Volume of Water Consumption
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart2" *ngIf="chartOptions2?.series">
+            <apx-chart
+              [series]="chartOptions2.series"
+              [chart]="chartOptions2.chart"
+              [dataLabels]="chartOptions2.dataLabels"
+              [plotOptions]="chartOptions2.plotOptions"
+              [yaxis]="chartOptions2.yaxis"
+              [legend]="chartOptions2.legend"
+              [fill]="chartOptions2.fill"
+              [stroke]="chartOptions2.stroke"
+              [tooltip]="chartOptions2.tooltip"
+              [xaxis]="chartOptions2.xaxis"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0 pt-4">
+      <!-- Budget distribution -->
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Total Energy Consumption
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart3" *ngIf="chartOptions3?.series">
+            <apx-chart
+              [series]="chartOptions3.series"
+              [chart]="chartOptions3.chart"
+              [xaxis]="chartOptions3.xaxis"
+              [dataLabels]="chartOptions3.dataLabels"
+              [grid]="chartOptions3.grid"
+              [stroke]="chartOptions3.stroke"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Total Water Discharged
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart4" *ngIf="chartOptions4?.series">
+            <apx-chart
+              [series]="chartOptions4.series"
+              [chart]="chartOptions4.chart"
+              [dataLabels]="chartOptions4.dataLabels"
+              [plotOptions]="chartOptions4.plotOptions"
+              [yaxis]="chartOptions4.yaxis"
+              [legend]="chartOptions4.legend"
+              [fill]="chartOptions4.fill"
+              [stroke]="chartOptions4.stroke"
+              [tooltip]="chartOptions4.tooltip"
+              [xaxis]="chartOptions4.xaxis"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--co2 emission-->
+    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0 pt-4">
+      <!-- Budget distribution -->
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          CO2 Emission Total
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart1" *ngIf="chartOptions5?.series">
+            <apx-chart
+              [series]="chartOptions5.series"
+              [chart]="chartOptions5.chart"
+              [xaxis]="chartOptions5.xaxis"
+              [dataLabels]="chartOptions5.dataLabels"
+              [grid]="chartOptions5.grid"
+              [stroke]="chartOptions5.stroke"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          CO2 Emission Increase
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart1" *ngIf="chartOptions7?.series">
+            <apx-chart
+              [series]="chartOptions7.series"
+              [chart]="chartOptions7.chart"
+              [xaxis]="chartOptions7.xaxis"
+              [dataLabels]="chartOptions7.dataLabels"
+              [grid]="chartOptions7.grid"
+              [stroke]="chartOptions7.stroke"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Solar/Wind Power Consumption
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart1" *ngIf="chartOptions6?.series">
+            <apx-chart
+              [series]="chartOptions6.series"
+              [chart]="chartOptions6.chart"
+              [xaxis]="chartOptions6.xaxis"
+              [dataLabels]="chartOptions6.dataLabels"
+              [grid]="chartOptions6.grid"
+              [stroke]="chartOptions6.stroke"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

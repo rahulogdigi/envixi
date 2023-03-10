@@ -1,0 +1,193 @@
+<p class="header-p mt-4 mb-4">
+  1. Details of a business process being modified / introduced as a result of
+  addressing human rights grievances/complaints.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="details_of_a_business_process_being_modified"
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  2. Details of the scope and coverage of any Human rights due-diligence
+  conducted.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="
+      details_of_the_scope_and_coverage_of_any_human_rights_due_diligence_conducted
+    "
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-9">
+    <label style="font-size: 16px; font-weight: 500"
+      >3. Is the premise/office of the entity accessible to differently abled
+      visitors, as per the requirements of the Rights of Persons with
+      Disabilities Act, 2016?</label
+    ><br />
+  </div>
+  <div class="sm:col-span-4">
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="
+          is_the_premise_or_office_of_the_entity_accessible_to_differently_abled_visitors
+        "
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  4. Details on assessment of value chain partners:
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        % of value chain partners <br />
+        (by value of business done with such partners) that were assessed
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sexual Harassment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.sexual_harassment_percentage_of_value_chain_partners
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Discrimination at workplace</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.discrimination_at_workplace_percentage_of_value_chain_partners
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Child Labour</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.child_labour_percentage_of_value_chain_partners
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Forced Labour/Involuntary Labour</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.involuntary_labour_percentage_of_value_chain_partners
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Wages</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.wages_percentage_of_value_chain_partners
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Others – please specify</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.others_percentage_of_value_chain_partners
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  5. Provide details of any corrective actions taken or underway to address
+  significant risks / concerns arising from the assessments at Question 4 above.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="provide_details_of_any_corrective_actions_taken"
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>

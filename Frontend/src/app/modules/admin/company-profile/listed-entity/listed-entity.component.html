@@ -1,0 +1,282 @@
+<div class="w-full">
+  <!-- Form -->
+
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">Profile</div>
+  </div>
+  <div class="grid sm:grid-cols-6 gap-6 w-full mt-8">
+    <!-- Title -->
+    <div class="sm:col-span-6">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label
+          >Corporate Identity Number (CIN) of the Listed Entity</mat-label
+        >
+        <input
+          [(ngModel)]="corporate_identity_number"
+          matInput
+          (keypress)="_utilities.textLimit($event, 21)"
+          (blur)="_utilities.trimExtra($event, 21)"
+          [disabled]="isEdit"
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Name of the Listed Entity</mat-label>
+
+        <input
+          [(ngModel)]="company_name"
+          matInput
+          [disabled]="isEdit"
+          (keypress)="_utilities.textLimit($event, 80)"
+          (blur)="_utilities.trimExtra($event, 80)"
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Year of incorporation</mat-label>
+        <mat-select [(ngModel)]="incorporation_year">
+          <mat-option [value]="''">Select</mat-option>
+          <mat-option [value]="'2012'">2012</mat-option>
+          <mat-option [value]="'2013'">2013</mat-option>
+          <mat-option [value]="'2014'">2014</mat-option>
+          <mat-option [value]="'2015'">2015</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Registered office address</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="registered_office_address"
+          (keypress)="_utilities.textLimit($event, 150)"
+          (blur)="_utilities.trimExtra($event, 150)"
+          cdkTextareaAutosize
+          [cdkAutosizeMinRows]="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Corporate address</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="corporate_office_address"
+          (keypress)="_utilities.textLimit($event, 150)"
+          (blur)="_utilities.trimExtra($event, 150)"
+          cdkTextareaAutosize
+          [cdkAutosizeMinRows]="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>E-mail</mat-label>
+
+        <input
+          [(ngModel)]="emai_id"
+          matInput
+          [disabled]="isEdit"
+          (keypress)="_utilities.textLimit($event, 80)"
+          (blur)="_utilities.trimExtra($event, 80)"
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Telephone</mat-label>
+        <mat-chip-list #telephone>
+          <mat-chip
+            *ngFor="let number of contact_number"
+            (removed)="remove(number, 'contact_number')"
+          >
+            {{ number }}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            placeholder="Add Number"
+            [matChipInputFor]="telephone"
+            (keypress)="_utilities.numberOnly($event, 10)"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event, 'contact_number')"
+          />
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Website</mat-label>
+
+        <mat-chip-list #website>
+          <mat-chip
+            *ngFor="let wUrl of website_url"
+            (removed)="remove(wUrl, 'website_url')"
+          >
+            {{ wUrl }}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            placeholder="Add Website"
+            [matChipInputFor]="website"
+            (keypress)="_utilities.textLimit($event, 80)"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event, 'website_url')"
+          />
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Financial year for which reporting is being done</mat-label>
+
+        <input
+          [(ngModel)]="financial_year"
+          (keypress)="_utilities.textLimit($event, 15)"
+          (blur)="_utilities.trimExtra($event, 15)"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label
+          >Name of the Stock Exchange(s) where shares are listed</mat-label
+        >
+
+        <input
+          [(ngModel)]="stock_exchange_name"
+          (keypress)="_utilities.textLimit($event, 80)"
+          (blur)="_utilities.trimExtra($event, 80)"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-3">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Paid-up Capital</mat-label>
+
+        <input
+          [(ngModel)]="paid_up_capital"
+          (keypress)="_utilities.numberOnly($event, 15)"
+          (blur)="_utilities.trimExtra($event, 15)"
+          type="number"
+          min="0"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-6">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Reporting Boundary</mat-label>
+
+        <input
+          [(ngModel)]="reporting_boundary"
+          (keypress)="_utilities.textLimit($event, 20)"
+          (blur)="_utilities.trimExtra($event, 20)"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="w-full mt-8">
+    <button
+      class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-8"
+      type="button"
+      (click)="addContact()"
+    >
+      Add New Contact
+    </button>
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>Contact Person</th>
+          <th>Contact Number</th>
+
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachContact of contact_details; let i = index"
+        >
+          <tr>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachContact.contact_person"
+                  (keypress)="_utilities.textLimit($event, 80)"
+                  (blur)="_utilities.trimExtra($event, 80)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-chip-list #detial_contact_number>
+                  <mat-chip
+                    *ngFor="
+                      let eachContactNumber of eachContact.contact_number;
+                      let j = index
+                    "
+                    (removed)="
+                      remove(eachContactNumber, 'detial_contact_number', i)
+                    "
+                  >
+                    {{ eachContactNumber }}
+                    <button matChipRemove>
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input
+                    placeholder="Add Contact"
+                    [matChipInputFor]="detial_contact_number"
+                    (keypress)="_utilities.numberOnly($event, 10)"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="
+                      add($event, 'detial_contact_number', i)
+                    "
+                  />
+                </mat-chip-list>
+              </mat-form-field>
+            </td>
+
+            <td>
+              <button
+                class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                type="button"
+                (click)="removeContact(i)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Update profile
+    </button>
+  </div>
+</div>

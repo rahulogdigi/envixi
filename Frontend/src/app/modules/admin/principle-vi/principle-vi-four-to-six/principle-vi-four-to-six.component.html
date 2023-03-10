@@ -1,0 +1,702 @@
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >4. Has the entity implemented a mechanism for Zero Liquid Discharge? If
+      yes, provide details of its coverage and implementation.
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            A zero liquid discharge system involves using advanced waste-water
+            treatment technologies to recycle, recover and then re-use the
+            treated waste-water; towards ensuring that there is not discharge of
+            the waste-water to the environment.
+          </div>
+        </div>
+      </span> </label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="mechanism_for_zero_liquid_discharge">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-5"
+    *ngIf="mechanism_for_zero_liquid_discharge == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Provide details</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="mechanism_for_zero_liquid_discharge_details"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 5000)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  5. Please provide details of air emissions (other than GHG emissions) by the
+  entity, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        Entities should disclose any contextual information necessary to
+        understand how the data has been compiled, such as any standards,
+        methodologies, assumptions and/or calculation tools used.
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Please specify unit</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}
+        (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NOx</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.nox.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.nox.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.nox.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>SOx</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.sox.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.sox.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.sox.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Particulate Matter (PM)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.pm.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.pm.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.pm.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Persistent organic pollutants (POP)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.pop.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.pop.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.pop.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Volatile organic compounds (VOC)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.voc.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.voc.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.voc.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Hazardous air pollutants (HAP)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.hap.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.hap.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.hap.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Others – please specify</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.other.unit"
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.other.current_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_air_emissions.other.previous_financial_year"
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="indicate_if_any_independent_assessment_essential_5"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_essential_5 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="independent_assessment_agency_name_essential_5"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  6. Provide details of greenhouse gas emissions (Scope 1 and Scope 2 emissions)
+  & its intensity, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            The term ‘green-house gas’ covers the following gases:
+            <ul>
+              <li>Carbon dioxide (CO2)</li>
+              <li>Methane (CH4)</li>
+              <li>Nitrous oxide (N2O)</li>
+              <li>Hydrofluorocarbons (HFCs)</li>
+              <li>Perfluorocarbons (PFCs)</li>
+              <li>Sulphur hexafluoride (SF6)</li>
+              <li>Nitrogen trifluoride (NF3)</li>
+            </ul>
+          </li>
+          <li>
+            Scope 1 emissions are direct GHG emissions from sources that are
+            owned or controlled by the entity. Source refers to any physical
+            unit or process that releases GHG into the atmosphere. Further, any
+            emissions that are not physically controlled but result from
+            intentional or unintentional releases of GHGs, such as equipment
+            leakages, methane emissions (eg: from coal mines), shall also be
+            included in the calculations.
+          </li>
+          <li>
+            Scope 2 emissions are energy indirect emissions that result from the
+            generation of purchased or acquired electricity, heating, cooling,
+            and steam consumed by the entity.
+          </li>
+          <li>
+            Entities may, on a voluntary basis, provide a break- up of the Scope
+            1 and Scope 2 emissions into CO2, CH4, N2O, HFCs, PFCs, SF6, NF3.
+          </li>
+          <li>
+            The entity shall exclude any GHG trades (purchase, sale or transfer
+            of GHG emissions) from the calculation of Scope 1 and Scope 2 GHG
+            emissions.
+          </li>
+          <li>
+            The unit for the disclosures shall be metric tonnes of CO2
+            equivalent. Further, entities should disclose the standards,
+            methodologies, assumptions and/or calculation tools used, including
+            sources of the global warming potential (GWP) rates and emission
+            factors used.
+          </li>
+          <li>
+            Scope 1 and Scope 2 emission intensity per rupee of turnover shall
+            be calculated as the total Scope 1 and Scope 2 emissions generated
+            divided by the total turnover in rupees.
+          </li>
+          <li>
+            Apart from turnover, entities may on a voluntary basis, provide
+            Scope 1 and Scope 2 GHG emission intensity ratio, based on other
+            metrics, such as:
+            <ul>
+              <li>Units of product;</li>
+              <li>Production volume (such as metric tons, litres, or MWh);</li>
+              <li>Size (such as m2 floor space);</li>
+              <li>Number of full-time employees</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Unit</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}
+        (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <b>Total Scope 1 emissions</b>(Break-up of the GHG into CO2, CH4, N2O,
+        HFCs, PFCs, SF6, NF3, if available)
+      </td>
+      <td>
+        <p>Metric tonnes of CO2 equivalent</p>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions.total_scope_1_emissions.unit
+            "
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions.total_scope_1_emissions
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions.total_scope_1_emissions
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total Scope 2 emissions</b>
+        (Break-up of the GHG into CO2, CH4, N2O, HFCs, PFCs, SF6, NF3, if
+        available)
+      </td>
+      <td>
+        <p>Metric tonnes of CO2 equivalent</p>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions.total_scope_2_emissions.unit
+            "
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions.total_scope_2_emissions
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions.total_scope_2_emissions
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total Scope 1 and Scope 2 emissions per rupee of turnover</b>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions
+                .total_scope_1_2_emissions_per_rupee_of_turnover.unit
+            "
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions
+                .total_scope_1_2_emissions_per_rupee_of_turnover
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions
+                .total_scope_1_2_emissions_per_rupee_of_turnover
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total Scope 1 and Scope 2 emission intensity</b> (optional) – the
+        relevant metric may be selected by the entity
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions
+                .total_scope_1_2_emissions_intensity.unit
+            "
+            (keypress)="_utilities.textLimit($event, 25)"
+            (blur)="_utilities.trimExtra($event, 25)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions
+                .total_scope_1_2_emissions_intensity.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_greenhouse_gas_emissions
+                .total_scope_1_2_emissions_intensity.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="indicate_if_any_independent_assessment_essential_6"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_essential_6 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="independent_assessment_agency_name_essential_6"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 5000)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

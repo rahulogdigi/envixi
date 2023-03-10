@@ -1,0 +1,1551 @@
+<p class="header-p mt-4 mb-4">
+  1. Provide break-up of the total energy consumed (in Joules or multiples) from
+  renewable and non-renewable sources, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            Under this field, the entity shall provide a break-up of
+            electricity, fuel and other energy consumption (Refer: P6, Essential
+            Question 1), from renewable and non-renewable sources.
+          </li>
+          <li>
+            Non-renewable energy sources are those that cannot be replenished,
+            reproduced, grown or generated in a short time period through
+            ecological cycles or agricultural processes. These include fuel
+            distilled from petroleum or crude oil, such as gasoline, diesel
+            fuel, jet fuel, and heating oil; natural gas, such as compressed
+            natural gas (CNG), and liquefied natural gas (LNG); fuels extracted
+            from natural gas processing and petroleum refining, such as butane,
+            propane, and liquefied petroleum gas (LPG); coal; and nuclear power.
+          </li>
+          <li>
+            Renewable energy sources are those that can be replenished in a
+            short time through ecological cycles or agricultural processes.
+            Renewable energy sources can include geothermal, wind, solar, hydro,
+            and biomass.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }}<br />
+        (Current Financial Year)<br />(in Joules)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}<br />
+        (Previous Financial Year)<br />
+        (in Joules)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <b>From renewable sources</b>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>Total electricity consumption (A)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .renewable_total_electricity_consumption.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .renewable_total_electricity_consumption.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Total fuel consumption (B)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .renewable_total_fuel_consumption.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .renewable_total_fuel_consumption.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Energy consumption through other sources (C)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .renewable_energy_consumption_through_other_sources
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .renewable_energy_consumption_through_other_sources
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total energy consumed from renewable sources (A+B+C)</b>
+      </td>
+      <td>
+        {{ getSum("1", "current") }}
+      </td>
+      <td>
+        {{ getSum("1", "previous") }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <b>From non-renewable sources</b>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>Total electricity consumption (D)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .non_renewable_total_electricity_consumption
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .non_renewable_total_electricity_consumption
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Total fuel consumption (E)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .non_renewable_total_fuel_consumption.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .non_renewable_total_fuel_consumption.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Energy consumption through other sources (F)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .non_renewable_energy_consumption_through_other_sources
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              energy_consumed_from_renewable_and_non_renewable_sources
+                .non_renewable_energy_consumption_through_other_sources
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total energy consumed from non-renewable sources (D+E+F)</b></td>
+      <td>
+        {{ getSum("2", "current") }}
+      </td>
+      <td>
+        {{ getSum("2", "previous") }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="indicate_if_any_independent_assessment_leader_1">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_leader_1 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="indicate_if_any_independent_assessment_name_leader_1"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 500)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+
+<p class="header-p mt-4 mb-4">
+  2. Provide the following details related to water discharged:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            The entity shall report the total water discharged i.e. the total
+            effluents, water released (unused or after use) for which the
+            organization has no further use, along-with a break-up by
+            destination (to surface water, groundwater, seawater, sent to third
+            parties or others – refer the guidance at Question 3 of Essential
+            indicators under P6) and by level of treatment.
+          </li>
+          <li>
+            The organization can break down its water discharge by the following
+            treatment levels:
+            <ul>
+              <li>
+                Primary treatment, which aims to remove solid substances that
+                settle or float on the water surface;
+              </li>
+              <li>
+                Secondary treatment, which aims to remove substances and
+                materials that have remained in the water, or are dissolved or
+                suspended in it;
+              </li>
+              <li>
+                Tertiary treatment, which aims to upgrade water to a higher
+                level of quality before it is discharged. It includes processes
+                that remove, for example, heavy metals, nitrogen, and
+                phosphorus.
+              </li>
+            </ul>
+            In case an organization withdraws and discharges water of good
+            quality that does not require treatment, the same can be explained.
+          </li>
+          <li>
+            Entities should also disclose any contextual information necessary
+            to understand how the data has been compiled, such as any standards,
+            methodologies, assumptions and/or calculation tools used.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}
+        (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">
+        <b
+          >Water discharge by destination and level of treatment (in
+          kilolitres)</b
+        >
+      </td>
+    </tr>
+    <tr>
+      <td><b>(i) To Surface water</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.surface_water_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.surface_water_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.surface_water_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.surface_water_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(ii) To Groundwater</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.ground_water_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.ground_water_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.ground_water_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.ground_water_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(iii) To Seawater</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.sea_water_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.sea_water_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.sea_water_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.sea_water_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(iv) Sent to third-parties</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.third_parties_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.third_parties_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.third_parties_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.third_parties_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(v) Others</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.others_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.others_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.others_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_water_discharged.others_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total water discharged (in kilolitres)</b>
+      </td>
+      <td>
+        {{ getSum("3", "current") }}
+      </td>
+      <td>
+        {{ getSum("3", "previous") }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="indicate_if_any_independent_assessment_leader_2">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_leader_2 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="indicate_if_any_independent_assessment_name_leader_2"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+
+<p class="header-p mt-4 mb-4">
+  3. Water withdrawal, consumption and discharge in areas of water stress (in
+  kilolitres):<br />For each facility / plant located in areas of water stress,
+  provide the following information:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            Areas of water stress are those where there is inability to meet the
+            human and ecological demand for water. It can refer to the
+            availability, quality, or accessibility of water. Further, areas
+            classified as “over-exploited” or “critical” by the Central
+            Groundwater Board, shall fall under area of water stress (Reference:
+            http://cgwb.gov.in/gwresource.html).
+          </li>
+          <li>
+            The entity may also refer to the guidance at Question 3 of Essential
+            indicators and Question 2 of Leadership Indicators under P6.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<div class="grid sm:grid-cols-8 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500">Name of the area</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <input
+        [(ngModel)]="water_withdrawal_in_areas_of_water_stress.name_of_area"
+        (keypress)="_utilities.textLimit($event, 150)"
+        (blur)="_utilities.trimExtra($event, 150)"
+        matInput
+      />
+    </mat-form-field>
+  </div>
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500">Nature of operations</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <input
+        [(ngModel)]="
+          water_withdrawal_in_areas_of_water_stress.nature_of_operations
+        "
+        (keypress)="_utilities.textLimit($event, 500)"
+        (blur)="_utilities.trimExtra($event, 500)"
+        matInput
+      />
+    </mat-form-field>
+  </div>
+</div>
+<p style="font-size: 16px; font-weight: 500" class="mt-4">
+  Water withdrawal, consumption and discharge in the following format:
+</p>
+<table class="en-table mt-4">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}
+        (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">
+        <b>Water withdrawal by source (in kilolitres)</b>
+      </td>
+    </tr>
+    <tr>
+      <td>(i) Surface water</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_surface_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_surface_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(ii) Groundwater</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_ground_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_ground_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(iii) Third party water</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_third_party_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_third_party_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(iv) Seawater / desalinated water</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_sea_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_sea_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(v) Others</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_others_water.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_withdrawal_others_water.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total volume of water withdrawal (in kilolitres)</b>
+      </td>
+      <td>
+        {{ getSum("4", "current") }}
+      </td>
+      <td>
+        {{ getSum("4", "previous") }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <b>Water intensity per rupee of turnover</b>(Water consumed / turnover)
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_intensity_per_rupee_of_turnover.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .water_intensity_per_rupee_of_turnover.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Water intensity</b>(optional) – the relevant metric may be selected
+        by the entity
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.water_intensity
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.water_intensity
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total volume of water consumption (in kilolitres)</b></td>
+      <td>
+        {{ getSum("6", "current") }}
+      </td>
+      <td>
+        {{ getSum("6", "previous") }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <b
+          >Water discharge by destination and level of treatment (in
+          kilolitres)</b
+        >
+      </td>
+    </tr>
+    <tr>
+      <td><b>(i) Into Surface water</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .surface_water_no_treatment.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .surface_water_no_treatment.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .surface_water_with_treatment.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .surface_water_with_treatment.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(ii) Into Groundwater</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .ground_water_no_treatment.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .ground_water_no_treatment.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .ground_water_with_treatment.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .ground_water_with_treatment.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(iii) Into Seawater</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.sea_water_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.sea_water_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.sea_water_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.sea_water_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(iv) Sent to third-parties</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .third_parties_no_treatment.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .third_parties_no_treatment.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .third_parties_with_treatment.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress
+                .third_parties_with_treatment.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>(v) Others</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>- No treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.others_no_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.others_no_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>- With treatment – please specify level of treatment</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.others_with_treatment
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              water_withdrawal_in_areas_of_water_stress.others_with_treatment
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total water discharged (in kilolitres)</b>
+      </td>
+      <td>
+        {{ getSum("5", "current") }}
+      </td>
+      <td>
+        {{ getSum("5", "previous") }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="indicate_if_any_independent_assessment_leader_3">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_leader_3 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="indicate_if_any_independent_assessment_name_leader_3"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 5000)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

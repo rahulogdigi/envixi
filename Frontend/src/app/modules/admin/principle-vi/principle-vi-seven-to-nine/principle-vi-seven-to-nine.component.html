@@ -1,0 +1,740 @@
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >7. Does the entity have any project related to reducing Green House Gas
+      emission?</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="related_to_reducing_green_house_gas_emission">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-5"
+    *ngIf="related_to_reducing_green_house_gas_emission == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Provide details</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="related_to_reducing_green_house_gas_emission_details"
+        (keypress)="_utilities.textLimit($event, 5000)"
+        (blur)="_utilities.trimExtra($event, 5000)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  8. Provide details related to waste management by the entity, in the following
+  format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            The entity shall report the total waste generated in its activities,
+            with a break-up as per the categories specified in various Waste
+            Management Rules issued by the Ministry of Environment, Forests &
+            Climate Change.
+          </li>
+          <li>
+            For each respective category of waste generated (plastic, e-waste,
+            bio-medical waste, construction and demolition waste, battery waste,
+            radio-active waste, other hazardous and other non-hazardous waste),
+            the entity shall report the waste that is recovered through
+            recycling, preparing for re-use or through other recovery
+            operations. Guidance on these terms is given below:
+            <ul>
+              <li>
+                Waste may be recovered through any operation wherein products,
+                components of products, or materials that have become waste are
+                prepared to fulfill a purpose in place of new products,
+                components, or materials that would otherwise have been used for
+                that purpose. Preparation for re-use and recycling are examples
+                of recovery operations.
+              </li>
+              <li>
+                Preparation for re-use means checking, cleaning, or repairing
+                operations, by which products or components of products that
+                have become waste are prepared to be put to use for the same
+                purpose for which they were conceived.
+              </li>
+              <li>
+                Recycling refers to reprocessing of products or components of
+                products that have become waste, to make new materials.
+              </li>
+            </ul>
+          </li>
+          <li>
+            For each respective category of waste generated (plastic, e-waste,
+            bio-medical waste, construction and demolition waste, battery waste,
+            radio-active waste, other hazardous and other non-hazardous waste),
+            the entity shall disclose the waste that is disposed with the
+            break-up of the disposal method, as follows:
+            <ul>
+              <li>
+                Waste that is incinerated – incinerations refers to controlled
+                burning of waste at high temperatures
+              </li>
+              <li>
+                Waste that is sent to a landfill - landfilling refers to
+                depositing of waste in sanitary landfills, and excludes
+                uncontrolled waste disposal such as open burning and dumping
+              </li>
+              <li>
+                Other disposal operations: Entities may specify the other
+                disposal operations used, in case the same are significant.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Entities should disclose any contextual information necessary to
+            understand the data, such as any standards, methodologies,
+            assumptions and/or calculation tools used.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}
+        (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3"><b>Total Waste generated (in metric tonnes)</b></td>
+    </tr>
+    <tr>
+      <td>Plastic waste (A)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.plastic_waste
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.plastic_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>E-waste (B)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.e_waste.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.e_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Bio-medical waste (C)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.bio_medical_waste
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.bio_medical_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Construction and demolition waste (D)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management
+                .construction_and_demolition_waste.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management
+                .construction_and_demolition_waste.previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Battery waste (E)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.battery_waste
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.battery_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Radioactive waste (F)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.radioactive_waste
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.radioactive_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Other Hazardous waste. Please specify, if any. (G)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_hazardous_waste
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_hazardous_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Other Non-hazardous waste generated (H). Please specify, if any.
+        (Break-up by composition i.e. by materials relevant to the sector)
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_non_hazardous_waste
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_non_hazardous_waste
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total (A+B + C + D + E + F + G + H)</b>
+      </td>
+      <td>
+        {{ getSum("1", "current") }}
+      </td>
+      <td>
+        {{ getSum("1", "previous") }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <b
+          >For each category of waste generated, total waste recovered through
+          recycling, re-using or other recovery operations (in metric tonnes)
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Category of waste </b>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>(i) Recycled</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.recycled
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.recycled
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(ii) Re-used</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.re_used.current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.re_used
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(iii) Other recovery operations</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_recovery_operations
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_recovery_operations
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Total</b>
+      </td>
+      <td>
+        {{ getSum("2", "current") }}
+      </td>
+      <td>
+        {{ getSum("2", "previous") }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <b
+          >For each category of waste generated, total waste disposed by nature
+          of disposal method (in metric tonnes)
+        </b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Category of waste </b>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td>(i) Incineration</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.incineration
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.incineration
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(ii) Landfilling</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.landfilling
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.landfilling
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>(iii) Other disposal operations</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_disposal_operations
+                .current_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_related_to_waste_management.other_disposal_operations
+                .previous_financial_year
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        {{ getSum("3", "current") }}
+      </td>
+      <td>
+        {{ getSum("3", "previous") }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <label style="font-size: 16px; font-weight: 500"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency. </label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="indicate_if_any_independent_assessment_essential_8"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-4"
+    *ngIf="indicate_if_any_independent_assessment_essential_8 == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Name of the external agency</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="indicate_if_any_independent_assessment_name_essential_8"
+        (keypress)="_utilities.textLimit($event, 250)"
+        (blur)="_utilities.trimExtra($event, 250)"
+        cdkTextareaAutosize
+        [cdkAutosizeMinRows]="3"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  9. Briefly describe the waste management practices adopted in your
+  establishments. Describe the strategy adopted by your company to reduce usage
+  of hazardous and toxic chemicals in your products and processes and the
+  practices adopted to manage such wastes.
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            Under this field, the entity may consider including a description of
+            the activities that lead to significant waste-related impact and the
+            actions taken to manage the impact from such waste. Such actions
+            could include the following:
+            <ul>
+              <li>Improving materials selection and product design</li>
+              <li>Using recycled, re-used or renewable materials</li>
+              <li>
+                Substituting inputs that have hazardous characteristics with
+                inputs that are non- hazardous
+              </li>
+            </ul>
+          </li>
+          <li>
+            If the waste generated by the organization in its own activities is
+            managed by a third party, the entity may consider including a
+            description of the processes used to determine whether the third
+            party manages the waste in line with contractual or legislative
+            obligations.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    [(ngModel)]="waste_management_practices_adopted"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

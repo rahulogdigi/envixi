@@ -1,0 +1,71 @@
+<div class="w-full">
+  <!-- Form -->
+  <!-- Actions -->
+  <!-- <div class="flex items-center justify-end">
+      <button class="ml-4" mat-flat-button type="button" [color]="'primary'">
+        Save
+      </button>
+    </div> -->
+  <!-- Section -->
+
+  <div class="grid sm:grid-cols-6 gap-6 w-full mt-8">
+    <div class="sm:col-span-6">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label
+          >Whether CSR is applicable as per section 135 of Companies Act,
+          2013</mat-label
+        >
+        <mat-select [(ngModel)]="is_csr_applicable">
+          <mat-option [value]="''">Select</mat-option>
+          <mat-option [value]="'Yes'">Yes</mat-option>
+          <mat-option [value]="'No'">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+    <div class="sm:col-span-2">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>Turnover (in Rs.)</mat-label>
+        <input
+          [(ngModel)]="turnover_in_rs"
+          (keypress)="_utilities.numberOnly($event, 15)"
+          (blur)="_utilities.trimExtra($event, 15)"
+          type="number"
+          min="0"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-2">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>CNet worth (in Rs.)</mat-label>
+        <input
+          [(ngModel)]="net_worth"
+          type="number"
+          (keypress)="_utilities.numberOnly($event, 15)"
+          (blur)="_utilities.trimExtra($event, 15)"
+          min="0"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Update profile
+    </button>
+  </div>
+</div>

@@ -1,0 +1,2885 @@
+<p class="header-p mt-4 mb-4">
+  1. Employees and workers who have been provided training on human rights
+  issues and policy(ies) of the entity, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        Training programs on human rights issues and policies for employees and
+        workers could include aspects of human rights that are relevant to
+        operations, including the applicability of the human rights policies or
+        procedures to the work done by employees / workers.
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Category</th>
+      <th colspan="3">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="3">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th>Total<br />(A)</th>
+      <th>No. of employees / workers covered (B)</th>
+      <th>% (B / A)</th>
+      <th>Total (C)</th>
+      <th>No. of employees / workers covered (D)</th>
+      <th>% (D / C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="7" class="table-subheader">
+        <b>Employees</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Permanent</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.permanent.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'employees',
+                'permanent',
+                'total_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.permanent
+                .no_of_employees_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'employees',
+                'permanent',
+                'no_of_employees_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.permanent
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.permanent.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'employees',
+                'permanent',
+                'total_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.permanent
+                .no_of_employees_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'employees',
+                'permanent',
+                'no_of_employees_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.permanent
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Other than permanent</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.other_permanent.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'employees',
+                'other_permanent',
+                'total_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.other_permanent
+                .no_of_employees_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'employees',
+                'other_permanent',
+                'no_of_employees_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.other_permanent
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.other_permanent.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'employees',
+                'other_permanent',
+                'total_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.other_permanent
+                .no_of_employees_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'employees',
+                'other_permanent',
+                'no_of_employees_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.other_permanent
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.total_employees.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.total_employees
+                .no_of_employees_or_workers_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.employees.total_employees
+                .percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.total_employees.total_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.total_employees
+                .no_of_employees_or_workers_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.employees.total_employees
+                .percentage_d_divided_by_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Workers-->
+    <tr>
+      <td colspan="7" class="table-subheader">
+        <b>Workers</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Permanent</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.permanent.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'workers',
+                'permanent',
+                'total_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.permanent
+                .no_of_employees_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'workers',
+                'permanent',
+                'no_of_employees_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.permanent
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.permanent.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'workers',
+                'permanent',
+                'total_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.permanent
+                .no_of_employees_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'workers',
+                'permanent',
+                'no_of_employees_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.permanent
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Other than permanent</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.other_permanent.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'workers',
+                'other_permanent',
+                'total_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.other_permanent
+                .no_of_employees_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'current_financial_year',
+                'workers',
+                'other_permanent',
+                'no_of_employees_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.other_permanent
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.other_permanent.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'workers',
+                'other_permanent',
+                'total_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.other_permanent
+                .no_of_employees_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '1',
+                'previous_financial_year',
+                'workers',
+                'other_permanent',
+                'no_of_employees_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.other_permanent
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.total_workers.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.total_workers
+                .no_of_employees_or_workers_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .current_financial_year.workers.total_workers
+                .percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.total_workers.total_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.total_workers
+                .no_of_employees_or_workers_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              employees_and_workers_who_have_been_provided_training_on_human_rights
+                .previous_financial_year.workers.total_workers
+                .percentage_d_divided_by_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  2. Details of minimum wages paid to employees and workers, in the following
+  format:
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="3">Category</th>
+      <th colspan="5">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="5">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th rowspan="2">Total<br />(A)</th>
+      <th colspan="2">Equal to Minimum Wage</th>
+      <th colspan="2">More Than Minimum Wage</th>
+      <th rowspan="2">Total<br />(D)</th>
+      <th colspan="2">Equal to Minimum Wage</th>
+      <th colspan="2">More Than Minimum Wage</th>
+    </tr>
+    <tr class="sub-sub-header">
+      <th>Number(B)</th>
+      <th>%(B / A)</th>
+      <th>Number(C)</th>
+      <th>%(C / A)</th>
+      <th>Number(E)</th>
+      <th>%(E / D)</th>
+      <th>Number(F)</th>
+      <th>%(F / D)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="11" class="table-subheader">
+        <b>Employees</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Permanent</b></td>
+      <td colspan="10"></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'permanent_male',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_male.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'permanent_male',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_male
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_male.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'permanent_male',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_male
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_male.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'permanent_male',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_male.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'permanent_male',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_male
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_male.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'permanent_male',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_male
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'permanent_female',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_female.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'permanent_female',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_female
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_female.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'permanent_female',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.permanent_female
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_female.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'permanent_female',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_female.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'permanent_female',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_female
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_female.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'permanent_female',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.permanent_female
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Other than Permanent</b></td>
+      <td colspan="10"></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'other_than_permanent_male',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_male.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'other_than_permanent_male',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_male
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_male.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'other_than_permanent_male',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_male
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_male.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'other_than_permanent_male',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_male.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'other_than_permanent_male',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_male
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_male.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'other_than_permanent_male',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_male
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'other_than_permanent_female',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_female
+                .equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'other_than_permanent_female',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_female
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_female
+                .more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'employees',
+                'other_than_permanent_female',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .employees.other_than_permanent_female
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_female.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'other_than_permanent_female',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_female
+                .equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'other_than_permanent_female',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_female
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_female
+                .more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'employees',
+                'other_than_permanent_female',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .employees.other_than_permanent_female
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="11" class="table-subheader">
+        <b>Workers</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Permanent</b></td>
+      <td colspan="10"></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'permanent_male',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_male.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'permanent_male',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_male.equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_male.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'permanent_male',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_male.more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_male.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'permanent_male',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_male.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'permanent_male',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_male.equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_male.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'permanent_male',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_male.more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'permanent_female',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_female.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'permanent_female',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_female
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_female.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'permanent_female',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.permanent_female
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_female.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'permanent_female',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_female.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'permanent_female',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_female
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_female.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'permanent_female',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.permanent_female
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Other than Permanent</b></td>
+      <td colspan="10"></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'other_than_permanent_male',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_male.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'other_than_permanent_male',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_male
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_male.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'other_than_permanent_male',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_male
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_male.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'other_than_permanent_male',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_male.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'other_than_permanent_male',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_male
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_male.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'other_than_permanent_male',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_male
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'other_than_permanent_female',
+                'total_a'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_female.equal_to_minimum_wage_no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'other_than_permanent_female',
+                'equal_to_minimum_wage_no_b'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_female
+                .equal_to_minimum_wage_no_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_female.more_than_minimum_wage_no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'current_financial_year',
+                'workers',
+                'other_than_permanent_female',
+                'more_than_minimum_wage_no_c'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.current_financial_year
+                .workers.other_than_permanent_female
+                .more_than_minimum_wage_no_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_female.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'other_than_permanent_female',
+                'total_d'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_female.equal_to_minimum_wage_no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'other_than_permanent_female',
+                'equal_to_minimum_wage_no_e'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_female
+                .equal_to_minimum_wage_no_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_female.more_than_minimum_wage_no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            (ngModelChange)="
+              sumUp(
+                '2',
+                'previous_financial_year',
+                'workers',
+                'other_than_permanent_female',
+                'more_than_minimum_wage_no_f'
+              )
+            "
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_minimum_wages_paid_to_employees.previous_financial_year
+                .workers.other_than_permanent_female
+                .more_than_minimum_wage_no_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  3. Details of remuneration/salary/wages, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            <b>Remuneration:</b> As per Sec. 2(78) of Companies Act 2013,
+            Remuneration means any money or its equivalent given or passed to
+            any person for services rendered by him and includes perquisites as
+            defined under the Income-Tax Act, 1961 (43 of 1961). Reference:
+            <a href="http://ebook.mca.gov.in/default.aspx" target="_blank"
+              >http://ebook.mca.gov.in/default.aspx</a
+            >
+          </li>
+          <li>
+            <b>Salary:</b> As per the Income Tax Act, 1961, salary includes:
+            <ul>
+              <li>Wages</li>
+              <li>Any annuity or pension</li>
+              <li>Any gratuity</li>
+              <li>
+                Any fees, commissions, perquisites or profits in lieu of or in
+                addition to any salary or wages
+              </li>
+              <li>Any advance of salary</li>
+              <li>
+                The annual accretion to the balance at the credit of an employee
+                participating in a recognised provident fund, to the extent to
+                which it is chargeable to tax under Rule 6 of Part `A' of the
+                Fourth Schedule; and
+              </li>
+              <li>
+                the aggregate of all sums that are comprised in the transferred
+                balance as referred to in sub-rule (2) of Rule 11 of Part A of
+                the Fourth Schedule of an employee participating in a recognised
+                provident fund, to the extent to which it is chargeable to tax
+                under sub-rule (4) thereof
+              </li>
+            </ul>
+            Ref-
+            <a
+              href="https://www.incometaxindia.gov.in/Acts/ Income- tax%20Act,%201961/1968/10212000000 2035669.htm"
+              target="_blank"
+              >https://www.incometaxindia.gov.in/Acts/ Income-
+              tax%20Act,%201961/1968/10212000000 2035669.htm</a
+            >
+          </li>
+          <li>
+            Wages: As per Sec 2(y) of the Code on Wages, 2019, Wages means all
+            remuneration whether by way of salaries, allowances or otherwise,
+            expressed in terms of money or capable of being so expressed which
+            would, if the terms of employment, express or implied, were
+            fulfilled, be payable to a person employed in respect of his
+            employment or of work done in such employment, and includes:
+            <ul>
+              <li>Basic pay</li>
+              <li>Dearness allowance</li>
+              <li>
+                Retaining allowance, if any, but does not include
+                <p>
+                  a. any bonus payable under any law for the time being in
+                  force, which does not form part of the remuneration payable
+                  under the terms of employment
+                </p>
+                <p>
+                  b. the value of any house-accommodation, or of the supply of
+                  light, water, medical attendance or other amenity or of any
+                  service excluded from the computation of wages by a general or
+                  special order of the appropriate Government
+                </p>
+                <p>
+                  c. any contribution paid by the employer to any pension or
+                  provident fund, and the interest which may have accrued
+                  thereon
+                </p>
+                <p>
+                  d. any conveyance allowance or the value of any travelling
+                  concession
+                </p>
+                <p>
+                  e. any sum paid to the employed person to defray special
+                  expenses entailed on him by the nature of his employment f.
+                  house rent allowance
+                </p>
+                <p>
+                  g. remuneration payable under any award or settlement between
+                  the parties or order of a court or Tribunal
+                </p>
+                <p>h. any overtime allowances</p>
+                <p>i. any commission payable to the employee</p>
+                <p>j. any gratuity payable on the termination of employment</p>
+                <p>
+                  k. any retrenchment compensation or other retirement benefit
+                  payable to the employee or any ex gratia payment made to him
+                  on the termination of employment
+                </p>
+                <p>
+                  Provided that, for calculating the wages under this clause, if
+                  payments made by the employer to the employee under clauses
+                  (a) to (i) exceeds one-half, or such other per cent. as may be
+                  notified by the Central Government, of the all remuneration
+                  calculated under this clause, the amount which exceeds such
+                  one-half, or the per cent. so notified, shall be deemed as
+                  remuneration and shall be accordingly added in wages under
+                  this clause Provided further that for the purpose of equal
+                  wages to all genders and for the purpose of payment of wages,
+                  the emoluments specified in clauses (d), (f), (g) and (h)
+                  shall be taken for computation of wage. Explanation: Where an
+                  employee is given in lieu of the whole or part of the wages
+                  payable to him, any remuneration in kind by his employer, the
+                  value of such remuneration in kind which does not exceed
+                  fifteen per cent. of the total wages payable to him, shall be
+                  deemed to form part of the wages of such employee
+                </p>
+                <a
+                  href="Ref-
+                https://labour.gov.in/sites/default/files/THE%20 CODE%20ON%20WAGES%2C%202019%20No. %2029%20of%202019.pdf"
+                  target="_blank"
+                  >Ref- https://labour.gov.in/sites/default/files/THE%20
+                  CODE%20ON%20WAGES%2C%202019%20No. %2029%20of%202019.pdf</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Category</th>
+      <th colspan="2">Male</th>
+      <th colspan="2">Female</th>
+    </tr>
+    <tr>
+      <th>Number</th>
+      <th>Median remuneration/ salary/ wages of respective category</th>
+      <th>Number</th>
+      <th>Median remuneration/ salary/ wages of respective category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Board of Directors (BoD)</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.boards_of_directors.male.number
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.boards_of_directors.male
+                .median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.boards_of_directors.female.number
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.boards_of_directors.female
+                .median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Key Managerial Personnel</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_remuneration.key_managerial.male.number"
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.key_managerial.male.median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_remuneration.key_managerial.female.number"
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.key_managerial.female.median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Employees other than BoD and KMP</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.other_than_bod_and_kmp.male.number
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.other_than_bod_and_kmp.male
+                .median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.other_than_bod_and_kmp.female.number
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.other_than_bod_and_kmp.female
+                .median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_remuneration.workers.male.number"
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.workers.male.median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="details_of_remuneration.workers.female.number"
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_remuneration.workers.female.median_remuneration
+            "
+            (keypress)="_utilities.numberOnly($event, 15)"
+            (blur)="_utilities.trimExtra($event, 15)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-9">
+    <label style="font-size: 16px; font-weight: 500"
+      >4. Do you have a focal point (Individual/ Committee) responsible for
+      addressing human rights impacts or issues caused or contributed to by the
+      business?</label
+    ><br />
+  </div>
+  <div class="sm:col-span-4">
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="
+          do_you_have_a_focal_point_individual_or_committee_responsible_for_addressing_human_rights_impacts_or_issues_caused_or_contributed_to_by_the_business
+        "
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  5. Describe the internal mechanisms in place to redress grievances related to
+  human rights issues.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="
+      describe_the_internal_mechanisms_in_place_to_redress_grievances
+    "
+    (keypress)="_utilities.textLimit($event, 5000)"
+    (blur)="_utilities.trimExtra($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

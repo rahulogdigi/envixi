@@ -1,0 +1,200 @@
+<div class="w-full">
+  <!-- Form -->
+
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Number of locations where plants and/or operations/offices of the entity
+      are situated:
+    </div>
+  </div>
+  <div class="w-full mt-8">
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Number of plants</th>
+          <th>Number of offices</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>National</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="location.national_operations.number_of_plants"
+                (keypress)="_utilities.numberOnly($event, 10, true)"
+                (blur)="_utilities.trimExtra($event, 10)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="location.national_operations.number_of_office"
+                (keypress)="_utilities.numberOnly($event, 10, true)"
+                (blur)="_utilities.trimExtra($event, 10)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            {{
+              getSum(
+                location?.national_operations?.number_of_plants,
+                location?.national_operations?.number_of_office
+              )
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>International</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="location.international_operations.number_of_plants"
+                (keypress)="_utilities.numberOnly($event, 10, true)"
+                (blur)="_utilities.trimExtra($event, 10)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="location.international_operations.number_of_office"
+                (keypress)="_utilities.numberOnly($event, 10, true)"
+                (blur)="_utilities.trimExtra($event, 10)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            {{
+              getSum(
+                location?.international_operations?.number_of_plants,
+                location?.international_operations?.number_of_office
+              )
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">Markets served by the entity:</div>
+  </div>
+  <div class="w-full mt-8">
+    <p>Number of locations</p>
+    <br />
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>Locations</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>National (No. of States)</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  market_served_by_entity.number_of_location.number_of_states
+                "
+                (keypress)="_utilities.numberOnly($event, 3, true)"
+                (blur)="_utilities.trimExtra($event, 3)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>International (No. of Countries)</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  market_served_by_entity.number_of_location.number_of_countries
+                "
+                (keypress)="_utilities.numberOnly($event, 3, true)"
+                (blur)="_utilities.trimExtra($event, 3)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+  <div class="grid sm:grid-cols-6 gap-6 w-full mt-8">
+    <!-- Title -->
+    <div class="sm:col-span-6">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label
+          >What is the contribution of exports as a percentage of the total
+          turnover of the entity?</mat-label
+        >
+        <textarea
+          matInput
+          [(ngModel)]="market_served_by_entity.seventeen_b"
+          (keypress)="_utilities.textLimit($event, 500)"
+          (blur)="_utilities.trimExtra($event, 500)"
+          cdkTextareaAutosize
+          [cdkAutosizeMinRows]="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="sm:col-span-6">
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <mat-label>A brief on types of customers</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="market_served_by_entity.seventeen_c"
+          (keypress)="_utilities.textLimit($event, 1000)"
+          (blur)="_utilities.trimExtra($event, 1000)"
+          cdkTextareaAutosize
+          [cdkAutosizeMinRows]="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Update profile
+    </button>
+  </div>
+</div>

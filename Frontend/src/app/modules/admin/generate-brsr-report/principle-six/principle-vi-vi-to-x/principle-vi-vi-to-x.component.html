@@ -1,0 +1,768 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <label style="font-weight: bold"
+      >6. Provide details of greenhouse gas emissions (Scope 1 and Scope 2
+      emissions) & its intensity, in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Unit</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <b
+              >Total Scope 1 emissions(Break-up of the GHG into CO2, CH4, N2O,
+              HFCs, PFCs, SF6, NF3, if available)</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions?.total_scope_1_emissions
+                  ?.unit || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions?.total_scope_1_emissions
+                  ?.current_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions?.total_scope_1_emissions
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions?.total_scope_1_emissions
+                  ?.previous_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions?.total_scope_1_emissions
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Scope 2 emissions(Break-up of the GHG into CO2, CH4, N2O,
+              HFCs, PFCs, SF6, NF3, if available)</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions?.total_scope_2_emissions
+                  ?.unit || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions?.total_scope_2_emissions
+                  ?.current_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions?.total_scope_2_emissions
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions?.total_scope_2_emissions
+                  ?.previous_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions?.total_scope_2_emissions
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total Scope 1 and Scope 2 emissions per rupee of turnover</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions
+                  ?.total_scope_1_2_emissions_per_rupee_of_turnover?.unit ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions
+                  ?.total_scope_1_2_emissions_per_rupee_of_turnover
+                  ?.current_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions
+                      ?.total_scope_1_2_emissions_per_rupee_of_turnover
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions
+                  ?.total_scope_1_2_emissions_per_rupee_of_turnover
+                  ?.previous_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions
+                      ?.total_scope_1_2_emissions_per_rupee_of_turnover
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Scope 1 and Scope 2 emission intensity(optional) – the
+              relevant metric may be selected by the entity</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions
+                  ?.total_scope_1_2_emissions_intensity?.unit || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions
+                  ?.total_scope_1_2_emissions_intensity
+                  ?.current_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions
+                      ?.total_scope_1_2_emissions_intensity
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_greenhouse_gas_emissions
+                  ?.total_scope_1_2_emissions_intensity
+                  ?.previous_financial_year >= 0
+                  ? details_of_greenhouse_gas_emissions
+                      ?.total_scope_1_2_emissions_intensity
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_essential_6 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_essential_6 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ independent_assessment_agency_name_essential_6 || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >7. Does the entity have any project related to reducing Green House Gas
+      emission?</label
+    >
+    <p>
+      {{ related_to_reducing_green_house_gas_emission || "--" }}
+    </p>
+    <ng-container *ngIf="related_to_reducing_green_house_gas_emission == 'Yes'">
+      <label style="font-weight: bold">Provide details</label>
+      <p>{{ related_to_reducing_green_house_gas_emission_details || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >8. Provide details related to waste management by the entity, in the
+      following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3"><b>Total Waste generated (in metric tonnes)</b></td>
+        </tr>
+        <tr>
+          <td><b>Plastic waste (A)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.plastic_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.plastic_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.plastic_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.plastic_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>E-waste (B)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.e_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.e_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.e_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.e_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Bio-medical waste (C)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.bio_medical_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.bio_medical_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.bio_medical_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.bio_medical_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Construction and demolition waste (D)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management
+                  ?.construction_and_demolition_waste?.current_financial_year >=
+                0
+                  ? details_related_to_waste_management
+                      ?.construction_and_demolition_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management
+                  ?.construction_and_demolition_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.construction_and_demolition_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Battery waste (E)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.battery_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.battery_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.battery_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.battery_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Radioactive waste (F)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.radioactive_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.radioactive_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.radioactive_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.radioactive_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other Hazardous waste. Please specify, if any. (G)</b></td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_hazardous_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.other_hazardous_waste
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_hazardous_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.other_hazardous_waste
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Other Non-hazardous waste generated (H). Please specify, if any.
+              (Break-up by composition i.e. by materials relevant to the
+              sector)</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_non_hazardous_waste
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_non_hazardous_waste?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_non_hazardous_waste
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_non_hazardous_waste?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total (A+B + C + D + E + F + G + H)</b>
+          </td>
+          <td>
+            {{ getSum("1", "current") }}
+          </td>
+          <td>
+            {{ getSum("1", "previous") }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <b
+              >For each category of waste generated, total waste recovered
+              through recycling, re-using or other recovery operations (in
+              metric tonnes)
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Category of waste </b>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td>
+            <b>(i) Recycled</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.recycled
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.recycled
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.recycled
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.recycled
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>(ii) Re-used</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.re_used
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.re_used
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.re_used
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.re_used
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>(iii) Other recovery operations</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_recovery_operations
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_recovery_operations?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_recovery_operations
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_recovery_operations?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>(iii) Other recovery operations</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_recovery_operations
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_recovery_operations?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_recovery_operations
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_recovery_operations?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total</b>
+          </td>
+          <td>
+            {{ getSum("2", "current") }}
+          </td>
+          <td>
+            {{ getSum("2", "previous") }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <b
+              >For each category of waste generated, total waste disposed by
+              nature of disposal method (in metric tonnes)
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Category of waste </b>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td>
+            <b>(i) Incineration</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.incineration
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.incineration
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.incineration
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.incineration
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>(ii) Landfilling</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.landfilling
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management?.landfilling
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.landfilling
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management?.landfilling
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>(iii) Other disposal operations</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_disposal_operations
+                  ?.current_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_disposal_operations?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_waste_management?.other_disposal_operations
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_waste_management
+                      ?.other_disposal_operations?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            {{ getSum("3", "current") }}
+          </td>
+          <td>
+            {{ getSum("3", "previous") }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_essential_8 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_essential_8 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>
+        {{ indicate_if_any_independent_assessment_name_essential_8 || "--" }}
+      </p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >9. Briefly describe the waste management practices adopted in your
+      establishments. Describe the strategy adopted by your company to reduce
+      usage of hazardous and toxic chemicals in your products and processes and
+      the practices adopted to manage such wastes.</label
+    >
+    <p>
+      {{ waste_management_practices_adopted || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >10. If the entity has operations/offices in/around ecologically sensitive
+      areas (such as national parks, wildlife sanctuaries, biosphere reserves,
+      wetlands, biodiversity hotspots, forests, coastal regulation zones etc.)
+      where environmental approvals / clearances are required, please specify
+      details in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Location of operations/offices</th>
+          <th>Type of operations</th>
+          <th>
+            Whether the conditions of environmental approval / clearance are
+            being complied with? (Y/N) If no, the reasons thereof and corrective
+            action taken, if any.
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let eachValue of ecologically_sensitive_areas; let i = index"
+        >
+          <td>
+            <p>{{ eachValue?.office_location || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.types_of_operation || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.is_environmental_approval == true
+                  ? "Yes"
+                  : eachValue?.is_environmental_approval == false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+            <p *ngIf="eachValue?.is_environmental_approval == false">
+              {{ eachValue?.details }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+</div>

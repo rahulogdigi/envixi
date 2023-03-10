@@ -1,0 +1,96 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+
+      <!-- Title -->
+      <div class="mt-1">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          Section A
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <h3><u>Details of the Listed Entity</u></h3>
+      <listed-entity
+        #listedEntityComponent
+        [isMonthly]="true"
+        [isEdit]="true"
+        [data]="data"
+        (_emitter)="callBackFunction($event)"
+      ></listed-entity>
+      <hr />
+      <h3><u>Products/Services</u></h3>
+      <product-services
+        #productServicesComponent
+        [isMonthly]="true"
+        [data]="data"
+        (_emitter)="callBackFunction($event)"
+      ></product-services>
+      <hr />
+      <h3><u>Operations</u></h3>
+      <company-operation
+        #companyOperationComponent
+        [isMonthly]="true"
+        [data]="data"
+        (_emitter)="callBackFunction($event)"
+      ></company-operation>
+      <hr />
+      <h3><u>Employees</u></h3>
+      <company-employees
+        #companyEmployeesComponent
+        [data]="data"
+        [isMonthly]="true"
+        (_emitter)="callBackFunction($event)"
+      ></company-employees>
+      <hr />
+      <h3>
+        <u>
+          Holding, Subsidiary and Associate Companies (including joint ventures)
+        </u>
+      </h3>
+      <holding-subsidiary
+        #holdingSubsidiaryComponent
+        [data]="data"
+        [isMonthly]="true"
+        (_emitter)="callBackFunction($event)"
+      ></holding-subsidiary>
+      <hr />
+      <h3><u> CSR Details </u></h3>
+      <csr-details
+        #csrDetailsComponent
+        [data]="data"
+        [isMonthly]="true"
+        (_emitter)="callBackFunction($event)"
+      ></csr-details>
+      <hr />
+      <h3><u> Transparency and Disclosures Compliances </u></h3>
+      <transparency-compliances
+        #transparencyCompliancesComponent
+        [data]="data"
+        [isMonthly]="true"
+        (_emitter)="callBackFunction($event)"
+      ></transparency-compliances>
+    </div>
+  </div>
+</div>

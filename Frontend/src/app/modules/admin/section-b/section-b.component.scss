@@ -1,0 +1,60 @@
+.en-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  thead tr {
+    border-bottom: 1px solid #e2e8f0;
+    th {
+      padding: 15px 10px;
+    }
+  }
+  tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    td {
+      padding: 15px 20px;
+      text-align: center;
+    }
+  }
+}
+.mat-form-field.mat-form-field-appearance-fill
+  .mat-form-field-wrapper
+  .mat-form-field-flex
+  .mat-form-field-infix {
+  width: 50px !important;
+}
+.t-body
+  .custom-class-for-field
+  .mat-form-field-wrapper
+  .mat-form-field-flex
+  .mat-form-field-infix {
+  width: 100px !important;
+}
+.mat-form-field.mat-form-field-appearance-fill
+  .mat-form-field-wrapper
+  .mat-form-field-flex {
+  padding: 0 6px !important;
+  min-height: 40px !important;
+}
+.mat-tab-label-container {
+  border-bottom: 1px solid #c7c7c7;
+}
+.mat-tab-group
+  .mat-tab-header
+  .mat-tab-label-container
+  .mat-tab-list
+  .mat-tab-labels
+  .mat-tab-label.mat-tab-label-active {
+  background-color: transparent !important;
+  border-radius: 0px !important;
+  border-bottom: 3px solid #909090;
+}
+.custom-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.en-alert {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  z-index: 99;
+}

@@ -1,0 +1,261 @@
+<p class="header-p mt-4 mb-4">
+  13. Number of Complaints on the following made by employees and workers:
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="3">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="3">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th>Filed during the year</th>
+      <th>Pending resolution at the end of year</th>
+      <th>Remarks</th>
+      <th>Filed during the year</th>
+      <th>Pending resolution at the end of year</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Working Conditions</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.working_conditions
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.working_conditions
+                .pending_resolution_at_the_year_end
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.working_conditions
+                .remarks
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.working_conditions
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.working_conditions
+                .pending_resolution_at_the_year_end
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.working_conditions
+                .remarks
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Health & Safety</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.healthy_and_safety
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.healthy_and_safety
+                .pending_resolution_at_the_year_end
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.current_financial_year.healthy_and_safety
+                .remarks
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.healthy_and_safety
+                .filed_during_the_year
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.healthy_and_safety
+                .pending_resolution_at_the_year_end
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              number_of_complaints.previous_financial_year.healthy_and_safety
+                .remarks
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">14. Assessments for the year:</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th></th>
+
+      <th>
+        % of your plants and offices that were assessed (by entity or statutory
+        authorities or third parties)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Health and safety practices</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessment_of_the_year.health_and_safety_practices
+                .percentage_of_your_plants
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Working Conditions</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              assessment_of_the_year.working_conditions
+                .percentage_of_your_plants
+            "
+            (keypress)="_utilities.numberOnly($event, 6)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  15. Provide details of any corrective action taken or underway to address
+  safety-related incidents (if any) and on significant risks / concerns arising
+  from assessments of health & safety practices and working conditions.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="details_of_any_corrective_action_taken"
+    cdkTextareaAutosize
+    (keypress)="_utilities.textLimit($event, 5000)"
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

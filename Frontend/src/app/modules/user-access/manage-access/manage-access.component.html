@@ -1,0 +1,141 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">{{
+            _utilities.selectedCompany?.company_name
+          }}</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Manage User Access</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="grid sm:grid-cols-12 gap-6 w-full mt-8 mb-8">
+        <!-- Title -->
+        <div class="sm:col-span-4">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose Location</mat-label>
+            <mat-select [(ngModel)]="selectedLocation">
+              <mat-option [value]="''">Select Location</mat-option>
+              <mat-option
+                [value]="eachLoc?._id"
+                *ngFor="let eachLoc of allLocation"
+                >{{ eachLoc?.location_name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <p class="error">{{ error1 }}</p>
+        </div>
+
+        <div class="sm:col-span-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Select Employee</mat-label>
+
+            <mat-select [(ngModel)]="selectedEmployee">
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option
+                *ngFor="let eachEmp of allEmployee"
+                [value]="eachEmp?._id"
+                >{{ eachEmp?.first_name }} {{ eachEmp?.last_name }}({{
+                  eachEmp?.email
+                }})</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <p class="error">{{ error2 }}</p>
+        </div>
+
+        <div class="sm:col-span-2">
+          <button
+            class="fuse-mat-button-large w-full mt-6"
+            mat-flat-button
+            [color]="'primary'"
+            [disabled]="disableBtn"
+            (click)="getUserAccess()"
+          >
+            <span *ngIf="!disableBtn"> Get User Access </span>
+            <mat-progress-spinner
+              *ngIf="disableBtn"
+              [diameter]="24"
+              [mode]="'indeterminate'"
+            ></mat-progress-spinner>
+          </button>
+        </div>
+      </div>
+      <ng-container *ngIf="selectedEmployee && selectedLocation && isSubmit">
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th style="min-width: 250px">Module Name</th>
+              <th>Grant Access</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Board of Directors-->
+            <ng-container *ngFor="let eachModule of allModules">
+              <tr *ngIf="eachModule?.type != 'group'">
+                <td>{{ eachModule?.title }}</td>
+                <td>
+                  <mat-checkbox
+                    [(ngModel)]="eachModule.hasAccess"
+                    color="primary"
+                  >
+                  </mat-checkbox>
+                </td>
+              </tr>
+            </ng-container>
+            <tr>
+              <td></td>
+              <td>
+                <button
+                  class="fuse-mat-button-large w-full mt-6"
+                  mat-flat-button
+                  [color]="'primary'"
+                  [disabled]="disableBtn"
+                  (click)="addEditAccess()"
+                >
+                  <span *ngIf="!disableBtn"> Save </span>
+                  <mat-progress-spinner
+                    *ngIf="disableBtn"
+                    [diameter]="24"
+                    [mode]="'indeterminate'"
+                  ></mat-progress-spinner>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+    </div>
+  </div>
+</div>

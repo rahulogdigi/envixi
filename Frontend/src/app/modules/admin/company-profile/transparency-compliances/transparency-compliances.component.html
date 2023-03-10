@@ -1,0 +1,945 @@
+<div class="w-full">
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Complaints/Grievances on any of the principles (Principles 1 to 9) under
+      the National Guidelines on Responsible Business Conduct:
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                Stakeholders are individuals or groups concerned or interested
+                with or impacted by the activities of the businesses and
+                vice-versa, now or in the future. Typically, stakeholders of a
+                business include, but are not limited to, its investors,
+                shareholders, employees and workers (and their families),
+                customers, communities, value chain members and other business
+                partners, regulators, civil society actors, and media.
+              </li>
+              <li>
+                Grievance Redressal Mechanism refers to a mechanism for any
+                stakeholder individually or collectively to raise and resolve
+                reasonable concerns affecting them without impeding access to
+                other judicial or administrative remedies. The mechanism should
+                be:
+                <ul>
+                  <li>Transparent and unbiased governance structures</li>
+                  <li>Accessible</li>
+                  <li>Based on dialogue and mediation</li>
+                </ul>
+              </li>
+              <li>
+                An organization’s value chain encompasses the full range of an
+                organization’s upstream and downstream activities that convert
+                input into output by adding value. It includes entities with
+                which the organization has a direct or indirect business
+                relationship and which either (a) supply products or services
+                that contribute to the organization’s own products or services,
+                or (b) receive products or services from the organization.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="w-full mt-8">
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Stakeholder group from whom complaint is received</th>
+          <th rowspan="2">
+            Grievance Redressal Mechanism in Place (Yes/No) (If Yes, then
+            provide web-link for grievance redress policy)
+          </th>
+
+          <th colspan="3">
+            FY {{ stakeholder_group.communities.current_fy.year }} Current
+            Financial Year
+          </th>
+          <th colspan="3">
+            FY {{ stakeholder_group.communities.previous_fy.year }} Previous
+            Financial Year
+          </th>
+        </tr>
+        <tr>
+          <th>Number of complaints filed during the year</th>
+          <th>Number of complaints pending resolution at close of the year</th>
+          <th>Remarks</th>
+          <th>Number of complaints filed during the year</th>
+          <th>Number of complaints pending resolution at close of the year</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Communities-->
+        <tr>
+          <td>Communities</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.communities
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.communities.current_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.communities.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.communities.current_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.communities.previous_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.communities.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.communities.previous_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Investors (other than shareholders)-->
+        <tr>
+          <td>Investors (other than shareholders)</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.investors
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.investors.current_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.investors.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.investors.current_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.investors.previous_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.investors.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.investors.previous_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Shareholders-->
+        <tr>
+          <td>Shareholders</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.shareholders
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.shareholders.current_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.shareholders.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.shareholders.current_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.shareholders.previous_fy
+                    .number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.shareholders.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.shareholders.previous_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Employees and workers-->
+        <tr>
+          <td>Employees and workers</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers.current_fy
+                    .number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers.current_fy.remarks
+                "
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers.previous_fy
+                    .number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.employee_and_workers.previous_fy.remarks
+                "
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Customers-->
+        <tr>
+          <td>Customers</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.customers
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.customers.current_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.customers.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.customers.current_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.customers.previous_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.customers.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.customers.previous_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Value Chain Partners-->
+        <tr>
+          <td>Value Chain Partners</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner.current_fy
+                    .number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner.current_fy.remarks
+                "
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner.previous_fy
+                    .number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.value_chain_partner.previous_fy.remarks
+                "
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Other-->
+        <tr>
+          <td>Other</td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select
+                [(ngModel)]="
+                  stakeholder_group.others
+                    .grievance_redressal_mechanism_in_place
+                "
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.others.current_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.others.current_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.others.current_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.others.previous_fy.number_of_complaints
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  stakeholder_group.others.previous_fy
+                    .number_of_complaints_pending_resolution_at_close
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (blur)="_utilities.trimExtra($event, 8)"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="stakeholder_group.others.previous_fy.remarks"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="my-10 border-t"></div>
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Overview of the entity’s material responsible business conduct issues
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                Sustainability as per National Guidelines on Responsible
+                Business Conduct is defined as the outcome achieved by balancing
+                the social, environmental and economic impacts of business. It
+                is the process that ensures that business goals are pursued
+                without compromising any of the three elements.
+              </li>
+              <li>
+                Under this section, the entity shall disclose the material
+                responsible business conduct and sustainability issues
+                pertaining to environmental and social matters that present a
+                risk or an opportunity to its business, along-with the
+                following:
+                <ul>
+                  <li>
+                    Classify the risk / opportunity as environment or social and
+                    provide its description. For instance, risk arising from
+                    climate change can include impact on operations, worker
+                    health, demand for products or services etc. Climate change
+                    opportunities can include cost savings through resource
+                    efficiency, development of new products and services, access
+                    to new markets etc.
+                  </li>
+                  <li>
+                    Rationale for identifying the risk, which may include a
+                    description of the impact associated with the risk or
+                    opportunity.
+                  </li>
+                  <li>
+                    In case of identified risks, approach to mitigate or adapt
+                    to the risk.
+                  </li>
+                  <li>
+                    Indicate the positive and negative impact of such risk or
+                    opportunity on the financials of the company. The company
+                    shall make qualitative disclosures in this regard and should
+                    not include any forward looking quantitative information.
+                    However, in case of previous years, impact can be disclosed
+                    in quantitative terms. The entity may consider impact on
+                    parameters such as demand for products & services/ capital
+                    or operational costs/, investment opportunities etc.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="w-full mt-8">
+    <p class="mb-2">
+      Please indicate material responsible business conduct and sustainability
+      issues pertaining to environmental and social matters that present a risk
+      or an opportunity to your business, rationale for identifying the same,
+      approach to adapt or mitigate the risk along-with its financial
+      implications, as per the following format
+    </p>
+    <button
+      class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4"
+      type="button"
+      (click)="addField()"
+    >
+      Add New Issue
+    </button>
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>Material issue identified</th>
+          <th>Indicate whether risk or opportunity (R/O)</th>
+          <th>Rationale for identifying the risk / opportunity</th>
+          <th>In case of risk, approach to adapt or mitigate</th>
+          <th>
+            Financial implications of the risk or opportunity (Indicate positive
+            or negative implications)
+          </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachValue of business_conduct_issues; let i = index"
+        >
+          <tr>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachValue.material_issue_identified"
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachValue.indicate_whether_risk_or_opportunity"
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachValue.rational_of_identifying"
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachValue.in_case_of_risk"
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="eachValue.financial_implications"
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <button
+                class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                type="button"
+                (click)="removeField(i)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Save profile
+    </button>
+  </div>
+</div>

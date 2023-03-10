@@ -1,0 +1,1290 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">{{
+            _utilities.selectedCompany?.company_name
+          }}</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Principle 1</a>
+        </div>
+      </div>
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 1
+        </h2>
+        <p>
+          Businesses should conduct and govern themselves with integrity, and in
+          a manner that is Ethical, Transparent and Accountable.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <h4><u>Essential Indicators</u></h4>
+      <p class="header-p mt-4 mb-4">
+        1. Percentage coverage by training and awareness programmes on any of
+        the Principles during the financial year:
+      </p>
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th style="min-width: 250px">Segment</th>
+            <th>Total number of training awareness programmes held and</th>
+            <th>
+              Topics / principles covered under the training and its impact
+            </th>
+            <th>
+              %age of persons in respective category covered by the awareness
+              programmes
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Board of Directors-->
+          <tr>
+            <td>Board of Directors</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .segment_board_of_director.total_number_of_training
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .segment_board_of_director.topics
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .segment_board_of_director.percentage_of_person
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <!--Key Managerial Personnel-->
+          <tr>
+            <td>Key Managerial Personnel</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .key_managerial_personnel.total_number_of_training
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .key_managerial_personnel.topics
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .key_managerial_personnel.percentage_of_person
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <!--Employees other than BoD and KMPs-->
+          <tr>
+            <td>Employees other than BoD and KMPs</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .employees_other_than_bod_and_kmps
+                      .total_number_of_training
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .employees_other_than_bod_and_kmps.topics
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year
+                      .employees_other_than_bod_and_kmps.percentage_of_person
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <!--Workers-->
+          <tr>
+            <td>Workers</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year.workers
+                      .total_number_of_training
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year.workers.topics
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    principles_during_the_financial_year.workers
+                      .percentage_of_person
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        2. Details of fines / penalties /punishment/ award/ compounding fees/
+        settlement amount paid in proceedings (by the entity or by directors /
+        KMPs) with regulators/ law enforcement agencies/ judicial institutions,
+        in the financial year, in the following format (Note: the entity shall
+        make disclosures on the basis of materiality as specified in Regulation
+        30 of SEBI (Listing Obligations and Disclosure Obligations) Regulations,
+        2015 and as disclosed on the entity’s website):
+        <span class="re-tooltip">
+          <mat-icon
+            svgIcon="heroicons_solid:information-circle"
+            class="icon-size-4"
+          ></mat-icon>
+          <div class="re-tooltiptext">
+            <div class="content">
+              Under this field, the entity shall make disclosures on the basis
+              of materiality as specified in Regulation 30 of SEBI (Listing
+              Obligations and Disclosure Obligations) Regulations, 2015 and as
+              disclosed on the entity’s website.
+            </div>
+          </div>
+        </span>
+      </p>
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th colspan="6">Monetary</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>NGRBC Principle</th>
+            <th>
+              Name of the regulatory/ enforcement agencies/ judicial
+              institutions
+            </th>
+            <th>Amount (In INR)</th>
+            <th>Brief of the Case</th>
+            <th>Has an appeal been preferred? (Yes/No)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Penalty/ Fine-->
+          <tr>
+            <td>Penalty/ Fine</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.penality.ngrbc_principal
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.penality
+                      .name_of_the_regulatory
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.penality.amount_in_inr
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.penality
+                      .brief_of_the_case
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.penality
+                      .has_an_appeal_been_preferred
+                  "
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="true">Yes</mat-option>
+                  <mat-option [value]="false">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <!-- Settlement-->
+          <tr>
+            <td>Settlement</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.settlement
+                      .ngrbc_principal
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.settlement
+                      .name_of_the_regulatory
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.settlement.amount_in_inr
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.settlement
+                      .brief_of_the_case
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.settlement
+                      .has_an_appeal_been_preferred
+                  "
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="true">Yes</mat-option>
+                  <mat-option [value]="false">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <!-- Compounding fee-->
+          <tr>
+            <td>Compounding fee</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.compounding_fee
+                      .ngrbc_principal
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.compounding_fee
+                      .name_of_the_regulatory
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.compounding_fee
+                      .amount_in_inr
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.compounding_fee
+                      .brief_of_the_case
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="
+                    details_of_fines_penalties.monetary.compounding_fee
+                      .has_an_appeal_been_preferred
+                  "
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="true">Yes</mat-option>
+                  <mat-option [value]="false">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr class="row-header">
+            <td colspan="6">Non-Monetary</td>
+          </tr>
+          <!-- Imprisonment-->
+          <tr>
+            <td>Imprisonment</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.imprisonment
+                      .ngrbc_principal
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.imprisonment
+                      .name_of_the_regulatory
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.imprisonment
+                      .amount_in_inr
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.imprisonment
+                      .brief_of_the_case
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.imprisonment
+                      .has_an_appeal_been_preferred
+                  "
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="true">Yes</mat-option>
+                  <mat-option [value]="false">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <!-- Punishment-->
+          <tr>
+            <td>Punishment</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.punishment
+                      .ngrbc_principal
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.punishment
+                      .name_of_the_regulatory
+                  "
+                  (keypress)="_utilities.textLimit($event, 100)"
+                  (blur)="_utilities.trimExtra($event, 100)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.punishment
+                      .amount_in_inr
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.punishment
+                      .brief_of_the_case
+                  "
+                  (keypress)="_utilities.textLimit($event, 500)"
+                  (blur)="_utilities.trimExtra($event, 500)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="
+                    details_of_fines_penalties.non_monetary.punishment
+                      .has_an_appeal_been_preferred
+                  "
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="true">Yes</mat-option>
+                  <mat-option [value]="false">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        3. Of the instances disclosed in Question 2 above, details of the
+        Appeal/ Revision preferred in cases where monetary or non-monetary
+        action has been appealed.
+      </p>
+      <button
+        class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-8"
+        type="button"
+        (click)="addField(1)"
+      >
+        Add New Detail
+      </button>
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th>Case Details</th>
+            <th>
+              Name of the regulatory/ enforcement agencies/ judicial
+              institutions
+            </th>
+
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="
+              let eachValue of monetary_or_non_monetary_action_appealed;
+              let i = index
+            "
+          >
+            <tr>
+              <td style="width: 50%">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.case_details"
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 40%">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.judicial_institutions"
+                    (keypress)="_utilities.textLimit($event, 100)"
+                    (blur)="_utilities.trimExtra($event, 100)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(i, 1)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+
+      <ng-container>
+        <div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+          <!-- Title -->
+          <div class="sm:col-span-9 small-select">
+            <label style="font-size: 16px; font-weight: 500"
+              >4. Does the entity have an anti-corruption or anti-bribery
+              policy? If yes, provide details in brief and if available, provide
+              a web-link to the policy.
+              <span class="re-tooltip">
+                <mat-icon
+                  svgIcon="heroicons_solid:information-circle"
+                  class="icon-size-4"
+                ></mat-icon>
+                <div class="re-tooltiptext">
+                  <div class="content">
+                    The disclosure on the anti-corruption or anti- bribery
+                    policy may include the following:
+                    <ol>
+                      <li>Risk assessment procedures and internal controls</li>
+                      <li>
+                        Mechanism to deal with complaints on bribery /
+                        corruption
+                      </li>
+                      <li>Coverage of trainings on anti-corruption issues</li>
+                    </ol>
+                  </div>
+                </div>
+              </span> </label
+            ><br />
+            <mat-form-field class="fuse-mat-no-subscript">
+              <mat-select
+                [(ngModel)]="is_anti_corruption"
+                (selectionChange)="onChangeSelect('is_anti_corruption')"
+              >
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="'Yes'">Yes</mat-option>
+                <mat-option [value]="'No'">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="sm:col-span-5" *ngIf="is_anti_corruption == 'Yes'">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-label>Brief</mat-label>
+              <textarea
+                matInput
+                [(ngModel)]="anti_corruption_or_anti_bribery_policy"
+                (keypress)="_utilities.textLimit($event, 500)"
+                (blur)="_utilities.trimExtra($event, 500)"
+                cdkTextareaAutosize
+                [cdkAutosizeMinRows]="3"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div class="sm:col-span-4" *ngIf="is_anti_corruption == 'Yes'">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-label>Web link to the policy</mat-label>
+
+              <input
+                [(ngModel)]="web_link_to_the_policy"
+                (keypress)="_utilities.textLimit($event, 250)"
+                (blur)="_utilities.trimExtra($event, 250)"
+                matInput
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </ng-container>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        5. Number of Directors/KMPs/employees/workers against whom disciplinary
+        action was taken by any law enforcement agency for the charges of
+        bribery/ corruption:
+      </p>
+      <table class="en-table">
+        <thead class="low-padding-head">
+          <tr>
+            <th></th>
+            <th>
+              FY
+              {{ number_of_directors.current_financial_yr.year }}<br />
+              (Current Financial Year)
+            </th>
+            <th>
+              FY
+              {{ number_of_directors.previous_financial_yr.year }}<br />
+              (Previous Financial Year)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Directors</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    number_of_directors.current_financial_yr.directors
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    number_of_directors.previous_financial_yr.directors
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>KMPs</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="number_of_directors.current_financial_yr.kmps"
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="number_of_directors.previous_financial_yr.kmps"
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Employees</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    number_of_directors.current_financial_yr.employees
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    number_of_directors.previous_financial_yr.employees
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Workers</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="number_of_directors.current_financial_yr.workers"
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    number_of_directors.previous_financial_yr.workers
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        6. Details of complaints with regard to conflict of interest:
+      </p>
+      <table class="en-table">
+        <thead class="low-padding-head">
+          <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">
+              FY
+              {{ details_of_complaints.current_financial_yr.year }}<br />
+              (Current Financial Year)
+            </th>
+            <th colspan="2">
+              FY
+              {{ details_of_complaints.previous_financial_yr.year }}<br />
+              (Previous Financial Year)
+            </th>
+          </tr>
+          <tr>
+            <th>Number</th>
+            <th style="min-width: 200px">Remarks</th>
+            <th>Number</th>
+            <th style="min-width: 200px">Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Number of complaints received in relation to issues of Conflict of
+              Interest of the Directors
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.current_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                      .numbers
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.current_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                      .remarks
+                  "
+                  (keypress)="_utilities.textLimit($event, 250)"
+                  (blur)="_utilities.trimExtra($event, 250)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.previous_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                      .numbers
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.previous_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                      .remarks
+                  "
+                  (keypress)="_utilities.textLimit($event, 250)"
+                  (blur)="_utilities.trimExtra($event, 250)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Number of complaints received in relation to issues of Conflict of
+              Interest of the KMPs
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.current_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                      .numbers
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.current_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                      .remarks
+                  "
+                  (keypress)="_utilities.textLimit($event, 250)"
+                  (blur)="_utilities.trimExtra($event, 250)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.previous_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                      .numbers
+                  "
+                  (keypress)="_utilities.numberOnly($event, 6, true)"
+                  (blur)="_utilities.trimExtra($event, 6)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    details_of_complaints.previous_financial_yr
+                      .number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                      .remarks
+                  "
+                  (keypress)="_utilities.textLimit($event, 250)"
+                  (blur)="_utilities.trimExtra($event, 250)"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        7. Provide details of any corrective action taken or underway on issues
+        related to fines / penalties / action taken by regulators/ law
+        enforcement agencies/ judicial institutions, on cases of corruption and
+        conflicts of interest.
+      </p>
+      <mat-form-field class="fuse-mat-no-subscript w-full">
+        <textarea
+          matInput
+          [(ngModel)]="
+            provide_details_of_any_corrective_action_taken_or_underway_on_issues_related_to_fines
+          "
+          (keypress)="_utilities.textLimit($event, 5000)"
+          (blur)="_utilities.trimExtra($event, 5000)"
+          cdkTextareaAutosize
+          [cdkAutosizeMinRows]="3"
+        ></textarea>
+      </mat-form-field>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <h4><u>Leadership Indicators</u></h4>
+      <p class="header-p mt-4 mb-4">
+        1. Awareness programmes conducted for value chain partners on any of the
+        Principles during the financial year:
+      </p>
+      <button
+        class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4"
+        type="button"
+        (click)="addField(2)"
+      >
+        Add New Detail
+      </button>
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th>Total number of awareness programmes held</th>
+            <th>Topics / principles covered under the training</th>
+            <th>
+              %age of value chain partners covered (by value of business done
+              with such partners) under the awareness programmes
+            </th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="
+              let eachValue of awareness_programmes_conducted;
+              let i = index
+            "
+          >
+            <tr>
+              <td style="width: 15%">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.total_number_of_awareness_programmes_held
+                    "
+                    (keypress)="_utilities.numberOnly($event, 6, true)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 50%">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.principles_covered_under_the_training
+                    "
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 25%">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.percetage_of_age"
+                    (keypress)="_utilities.numberOnly($event, 3)"
+                    (blur)="_utilities.trimExtra($event, 3)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(i, 2)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mt-4 mb-4">
+        2. Does the entity have processes in place to avoid/ manage conflict of
+        interests involving members of the Board? (Yes/No) If Yes, provide
+        details of the same.
+        <span class="re-tooltip">
+          <mat-icon
+            svgIcon="heroicons_solid:information-circle"
+            class="icon-size-4"
+          ></mat-icon>
+          <div class="re-tooltiptext">
+            <div class="content">
+              <ol>
+                <li>
+                  Conflict of interest refers to a situation where an individual
+                  is confronted with choosing between the requirements of his or
+                  her function and his or her own private interests.
+                </li>
+                <li>
+                  The entity shall disclose whether there are processes to
+                  ensure that conflict of interests involving members of the
+                  Board/ KMPs are avoided or managed along-with details of such
+                  processes.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </span>
+      </p>
+      <div class="grid sm:grid-cols-6 gap-6 w-full mt-8">
+        <div class="sm:col-span-2">
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select
+              [(ngModel)]="is_managing_conflict"
+              (selectionChange)="onChangeSelect('is_managing_conflict')"
+            >
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="'Yes'">Yes</mat-option>
+              <mat-option [value]="'No'">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="sm:col-span-4" *ngIf="is_managing_conflict == 'Yes'">
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <textarea
+              matInput
+              [(ngModel)]="
+                manage_conflict_of_interests_involving_members_of_the_board
+              "
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              cdkTextareaAutosize
+              [cdkAutosizeMinRows]="3"
+              placeholder="Details"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="mt-11 mb-4 border-t"></div>
+      <!-- Actions -->
+      <div class="flex items-center justify-end">
+        <button
+          class="ml-4"
+          mat-flat-button
+          type="button"
+          [color]="'primary'"
+          (click)="submitForm()"
+        >
+          Save Form
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

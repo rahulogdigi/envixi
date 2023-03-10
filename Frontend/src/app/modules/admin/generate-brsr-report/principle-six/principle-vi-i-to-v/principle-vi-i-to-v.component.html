@@ -1,0 +1,752 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 6:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <label style="font-weight: bold"
+      >1. Details of total energy consumption (in Joules or multiples) and
+      energy intensity, in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }}<br />
+            (Current Financial Year)<br />(in Joules)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}<br />
+            (Previous Financial Year)<br />(in Joules)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Total electricity consumption (A)</b></td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption
+                  ?.total_electricity_consumption?.current_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.total_electricity_consumption?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption
+                  ?.total_electricity_consumption?.previous_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.total_electricity_consumption?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total fuel consumption (B)</b></td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.total_fuel_consumption
+                  ?.current_financial_year >= 0
+                  ? details_of_total_energy_consumption?.total_fuel_consumption
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.total_fuel_consumption
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_energy_consumption?.total_fuel_consumption
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Energy consumption through other sources (C)</b></td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption
+                  ?.energy_consumption_through_other_sources
+                  ?.current_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.energy_consumption_through_other_sources
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption
+                  ?.energy_consumption_through_other_sources
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.energy_consumption_through_other_sources
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total energy consumption (A+B+C)</b></td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.total_energy_consumption
+                  ?.current_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.total_energy_consumption?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.total_energy_consumption
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.total_energy_consumption?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Energy intensity per rupee of turnover<br />
+              (Total energy consumption/ turnover in rupees)</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.energy_intensity_per_rupee
+                  ?.current_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.energy_intensity_per_rupee?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.energy_intensity_per_rupee
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.energy_intensity_per_rupee?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Energy intensity (optional) – the relevant metric may be selected
+              by the entity</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.energy_intensity_optional
+                  ?.current_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.energy_intensity_optional?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_energy_consumption?.energy_intensity_optional
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_energy_consumption
+                      ?.energy_intensity_optional?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_essential_1 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_essential_1 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ independent_assessment_agency_name_essential_1 || "--" }}</p>
+    </ng-container>
+    <hr />
+
+    <label style="font-weight: bold"
+      >2. Does the entity have any sites / facilities identified as designated
+      consumers (DCs) under the Performance, Achieve and Trade (PAT) Scheme of
+      the Government of India?</label
+    >
+    <p>
+      {{ is_dcs || "--" }}
+    </p>
+    <ng-container *ngIf="is_dcs == 'Yes'">
+      <label style="font-weight: bold"
+        >Whether targets set under the PAT scheme have been achieved?</label
+      >
+      <p>
+        {{ targets_under_pat_achieved || "--" }}
+      </p>
+    </ng-container>
+    <ng-container *ngIf="targets_under_pat_achieved == 'No'">
+      <label style="font-weight: bold">Provide the remedial action taken</label>
+      <p>
+        {{ remedial_action_taken || "--" }}
+      </p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >3. Provide details of the following disclosures related to water, in the
+      following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Water withdrawal by source (in kilolitres)</b></td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td><b>(i) Surface water</b></td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water?.surface_water
+                  ?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.surface_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water?.surface_water
+                  ?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.surface_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(ii) Groundwater</b></td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water?.groundwater
+                  ?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.groundwater?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water?.groundwater
+                  ?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.groundwater?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(iii) Third party water</b></td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.third_party_water?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.third_party_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.third_party_water?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.third_party_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(iv) Seawater / desalinated water</b></td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.desalinated_water?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.desalinated_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.desalinated_water?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.desalinated_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(v) Others</b></td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water?.others
+                  ?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water?.others
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water?.others
+                  ?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water?.others
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total volume of water withdrawal (in kilolitres) (i + ii + iii +
+              iv + v)</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.total_volume_of_water_withdrawal?.current_financial_year >=
+                0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.total_volume_of_water_withdrawal?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.total_volume_of_water_withdrawal?.previous_financial_year >=
+                0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.total_volume_of_water_withdrawal
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total volume of water consumption (in kilolitres)</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.total_volume_of_water_consumption?.current_financial_year >=
+                0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.total_volume_of_water_consumption
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.total_volume_of_water_consumption
+                  ?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.total_volume_of_water_consumption
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Water intensity per rupee of turnover (Water consumed /
+              turnover)</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.water_intensity_per_rupee?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.water_intensity_per_rupee?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.water_intensity_per_rupee?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.water_intensity_per_rupee?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Water intensity (optional) – the relevant metric may be selected
+              by the entity</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.water_intensity_optional?.current_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.water_intensity_optional?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_following_disclosures_related_to_water
+                  ?.water_intensity_optional?.previous_financial_year >= 0
+                  ? details_of_following_disclosures_related_to_water
+                      ?.water_intensity_optional?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_essential_3 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_essential_3 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ independent_assessment_agency_name_essential_3 || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >4. Has the entity implemented a mechanism for Zero Liquid Discharge? If
+      yes, provide details of its coverage and implementation.</label
+    >
+    <p>
+      {{ mechanism_for_zero_liquid_discharge || "--" }}
+    </p>
+    <ng-container *ngIf="mechanism_for_zero_liquid_discharge == 'Yes'">
+      <label style="font-weight: bold">Provide details</label>
+      <p>
+        {{ mechanism_for_zero_liquid_discharge_details || "--" }}
+      </p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >5. Please provide details of air emissions (other than GHG emissions) by
+      the entity, in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Please specify unit</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>NOx</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.nox?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.nox?.current_financial_year >= 0
+                  ? details_of_air_emissions?.nox?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.nox?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.nox?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>SOx</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.sox?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.sox?.current_financial_year >= 0
+                  ? details_of_air_emissions?.sox?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.sox?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.sox?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Particulate Matter (PM)</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.pm?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.pm?.current_financial_year >= 0
+                  ? details_of_air_emissions?.pm?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.pm?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.pm?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Persistent organic pollutants (POP)</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.pop?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.pop?.current_financial_year >= 0
+                  ? details_of_air_emissions?.pop?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.pop?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.pop?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Volatile organic compounds (VOC)</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.voc?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.voc?.current_financial_year >= 0
+                  ? details_of_air_emissions?.voc?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.voc?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.voc?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Hazardous air pollutants (HAP)</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.hap?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.hap?.current_financial_year >= 0
+                  ? details_of_air_emissions?.hap?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.hap?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.hap?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Others – please specify</b></td>
+          <td>
+            <p>
+              {{ details_of_air_emissions?.other?.unit || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.other?.current_financial_year >= 0
+                  ? details_of_air_emissions?.other?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_air_emissions?.other?.previous_financial_year >= 0
+                  ? details_of_air_emissions?.other?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_essential_5 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_essential_5 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ independent_assessment_agency_name_essential_5 || "--" }}</p>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,3340 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <div class="mt-1">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          Section B
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-4 sm:p-4">
+    <div class="en-alert" *ngIf="showAlert">
+      <fuse-alert
+        class="mt-8 -mb-4"
+        [appearance]="'outline'"
+        [showIcon]="false"
+        [dismissed]="false"
+        [type]="alert.type"
+        [name]="'alert_message'"
+      >
+        {{ alert.message }}
+      </fuse-alert>
+    </div>
+
+    <mat-tab-group>
+      <mat-tab label="Policy and management processes">
+        <div class="w-full">
+          <table class="en-table">
+            <thead>
+              <tr>
+                <th style="min-width: 250px">Disclosure Questions</th>
+                <th>P<br />1</th>
+                <th>P<br />2</th>
+                <th>P<br />3</th>
+                <th>P<br />4</th>
+                <th>P<br />5</th>
+                <th>P<br />6</th>
+                <th>P<br />7</th>
+                <th>P<br />8</th>
+                <th>P<br />9</th>
+              </tr>
+              <tr>
+                <th colspan="10">Policy and management processes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--one_a-->
+              <tr>
+                <td>
+                  1. a. Whether your entity’s policy/policies cover each
+                  principle and its core elements of the NGRBCs.
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p1"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p2"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p3"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p4"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p5"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p6"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p7"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p8"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_a.p9"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--one_b-->
+              <tr>
+                <td>b. Has the policy been approved by the Board?</td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p1"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p2"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p3"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p4"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p5"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p6"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p7"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p8"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.one_b.p9"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--one_c-->
+              <tr>
+                <td>c. Web Link of the Policies, if available</td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p1"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p2"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p3"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p4"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p5"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p6"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p7"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p8"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.one_c.p9"
+                      placeholder="Web Link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--two-->
+              <tr>
+                <td>
+                  2. Whether the entity has translated the policy into
+                  procedures.
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p1"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p2"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p3"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p4"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p5"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p6"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p7"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p8"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.two.p9"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--three-->
+              <tr>
+                <td>
+                  3. Do the enlisted policies extend to your value chain
+                  partners?
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p1"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p2"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p3"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p4"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p5"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p6"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p7"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p8"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="policy_and_management_process.three.p9"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--four-->
+              <tr>
+                <td>
+                  4. Name of the national and international
+                  codes/certifications/labels/ standards (e.g. Forest
+                  Stewardship Council, Fairtrade, Rainforest Alliance, Trustea)
+                  standards (e.g. SA 8000, OHSAS, ISO, BIS) adopted by your
+                  entity and mapped to each principle.
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p1"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p2"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p3"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p4"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p5"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p6"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p7"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p8"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.four.p9"
+                      placeholder="Name"
+                      (keypress)="_utilities.textLimit($event, 200)"
+                      (blur)="_utilities.trimExtra($event, 200)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--five-->
+              <tr>
+                <td>
+                  5. Specific commitments, goals and targets set by the entity
+                  with defined timelines, if any.
+                  <span class="re-tooltip">
+                    <mat-icon
+                      svgIcon="heroicons_solid:information-circle"
+                      class="icon-size-4"
+                    ></mat-icon>
+                    <div class="re-tooltiptext">
+                      <div class="content">
+                        <ol>
+                          <li>
+                            Under this field, the entity may disclose if it has
+                            any specific commitment, goal or target against any
+                            of the principles. Such disclosures may include the
+                            following:
+                            <ul>
+                              <li>
+                                Baseline and context for goals and targets
+                              </li>
+                              <li>
+                                Entities covered such as subsidiaries /
+                                associates / joint ventures / value chain
+                                partners
+                              </li>
+                              <li>
+                                Expected result or outcome, in quantitative or
+                                qualitative terms
+                              </li>
+                              <li>
+                                Expected timeline for achieving each goal and
+                                target
+                              </li>
+                              <li>
+                                Whether goals and targets are mandatory (based
+                                on legislation) or voluntary. If they are
+                                mandatory, the organization should list the
+                                relevant legislation.
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            The entity shall state the performance achieved
+                            against each goal or target. Any change in goals
+                            with regard to timelines, partial achievement of a
+                            goal or delay in achievement should also be
+                            specifically indicated, and where possible, with
+                            reasons.
+                          </li>
+                          <li>
+                            The entity need not strictly follow the tabular
+                            format for this disclosure. The issues for each
+                            principle can be covered in a running format.
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p1"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p2"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p3"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p4"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p5"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p6"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p7"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p8"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.five.p9"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--six-->
+              <tr>
+                <td>
+                  6. Performance of the entity against the specific commitments,
+                  goals and targets along-with reasons in case the same are not
+                  met. goals and targets along-with reasons in case the same are
+                  not met.
+                  <span class="re-tooltip">
+                    <mat-icon
+                      svgIcon="heroicons_solid:information-circle"
+                      class="icon-size-4"
+                    ></mat-icon>
+                    <div class="re-tooltiptext">
+                      <div class="content">
+                        <ol>
+                          <li>
+                            Under this field, the entity may disclose if it has
+                            any specific commitment, goal or target against any
+                            of the principles. Such disclosures may include the
+                            following:
+                            <ul>
+                              <li>
+                                Baseline and context for goals and targets
+                              </li>
+                              <li>
+                                Entities covered such as subsidiaries /
+                                associates / joint ventures / value chain
+                                partners
+                              </li>
+                              <li>
+                                Expected result or outcome, in quantitative or
+                                qualitative terms
+                              </li>
+                              <li>
+                                Expected timeline for achieving each goal and
+                                target
+                              </li>
+                              <li>
+                                Whether goals and targets are mandatory (based
+                                on legislation) or voluntary. If they are
+                                mandatory, the organization should list the
+                                relevant legislation.
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            The entity shall state the performance achieved
+                            against each goal or target. Any change in goals
+                            with regard to timelines, partial achievement of a
+                            goal or delay in achievement should also be
+                            specifically indicated, and where possible, with
+                            reasons.
+                          </li>
+                          <li>
+                            The entity need not strictly follow the tabular
+                            format for this disclosure. The issues for each
+                            principle can be covered in a running format.
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </span>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p1"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p2"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p3"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p4"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p5"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p6"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p7"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p8"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="policy_and_management_process.six.p9"
+                      placeholder="Performance of the entity"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ng-container *ngIf="showTable()">
+            <p class="mt-4 mb-4">
+              If answer to question (1) above is “No” i.e. not all Principles
+              are covered by a policy, reasons to be stated:
+            </p>
+            <table class="en-table">
+              <thead>
+                <tr>
+                  <th style="min-width: 250px">Questions</th>
+                  <th>P<br />1</th>
+                  <th>P<br />2</th>
+                  <th>P<br />3</th>
+                  <th>P<br />4</th>
+                  <th>P<br />5</th>
+                  <th>P<br />6</th>
+                  <th>P<br />7</th>
+                  <th>P<br />8</th>
+                  <th>P<br />9</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--one_a-->
+                <tr>
+                  <td>
+                    The entity does not consider the Principles material to its
+                    business (Yes/No)
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p1
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p2
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p3
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p4
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p5
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p6
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p7
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p8
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .the_entity_does_not_consider_the_principles_material_to_its_business
+                            .p9
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    The entity is not at a stage where it is in a position to
+                    formulate and implement the policies on specified principles
+                    (Yes/No)
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p1
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p2
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p3
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p4
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p5
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p6
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p7
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p8
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .position_to_formulate_and_implement_the_policies_on_specified_principles
+                            .p9
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    The entity does not have the financial or/human and
+                    technical resources available for the task (Yes/No)
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p1
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p2
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p3
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p4
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p5
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p6
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p7
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p8
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .human_and_technical_resources_available_for_the_task
+                            .p9
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    It is planned to be done in the next financial year (Yes/No)
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p1
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p2
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p3
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p4
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p5
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p6
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p7
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p8
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="fuse-mat-no-subscript">
+                      <mat-select
+                        [(ngModel)]="
+                          tweleve
+                            .it_is_planned_to_be_done_in_the_next_financial_year
+                            .p9
+                        "
+                      >
+                        <mat-option [value]="''">Select</mat-option>
+                        <mat-option [value]="true">Yes</mat-option>
+                        <mat-option [value]="false">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-form-field class="fuse-mat-no-subscript w-full mt-4">
+              <mat-label>Any other reason (please specify)</mat-label>
+              <textarea
+                matInput
+                [(ngModel)]="tweleve.any_other_reason"
+                cdkTextareaAutosize
+                [cdkAutosizeMinRows]="3"
+              ></textarea>
+            </mat-form-field>
+          </ng-container>
+        </div>
+      </mat-tab>
+      <mat-tab label="Governance, leadership and oversight">
+        <div class="w-full">
+          <div class="grid sm:grid-cols-6 gap-6 w-full mt-8">
+            <!-- Title -->
+            <div class="sm:col-span-6">
+              <label class="custom-label"
+                >Statement by director responsible for the business
+                responsibility report, highlighting ESG related challenges,
+                targets and achievements (listed entity has flexibility
+                regarding the placement of this disclosure)
+                <span class="re-tooltip">
+                  <mat-icon
+                    svgIcon="heroicons_solid:information-circle"
+                    class="icon-size-4"
+                  ></mat-icon>
+                  <div class="re-tooltiptext">
+                    <div class="content">
+                      <ol>
+                        <li>
+                          The listed entity shall include a statement from the
+                          director who is responsible for preparation of the
+                          report, highlighting the relevance of sustainability
+                          to the organization. Such statement can include the
+                          following:
+                          <ul>
+                            <li>
+                              The overall vision and strategy of the
+                              organization for the short-term, medium- term, and
+                              long-term, with respect to managing the
+                              significant environmental and social impacts that
+                              the organization causes, contributes to, or that
+                              are directly linked to its activities, products or
+                              services
+                            </li>
+                            <li>
+                              Strategic priorities and key topics for the short
+                              and medium-term with respect to sustainability
+                            </li>
+                            <li>
+                              Broader trends influencing the sustainability
+                              priorities of the entity
+                            </li>
+                            <li>
+                              Key events, achievements, and failures during the
+                              reporting period
+                            </li>
+                            <li>
+                              Views on performance with respect to targets
+                            </li>
+                            <li>
+                              Outlook on the organization’s main challenges and
+                              targets
+                            </li>
+                            <li>
+                              Any other items pertaining to the organization’s
+                              strategic approach
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          The listed entity can place this disclosure at the
+                          beginning of the report or under Section B.
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </span>
+              </label>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <textarea
+                  matInput
+                  [(ngModel)]="seven"
+                  (keypress)="_utilities.textLimit($event, 5000)"
+                  (blur)="_utilities.trimExtra($event, 5000)"
+                  cdkTextareaAutosize
+                  [cdkAutosizeMinRows]="3"
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <!-- Title -->
+            <div class="sm:col-span-6">
+              <label class="custom-label"
+                >Details of the highest authority responsible for implementation
+                and oversight of the Business Responsibility policy (ies).
+                <span class="re-tooltip">
+                  <mat-icon
+                    svgIcon="heroicons_solid:information-circle"
+                    class="icon-size-4"
+                  ></mat-icon>
+                  <div class="re-tooltiptext">
+                    <div class="content">
+                      <ol>
+                        <li>
+                          For the policies disclosed at Question 1 of Section B,
+                          the entity shall disclose the highest executive
+                          authority in the organization who is responsible for
+                          their implementation and highest authority responsible
+                          for oversight. Such authority could be a director of
+                          the board, committee of the board, senior management
+                          personnel or a committee of employees.
+                        </li>
+                        <li>
+                          In case a committee is the highest authority, then the
+                          composition of the committee shall be disclosed,
+                          including the following: name of individuals,
+                          designation and in case of director, DIN and category
+                          (Chair / ED / NED / ID).
+                        </li>
+                        <li>
+                          In case an individual is the highest authority, the
+                          name, designation and in case of director, DIN and
+                          category (Chair / ED / NED / ID) shall be disclosed.
+                        </li>
+                        <li>
+                          In case, different authorities are responsible for the
+                          implementation of different policies, the same may be
+                          indicated.
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </span>
+              </label>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <textarea
+                  matInput
+                  [(ngModel)]="eight"
+                  (keypress)="_utilities.textLimit($event, 5000)"
+                  (blur)="_utilities.trimExtra($event, 5000)"
+                  cdkTextareaAutosize
+                  [cdkAutosizeMinRows]="3"
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="custom-label"
+                >Does the entity have a specified Committee of the Board/
+                Director responsible for decision making on sustainability
+                related issues?
+                <span class="re-tooltip">
+                  <mat-icon
+                    svgIcon="heroicons_solid:information-circle"
+                    class="icon-size-4"
+                  ></mat-icon>
+                  <div class="re-tooltiptext">
+                    <div class="content">
+                      <ol>
+                        <li>
+                          The entity shall indicate ‘Yes’ if it has a specified
+                          Committee of the Board or a director of the Board of
+                          the entity who is responsible for decision making on
+                          sustainability related issues.
+                        </li>
+                        <li>
+                          In case a Committee of the Board is responsible, its
+                          composition shall be disclosed, including the
+                          following: name of individual, designation and in case
+                          of director, DIN and category (Chair / ED / NED / ID).
+                          In case a director is responsible, DIN and category
+                          (Chair / ED / NED / ID) shall be disclosed.
+                        </li>
+                        <li>
+                          In case the response to this question is the same as
+                          that to question 8, the entity need not repeat its
+                          response and can cross-refer to the same.
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </span>
+              </label>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-select
+                  [(ngModel)]="conditionCheck"
+                  (selectionChange)="onChangeSelect('nine')"
+                >
+                  <mat-option [value]="''">Select</mat-option>
+                  <mat-option [value]="'Yes'">Yes</mat-option>
+                  <mat-option [value]="'No'">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="sm:col-span-4" *ngIf="conditionCheck == 'Yes'">
+              <label class="custom-label">Details</label>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <textarea
+                  matInput
+                  [(ngModel)]="nine"
+                  (keypress)="_utilities.textLimit($event, 5000)"
+                  (blur)="_utilities.trimExtra($event, 5000)"
+                  cdkTextareaAutosize
+                  [cdkAutosizeMinRows]="3"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Details of Review of NGRBCs by the Company">
+        <div class="w-full">
+          <table class="en-table">
+            <thead>
+              <tr>
+                <th style="min-width: 250px" rowspan="2">Subject for Review</th>
+                <th style="min-width: 250px" colspan="9">
+                  Indicate whether review was undertaken by Director /Committee
+                  of the Board/ Any other Committee
+                </th>
+                <th style="min-width: 250px" colspan="9">
+                  Frequency (Annually/ Half yearly/ Quarterly/ Any other –
+                  please specify)
+                </th>
+              </tr>
+              <tr>
+                <th>P<br />1</th>
+                <th>P<br />2</th>
+                <th>P<br />3</th>
+                <th>P<br />4</th>
+                <th>P<br />5</th>
+                <th>P<br />6</th>
+                <th>P<br />7</th>
+                <th>P<br />8</th>
+                <th>P<br />9</th>
+                <th>P<br />1</th>
+                <th>P<br />2</th>
+                <th>P<br />3</th>
+                <th>P<br />4</th>
+                <th>P<br />5</th>
+                <th>P<br />6</th>
+                <th>P<br />7</th>
+                <th>P<br />8</th>
+                <th>P<br />9</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--one_a-->
+              <tr>
+                <td>Performance against above policies and follow up action</td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p1
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p1 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p1_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p2
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p2 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p2_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p3
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p3 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p3_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p4
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p4 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p4_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p5
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p5 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p5_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p6
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p6 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p6_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p7
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p7 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p7_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p8
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p8 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p8_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director.p9
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p9 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p9_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p1
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p1 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p1_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p2
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p2 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p2_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p3
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p3 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p3_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p4
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p4 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p4_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p5
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p5 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p5_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p6
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p6 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p6_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p7
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p7 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p7_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p8
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p8 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p8_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p9
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten
+                        .performance_against_above_policies_and_follow_up_action
+                        .frequency.p9 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten
+                          .performance_against_above_policies_and_follow_up_action
+                          .frequency.p9_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+              <!--one_a-->
+              <tr>
+                <td>
+                  Compliance with statutory requirements of relevance to the
+                  principles, and, rectification of any non-compliances
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p1
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p1 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p1_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p2
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p2 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p2_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p3
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p3 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p3_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p4
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p4 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p4_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p5
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p5 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p5_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p6
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p6 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p6_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p7
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p7 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p7_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p8
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p8 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p8_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director.p9
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Director'">Director</mat-option>
+                      <mat-option [value]="'Committee of the Board'"
+                        >Committee of the Board</mat-option
+                      >
+                      <mat-option [value]="'Other'"
+                        >Any other Committee</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements
+                        .indicate_whether_review_was_undertaken_by_director
+                        .p9 == 'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements
+                          .indicate_whether_review_was_undertaken_by_director
+                          .p9_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p1
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p1 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p1_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p2
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p2 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p2_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p3
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p3 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p3_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p4
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p4 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p4_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p5
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p5 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p5_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p6
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p6 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p6_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p7
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p7 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p7_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p8
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p8 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p8_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency.p9
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Other'">Any other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="mt-2"
+                    *ngIf="
+                      ten.compliance_with_statutory_requirements.frequency.p9 ==
+                      'Other'
+                    "
+                  >
+                    <input
+                      [(ngModel)]="
+                        ten.compliance_with_statutory_requirements.frequency
+                          .p9_other
+                      "
+                      placeholder="Specify"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="en-table">
+            <thead>
+              <tr>
+                <th style="min-width: 250px">Subject for Review</th>
+                <th>P<br />1</th>
+                <th>P<br />2</th>
+                <th>P<br />3</th>
+                <th>P<br />4</th>
+                <th>P<br />5</th>
+                <th>P<br />6</th>
+                <th>P<br />7</th>
+                <th>P<br />8</th>
+                <th>P<br />9</th>
+              </tr>
+            </thead>
+            <tbody class="t-body">
+              <tr>
+                <td>
+                  Has the entity carried out independent assessment/ evaluation
+                  of the working of its policies by an external agency?
+                  (Yes/No). If yes, provide name of the agency.
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p1">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p1"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p1" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p2">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p2"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p2" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p3">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p3"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p3" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p4">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p4"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p4" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p5">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p5"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p5" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p6">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p6"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p6" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p7">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p7"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p7" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p8">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p8"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p8" matInput />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript">
+                    <mat-select [(ngModel)]="eleven.p9">
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    class="fuse-mat-no-subscript w-full mt-4 custom-class-for-field"
+                    *ngIf="eleven.p9"
+                  >
+                    <input [(ngModel)]="eleven.name_of_agency_p9" matInput />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

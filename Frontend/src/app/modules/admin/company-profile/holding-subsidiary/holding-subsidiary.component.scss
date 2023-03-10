@@ -1,0 +1,18 @@
+.en-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  thead tr {
+    border-bottom: 1px solid #e2e8f0;
+    th {
+      padding: 25px 10px;
+    }
+  }
+  tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    td {
+      padding: 15px 20px;
+      text-align: center;
+    }
+  }
+}

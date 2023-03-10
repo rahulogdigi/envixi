@@ -1,0 +1,105 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 4:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <label style="font-weight: bold"
+      >1. Describe the processes for identifying key stakeholder groups of the
+      entity.</label
+    >
+    <p style="font-size: 14px">
+      {{
+        describe_the_processes_for_identifying_key_stakeholder_groups_of_the_entity ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >2. List stakeholder groups identified as key for your entity and the
+      frequency of engagement with each stakeholder group.</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Stakeholder Group</th>
+          <th>
+            Whether identified as Vulnerable & Marginalized Group (Yes/No)
+          </th>
+          <th>
+            Channels of communication (Email, SMS, Newspaper, Pamphlets,
+            Advertisement, Community Meetings, Notice Board, Website), Other
+          </th>
+          <th>
+            Frequency of engagement (Annually/ Half yearly/ Quarterly / others)
+          </th>
+          <th>
+            Purpose and scope of engagement including key topics and concerns
+            raised during such engagement
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eachValue of list_stakeholder_groups; let i = index">
+          <td>
+            <p>{{ eachValue?.stakeholder_group || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.whether_identified_as_vulnerable || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.channel_of_the_communication || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.frequency_of_the_engagement || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.purpose_and_scope_of_engagement_including_key || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Provide the processes for consultation between stakeholders and the
+      Board on economic, environmental, and social topics or if consultation is
+      delegated, how is feedback from such consultations provided to the
+      Board.</label
+    >
+    <p style="font-size: 14px">
+      {{
+        provide_the_processes_for_consultation_between_stakeholders_and_the_board ||
+          "--"
+      }}
+    </p>
+    <label style="font-weight: bold">
+      2. Whether stakeholder consultation is used to support the identification
+      and management of environmental, and social topics?</label
+    >
+    <p style="font-size: 14px">
+      {{
+        whether_stakeholder_consultation_is_used_to_support_the_identification
+          ? whether_stakeholder_consultation_is_used_to_support_the_identification
+          : "--"
+      }}
+    </p>
+    <label style="font-weight: bold">
+      3. Provide details of instances of engagement with, and actions taken to,
+      address the concerns of vulnerable/ marginalized stakeholder
+      groups.</label
+    >
+    <p style="font-size: 14px">
+      {{
+        provide_details_of_instances_of_engagement
+          ? provide_details_of_instances_of_engagement
+          : "--"
+      }}
+    </p>
+  </div>
+</div>

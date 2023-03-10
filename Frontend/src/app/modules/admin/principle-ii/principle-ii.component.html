@@ -1,0 +1,1274 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">{{
+            _utilities.selectedCompany?.company_name
+          }}</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Principle 2</a>
+        </div>
+      </div>
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 2
+        </h2>
+        <p>
+          Businesses should provide goods and services in a manner that is
+          sustainable and safe
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <h4><u>Essential Indicators</u></h4>
+      <p class="header-p mt-4 mb-4">
+        1. Percentage of R&D and capital expenditure (capex) investments in
+        specific technologies to improve the environmental and social impacts of
+        product and processes to total R&D and capex investments made by the
+        entity, respectively.
+      </p>
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Current Financial Year (Rs.)</th>
+            <th>Previous Financial Year (Rs.)</th>
+            <th>Details of improvements in environmental and social impacts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- R&D-->
+          <tr>
+            <td>R&D</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="one_capital_expenditure.r_and_d.current_year"
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="one_capital_expenditure.r_and_d.previous_year"
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <textarea
+                  matInput
+                  [(ngModel)]="
+                    one_capital_expenditure.r_and_d.details_of_improvements
+                  "
+                  (keypress)="_utilities.textLimit($event, 5000)"
+                  (blur)="_utilities.trimExtra($event, 5000)"
+                  cdkTextareaAutosize
+                  [cdkAutosizeMinRows]="3"
+                ></textarea>
+              </mat-form-field>
+            </td>
+          </tr>
+          <!--Capex-->
+          <tr>
+            <td>Capex</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="one_capital_expenditure.capex.current_year"
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="one_capital_expenditure.capex.previous_year"
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <textarea
+                  matInput
+                  [(ngModel)]="
+                    one_capital_expenditure.capex.details_of_improvements
+                  "
+                  (keypress)="_utilities.textLimit($event, 5000)"
+                  (blur)="_utilities.trimExtra($event, 5000)"
+                  cdkTextareaAutosize
+                  [cdkAutosizeMinRows]="3"
+                ></textarea>
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+
+      <div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+        <!-- Title -->
+        <div class="sm:col-span-4">
+          <label style="font-size: 16px; font-weight: 500"
+            >2. Does the entity have procedures in place for sustainable
+            sourcing?
+            <span class="re-tooltip">
+              <mat-icon
+                svgIcon="heroicons_solid:information-circle"
+                class="icon-size-4"
+              ></mat-icon>
+              <div class="re-tooltiptext">
+                <div class="content">
+                  <ol>
+                    <li>
+                      “Sustainable Sourcing” essentially refers the integration
+                      of social, ethical and environmental performance factors
+                      into the process of selecting suppliers.
+                    </li>
+                    <li>
+                      Under this field, the entity shall indicate what
+                      proportion of its inputs (by quantity or value – please
+                      specify) are sourced from suppliers who are either covered
+                      by the company’s sustainable sourcing programmes and/or
+                      are certified to be compliant with social and
+                      environmental standards such as SA 8000, ISO 14001, OHSAS
+                      18001 or relevant labels like Rainforest Alliance,
+                      Rugmark, RSPO etc.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </span> </label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select
+              [(ngModel)]="two_a"
+              (selectionChange)="onChangeSelect('two_a')"
+            >
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="'Yes'">Yes</mat-option>
+              <mat-option [value]="'No'">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="sm:col-span-5" *ngIf="two_a == 'Yes'">
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-label
+              >what percentage of inputs were sourced sustainably?</mat-label
+            >
+            <input
+              [(ngModel)]="two_b"
+              matInput
+              (keypress)="_utilities.numberOnly($event, 6)"
+              (blur)="_utilities.trimExtra($event, 6)"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        3. Describe the processes in place to safely reclaim your products for
+        reusing, recycling and disposing at the end of life, for:
+        <span class="re-tooltip">
+          <mat-icon
+            svgIcon="heroicons_solid:information-circle"
+            class="icon-size-4"
+          ></mat-icon>
+          <div class="re-tooltiptext">
+            <div class="content">
+              <ol>
+                <li>
+                  Reclaiming refers to collecting products and their packaging
+                  materials at the end of their useful lives, for reusing, or
+                  recycling or safe disposal. Reclaimed items can include
+                  products and their packaging materials that are collected by
+                  or on behalf of the organization, by a third-party contractor.
+                </li>
+                <li>
+                  Preparation for re-use means checking, cleaning, or repairing
+                  operations, by which products or components of products are
+                  prepared to be put to use for the same purpose for which they
+                  were conceived.
+                </li>
+                <li>
+                  Recycling refers to reprocessing of products or components of
+                  products, to make new materials.
+                </li>
+                <li>
+                  Disposal refers to any operation which is not recovery.
+                  Further, safe disposal excludes uncontrolled waste disposal
+                  such as open burning and dumping.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </span>
+      </p>
+      <div class="grid sm:grid-cols-8 gap-6 w-full mt-8">
+        <!-- Title -->
+        <div class="sm:col-span-4">
+          <label style="font-size: 16px; font-weight: 500"
+            >(a) Plastics(including packaging)</label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <textarea
+              matInput
+              [(ngModel)]="
+                three_describe_the_processes_in_place_to_safely_reclaim.a
+              "
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              cdkTextareaAutosize
+              [cdkAutosizeMinRows]="3"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="sm:col-span-4">
+          <label style="font-size: 16px; font-weight: 500">(b) E-waste</label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <textarea
+              matInput
+              [(ngModel)]="
+                three_describe_the_processes_in_place_to_safely_reclaim.b
+              "
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              cdkTextareaAutosize
+              [cdkAutosizeMinRows]="3"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="sm:col-span-4">
+          <label style="font-size: 16px; font-weight: 500"
+            >(c) Hazardous waste</label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <textarea
+              matInput
+              [(ngModel)]="
+                three_describe_the_processes_in_place_to_safely_reclaim.c
+              "
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              cdkTextareaAutosize
+              [cdkAutosizeMinRows]="3"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="sm:col-span-4">
+          <label style="font-size: 16px; font-weight: 500"
+            >(d) Other waste</label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <textarea
+              matInput
+              [(ngModel)]="
+                three_describe_the_processes_in_place_to_safely_reclaim.d
+              "
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              cdkTextareaAutosize
+              [cdkAutosizeMinRows]="3"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <div class="grid sm:grid-cols-8 gap-6 w-full mt-8">
+        <!-- Title -->
+        <div class="sm:col-span-4">
+          <label style="font-size: 16px; font-weight: 500"
+            >4. Whether Extended Producer Responsibility (EPR) is applicable to
+            the entity’s activities?
+            <span class="re-tooltip">
+              <mat-icon
+                svgIcon="heroicons_solid:information-circle"
+                class="icon-size-4"
+              ></mat-icon>
+              <div class="re-tooltiptext">
+                <div class="content">
+                  “Extended Producer Responsibility” means the responsibility of
+                  a producer for the environmentally sound management of the
+                  product until the end of its life. The Uniform Framework for
+                  Extended Producers Responsibility issued by the Ministry of
+                  Environment, Forest and Climate Change places responsibility
+                  on producers, importers and brand owners to establish a system
+                  for collecting back the plastic waste generated due to their
+                  products and submit a plan for such collection with the
+                  relevant Pollution Control Board(s) (details available at
+                  <a
+                    href="http://moef.gov.in/guideline-document-uniform-framework- for-extended-producers-responsibility-under-plastic-waste- management-rules-2016/"
+                    target="_blank"
+                    >http://moef.gov.in/guideline-document-uniform-framework-
+                    for-extended-producers-responsibility-under-plastic-waste-
+                    management-rules-2016/ ).</a
+                  >
+                </div>
+              </div>
+            </span> </label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select
+              [(ngModel)]="four_extended_producer_responsibility.if_yes"
+            >
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div
+          class="sm:col-span-4"
+          *ngIf="four_extended_producer_responsibility?.if_yes"
+        >
+          <label style="font-size: 16px; font-weight: 500"
+            >Whether the waste collection plan is in line with the Extended
+            Producer Responsibility (EPR) plan submitted to Pollution Control
+            Boards?</label
+          ><br />
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select
+              [(ngModel)]="four_extended_producer_responsibility.if_no"
+            >
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div
+          class="sm:col-span-4"
+          *ngIf="four_extended_producer_responsibility?.if_yes === false"
+        >
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-label>Steps taken to address the same.</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="four_extended_producer_responsibility.epr"
+              cdkTextareaAutosize
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              [cdkAutosizeMinRows]="3"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <h4><u>Leadership Indicators</u></h4>
+      <p class="header-p mt-4 mb-4">
+        1. Has the entity conducted Life Cycle Perspective / Assessments (LCA)
+        for any of its products (for manufacturing industry) or for its services
+        (for service industry)? If yes, provide details in the following format?
+        <span class="re-tooltip">
+          <mat-icon
+            svgIcon="heroicons_solid:information-circle"
+            class="icon-size-4"
+          ></mat-icon>
+          <div class="re-tooltiptext">
+            <div class="content">
+              <ol>
+                <li>
+                  Product Life Cycle refers to all the stages of a product from
+                  extraction or acquisition of raw materials through
+                  manufacturing and processing, distribution and transportation,
+                  use and reuse, recycling and disposal. In the case of
+                  services, it refers to all activities and processes from the
+                  design to delivery.
+                </li>
+                <li>
+                  Life cycle assessment is an analytical procedure that involves
+                  assessment of the potential environment or social impacts of a
+                  product or service, throughout its life cycle.
+                </li>
+                <li>
+                  Boundary of LCA refers to the scope for which the assessment
+                  was conducted. For example, in the case of products, the
+                  boundary of LCA could be the following:
+                  <ul>
+                    <li>
+                      Cradle-to-grave is the full Life Cycle Assessment from
+                      resource extraction ('cradle') to use phase and disposal
+                      phase ('grave').
+                    </li>
+                    <li>
+                      Cradle-to-cradle is a specific kind of cradle-to-grave
+                      assessment, where the end-of-life disposal step for the
+                      product is a recycling process.
+                    </li>
+                    <li>
+                      Cradle-to-gate is an assessment of a partial product life
+                      cycle from resource extraction (cradle) to the factory
+                      gate (i.e., before it is transported to the consumer).
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </span>
+      </p>
+      <div class="grid sm:grid-cols-6 gap-6 w-full">
+        <div class="sm:col-span-2">
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select [(ngModel)]="is_lca">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <ng-container *ngIf="is_lca">
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(1)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>NIC Code</th>
+              <th>Name of Product /Service</th>
+              <th>% of total Turnover contributed</th>
+              <th>
+                Boundary for which the Life Cycle Perspective / Assessment was
+                conducted
+              </th>
+              <th>Whether conducted by independent external agency</th>
+              <th>
+                Results communicated in public domain?<br />
+                If yes, provide the web-link.
+              </th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of entity_conducted_life_cycle_perspective;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.nic_code"
+                    matInput
+                    (keypress)="_utilities.textLimit($event, 30)"
+                    (blur)="_utilities.trimExtra($event, 30)"
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.name_of_the_product_or_service"
+                    (keypress)="_utilities.textLimit($event, 100)"
+                    (blur)="_utilities.trimExtra($event, 100)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.percetage_of_total_turnover"
+                    (keypress)="_utilities.numberOnly($event, 6)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.assesment_was_conducted"
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <mat-select
+                    [(ngModel)]="
+                      eachValue.whether_conducted_by_independent_external_agency
+                    "
+                  >
+                    <mat-option [value]="''">Select</mat-option>
+                    <mat-option [value]="true">Yes</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <mat-select
+                    [(ngModel)]="eachValue.result_communucated_in_public_domain"
+                  >
+                    <mat-option [value]="''">Select</mat-option>
+                    <mat-option [value]="true">Yes</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field
+                  class="fuse-mat-no-subscript w-full mt-4"
+                  *ngIf="eachValue.result_communucated_in_public_domain"
+                >
+                  <mat-label>Web Link</mat-label>
+                  <input
+                    [(ngModel)]="eachValue.url"
+                    matInput
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(i, 1)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        2. If there are any significant social or environmental concerns and/or
+        risks arising from production or disposal of your products / services,
+        as identified in the Life Cycle Perspective / Assessments (LCA) or
+        through any other means, briefly describe the same along-with action
+        taken to mitigate the same.
+      </p>
+      <ng-container>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(2)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Name of Product / Service</th>
+              <th>Description of the risk / concern</th>
+              <th>Action Taken</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of significant_social_or_environmental_concerns;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.name_of_the_product_or_service"
+                    (keypress)="_utilities.textLimit($event, 150)"
+                    (blur)="_utilities.trimExtra($event, 150)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.description_of_the_risk"
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.action_taken"
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(i, 2)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        3. Percentage of recycled or reused input material to total material (by
+        value) used in production (for manufacturing industry) or providing
+        services (for service industry).
+      </p>
+      <ng-container>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(3)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Indicate input material</th>
+              <th colspan="2">
+                Recycled or re-used input material to total material
+              </th>
+            </tr>
+            <tr>
+              <th>FY {{ current_years }}<br />Current Financial Year (%)</th>
+              <th>FY {{ previous_years }}<br />Previous Financial Year (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of percentage_of_recycled_or_reused_input_material;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.indicate_input_material"
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.current_year"
+                    (keypress)="_utilities.textLimit($event, 6)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.previous_year"
+                    (keypress)="_utilities.textLimit($event, 6)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(i, 3)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        4. Of the products and packaging reclaimed at end of life of products,
+        amount (in metric tonnes) reused, recycled, and safely disposed, as per
+        the following format:
+        <span class="re-tooltip">
+          <mat-icon
+            svgIcon="heroicons_solid:information-circle"
+            class="icon-size-4"
+          ></mat-icon>
+          <div class="re-tooltiptext">
+            <div class="content">
+              For each category of input material, the percentage of re-used and
+              recycled input material may be calculated as ((total recycled +
+              re-used input material used)*100) divided by (total input material
+              used to manufacture the entity’s products or to provide services).
+              The entity may use the total weight or the total volume of
+              materials, for calculating this field.
+            </div>
+          </div>
+        </span>
+      </p>
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th rowspan="2"></th>
+            <th colspan="3">
+              FY {{ current_years }}<br />Current Financial Year
+            </th>
+            <th colspan="3">
+              FY {{ previous_years }}<br />Previous Financial Year
+            </th>
+          </tr>
+          <tr>
+            <th>Re-Used (metric tonnes)</th>
+            <th>Recycled (metric tonnes)</th>
+            <th>Safely Disposed (metric tonnes)</th>
+            <th>Re-Used (metric tonnes)</th>
+            <th>Recycled (metric tonnes)</th>
+            <th>Safely Disposed (metric tonnes)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plastics (including packaging)</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.plastic.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.plastic.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.plastic.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.plastic.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.plastic.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.plastic.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>E-waste</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.e_waste.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.e_waste.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.e_waste.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.e_waste.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.e_waste.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.e_waste.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Hazardous waste</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.hazardous_waste.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.hazardous_waste.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.hazardous_waste.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.hazardous_waste.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.hazardous_waste.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.hazardous_waste.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Other waste</td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.other_waste.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.other_waste.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .current_financial_year.other_waste.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.other_waste.re_used
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.other_waste.recycled
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="fuse-mat-no-subscript w-full">
+                <input
+                  [(ngModel)]="
+                    products_and_packaging_reclaimed_at_end_of_life
+                      .previous_financial_year.other_waste.safely_disposed
+                  "
+                  (keypress)="_utilities.numberOnly($event, 15)"
+                  (blur)="_utilities.trimExtra($event, 15)"
+                  type="number"
+                  min="0"
+                  matInput
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Divider -->
+      <div class="mt-8 mb-6 border-t"></div>
+      <p class="header-p mb-4">
+        5. Reclaimed products and their packaging materials (as percentage of
+        products sold) for each product category.
+        <span class="re-tooltip">
+          <mat-icon
+            svgIcon="heroicons_solid:information-circle"
+            class="icon-size-4"
+          ></mat-icon>
+          <div class="re-tooltiptext">
+            <div class="content">
+              The entity shall calculate the percentage of reclaimed products
+              and their packaging materials for each product category using the
+              following formula:
+              <p>
+                <b
+                  >Percentage of reclaimed products and their packaging
+                  materials = (Products and their packaging materials reclaimed
+                  within the reporting period) / (Products sold within the
+                  reporting period)</b
+                >
+              </p>
+            </div>
+          </div>
+        </span>
+      </p>
+      <ng-container>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(4)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Indicate product category</th>
+              <th>
+                Reclaimed products and their packaging materials as % of total
+                products sold in respective category
+              </th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let eachValue of reclaimed_products; let i = index">
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.indicate_product_category"
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.packaging_materials_as_percentage"
+                    (keypress)="_utilities.numberOnly($event, 6)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(i, 4)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <!-- Divider -->
+      <div class="mt-11 mb-4 border-t"></div>
+      <!-- Actions -->
+      <div class="flex items-center justify-end">
+        <button
+          class="ml-4"
+          mat-flat-button
+          type="button"
+          [color]="'primary'"
+          (click)="submitForm()"
+        >
+          Save Form
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

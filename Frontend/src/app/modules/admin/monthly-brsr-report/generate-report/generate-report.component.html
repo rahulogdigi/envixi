@@ -1,0 +1,98 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">Dashboard</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Generate BRSR Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <h4>BRSR Report Downloaded Successfully</h4>
+    </div>
+    <div id="pdfTable" #pdfTable class="pdfscroller">
+      <h2>
+        BRSR Report for {{ getMonth(selectedMonth) + "," + selectedYear }}
+      </h2>
+      <app-report-listed-entity
+        [data]="data"
+        *ngIf="isDisplay('Section A')"
+      ></app-report-listed-entity>
+      <app-product-services-report
+        [data]="data"
+        *ngIf="isDisplay('Section A')"
+      ></app-product-services-report>
+      <app-operations-to-transparency
+        [data]="data"
+        *ngIf="isDisplay('Section A')"
+      ></app-operations-to-transparency>
+      <app-section-b-report
+        [data]="sectionBData"
+        *ngIf="isDisplay('Section B')"
+      ></app-section-b-report>
+      <app-principle-one
+        [data]="pOneData"
+        *ngIf="isDisplay('Principle 1')"
+      ></app-principle-one>
+      <app-principle-two
+        [data]="pTwoData"
+        *ngIf="isDisplay('Principle 2')"
+      ></app-principle-two>
+      <app-principle-three-one-to-eight
+        [data]="pThreeData"
+        *ngIf="isDisplay('Principle 3')"
+      ></app-principle-three-one-to-eight>
+      <app-ten-fifteen-leader-all
+        [data]="pThreeData"
+        *ngIf="isDisplay('Principle 3')"
+      ></app-ten-fifteen-leader-all>
+      <app-principle-four
+        [data]="pFourData"
+        *ngIf="isDisplay('Principle 4')"
+      ></app-principle-four>
+      <app-principle-five
+        [data]="pFiveData"
+        *ngIf="isDisplay('Principle 5')"
+      ></app-principle-five>
+      <app-principle-vi-i-to-v
+        [data]="pSixData"
+        *ngIf="isDisplay('Principle 6')"
+      ></app-principle-vi-i-to-v>
+      <app-principle-vi-vi-to-x
+        [data]="pSixData"
+        *ngIf="isDisplay('Principle 6')"
+      ></app-principle-vi-vi-to-x>
+      <app-principle-six-eleven-to-all
+        [data]="pSixData"
+        *ngIf="isDisplay('Principle 6')"
+      ></app-principle-six-eleven-to-all>
+      <app-principle-seven
+        [data]="pSevenData"
+        *ngIf="isDisplay('Principle 7')"
+      ></app-principle-seven>
+      <app-principle-eight
+        [data]="pEightData"
+        *ngIf="isDisplay('Principle 8')"
+      ></app-principle-eight>
+      <app-principle-nine
+        [data]="pNineData"
+        *ngIf="isDisplay('Principle 9')"
+      ></app-principle-nine>
+    </div>
+  </div>
+</div>

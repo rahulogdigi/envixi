@@ -1,0 +1,245 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">Dashboard</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Generate BRSR Monthly Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <h4 *ngIf="!isSubmit">
+        <u>Select The Financial Year and Download your BRSR Report</u>
+      </h4>
+
+      <div class="grid sm:grid-cols-12 gap-6 w-full mt-8" *ngIf="!isSubmit">
+        <!-- Title -->
+        <div class="sm:col-span-4">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose Location</mat-label>
+            <mat-select [(ngModel)]="selectedLocation">
+              <mat-option [value]="''">Select Location</mat-option>
+              <mat-option
+                [value]="eachLoc?._id"
+                *ngFor="let eachLoc of allLocation"
+                >{{ eachLoc?.location_name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <p class="error">{{ error1 }}</p>
+        </div>
+        <div class="sm:col-span-4">
+          <mat-form-field appearance="fill">
+            <mat-label>From Month and Year</mat-label>
+            <input
+              matInput
+              [matDatepicker]="dp"
+              [formControl]="fromDateValue"
+              readonly
+            />
+
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="dp"
+            ></mat-datepicker-toggle>
+            <mat-datepicker
+              #dp
+              startView="multi-year"
+              (monthSelected)="setMonthAndYear($event, dp, '1')"
+              panelClass="example-month-picker"
+              disabled
+            >
+            </mat-datepicker>
+          </mat-form-field>
+          <p class="error">{{ error2 }}</p>
+        </div>
+        <div class="sm:col-span-4">
+          <mat-form-field appearance="fill">
+            <mat-label>To Month and Year</mat-label>
+            <input
+              matInput
+              [matDatepicker]="dp1"
+              [formControl]="toDateValue"
+              readonly
+            />
+
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="dp1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker
+              #dp1
+              startView="multi-year"
+              (monthSelected)="setMonthAndYear($event, dp1, '2')"
+              panelClass="example-month-picker"
+              disabled
+            >
+            </mat-datepicker>
+          </mat-form-field>
+          <p class="error">{{ error3 }}</p>
+        </div>
+        <div class="sm:col-span-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Select Forms</mat-label>
+            <mat-select [(ngModel)]="selectedForms" multiple>
+              <mat-option
+                *ngFor="let eachForm of allForms"
+                [value]="eachForm"
+                >{{ eachForm }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <p class="error">{{ error4 }}</p>
+        </div>
+
+        <div class="sm:col-span-2">
+          <button
+            class="fuse-mat-button-large w-full mt-6"
+            mat-flat-button
+            [color]="'primary'"
+            [disabled]="disableBtn"
+            (click)="generateReport()"
+          >
+            <span *ngIf="!disableBtn"> Generate Report </span>
+            <mat-progress-spinner
+              *ngIf="disableBtn"
+              [diameter]="24"
+              [mode]="'indeterminate'"
+            ></mat-progress-spinner>
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div id="pdfTable" #pdfTable>
+        <ng-container *ngIf="isDisplay('Section A')">
+          <app-monthly-company-profile
+            #monthlyCompanyProfileComponent
+          ></app-monthly-company-profile>
+        </ng-container>
+        <ng-container *ngIf="isDisplay('Section B')">
+          <app-monthly-section-b
+            #monthlySectionBComponent
+          ></app-monthly-section-b>
+        </ng-container>
+        <ng-container *ngIf="isDisplay('Principle 1')">
+          <app-monthly-principle-one
+            #monthlyPrincipleOneComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-one>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 2')">
+          <app-monthly-principle-two
+            #monthlyPrincipleTwoComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-two>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 3')">
+          <app-monthly-principle-three
+            #monthlyPrincipleThreeComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-three>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 4')">
+          <app-monthly-principle-four
+            #MonthlyPrincipleFourComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-four>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 5')">
+          <app-monthly-principle-five
+            #monthlyPrincipleFiveComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-five>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 6')">
+          <app-monthly-principle-six
+            #monthlyPrincipleSixComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-six>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 7')">
+          <app-monthly-principle-seven
+            #monthlyPrincipleSevenComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-seven>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 8')">
+          <app-monthly-principle-eight
+            #monthlyPrincipleEightComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-eight>
+        </ng-container>
+
+        <ng-container *ngIf="isDisplay('Principle 9')">
+          <app-monthly-principle-nine
+            #monthlyPrincipleNineComponent
+            [startDate]="startDate"
+            [endDate]="endDate"
+            [branch_id]="selectedLocation"
+          ></app-monthly-principle-nine>
+        </ng-container>
+      </div>
+      <div *ngIf="isSubmit" style="text-align: center">
+        <button
+          class="ml-4"
+          mat-flat-button
+          type="button"
+          [color]="'primary'"
+          (click)="submitForm()"
+        >
+          Save Form
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1453 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <label style="font-weight: bold"
+      >11. Details of environmental impact assessments of projects undertaken by
+      the entity based on applicable laws, in the current financial year:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Name and brief details of project</th>
+          <th>EIA Notification No.</th>
+          <th>Date</th>
+          <th>Whether conducted by independent external agency (Yes / No)</th>
+          <th>Results communicated in public domain (Yes / No)</th>
+          <th>Relevant Web link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of details_of_environmental_impact_assessments;
+            let i = index
+          "
+        >
+          <td>
+            <p>{{ eachValue?.project_detail || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.eia || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.date || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.conducted_by_independent_external_agency == true
+                  ? "Yes"
+                  : eachValue?.conducted_by_independent_external_agency == false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.communicated_in_public_domain == true
+                  ? "Yes"
+                  : eachValue?.communicated_in_public_domain == false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ eachValue?.web_link || "--" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >12. Is the entity compliant with the applicable environmental law/
+      regulations/ guidelines in India; such as the Water (Prevention and
+      Control of Pollution) Act, Air (Prevention and Control of Pollution) Act,
+      Environment protection act and rules thereunder (Y/N). If not, provide
+      details of all such non-compliances, in the following format:</label
+    >
+    <p>
+      {{ is_entity_compliant_with_the_applicable_environmental_law || "--" }}
+    </p>
+    <table
+      style="width: 100%"
+      *ngIf="is_entity_compliant_with_the_applicable_environmental_law == 'No'"
+    >
+      <thead>
+        <tr>
+          <th>
+            Specify the law / regulation / guidelines which was not complied
+            with
+          </th>
+          <th>Provide details of the non- compliance</th>
+          <th>
+            Any fines / penalties / action taken by regulatory agencies such as
+            pollution control boards or by courts
+          </th>
+          <th>Corrective action taken, if any</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eachValue of non_compliances_details; let i = index">
+          <td>
+            <p>{{ eachValue?.guidelines_which_was_not_complied || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.details_of_the_non_compliance || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.action_taken_by_regulatory_agencies || "--" }}</p>
+          </td>
+
+          <td>
+            <p>
+              {{ eachValue?.corrective_action_taken || "--" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Provide break-up of the total energy consumed (in Joules or multiples)
+      from renewable and non-renewable sources, in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }}<br />
+            (Current Financial Year)<br />(in Joules)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}<br />
+            (Previous Financial Year)<br />
+            (in Joules)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <b>From renewable sources</b>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td>Total electricity consumption (A)</td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.renewable_total_electricity_consumption
+                  ?.current_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.renewable_total_electricity_consumption
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.renewable_total_electricity_consumption
+                  ?.previous_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.renewable_total_electricity_consumption
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Total fuel consumption (B)</td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.renewable_total_fuel_consumption?.current_financial_year >=
+                0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.renewable_total_fuel_consumption?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.renewable_total_fuel_consumption?.previous_financial_year >=
+                0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.renewable_total_fuel_consumption
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Energy consumption through other sources (C)</td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.renewable_energy_consumption_through_other_sources
+                  ?.current_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.renewable_energy_consumption_through_other_sources
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.renewable_energy_consumption_through_other_sources
+                  ?.previous_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.renewable_energy_consumption_through_other_sources
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total energy consumed from renewable sources (A+B+C)</b>
+          </td>
+          <td>
+            {{ getSum("1", "current") }}
+          </td>
+          <td>
+            {{ getSum("1", "previous") }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>From non-renewable sources</b>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td>Total electricity consumption (D)</td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.non_renewable_total_electricity_consumption
+                  ?.current_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.non_renewable_total_electricity_consumption
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.non_renewable_total_electricity_consumption
+                  ?.previous_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.non_renewable_total_electricity_consumption
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Total fuel consumption (E)</td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.non_renewable_total_fuel_consumption
+                  ?.current_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.non_renewable_total_fuel_consumption
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.non_renewable_total_fuel_consumption
+                  ?.previous_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.non_renewable_total_fuel_consumption
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Energy consumption through other sources (F)</td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.non_renewable_energy_consumption_through_other_sources
+                  ?.current_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.non_renewable_energy_consumption_through_other_sources
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                energy_consumed_from_renewable_and_non_renewable_sources
+                  ?.non_renewable_energy_consumption_through_other_sources
+                  ?.previous_financial_year >= 0
+                  ? energy_consumed_from_renewable_and_non_renewable_sources
+                      ?.non_renewable_energy_consumption_through_other_sources
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total energy consumed from non-renewable sources (D+E+F)</b>
+          </td>
+          <td>
+            {{ getSum("2", "current") }}
+          </td>
+          <td>
+            {{ getSum("2", "previous") }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_leader_1 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_leader_1 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ indicate_if_any_independent_assessment_name_leader_1 || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold">
+      2. Provide the following details related to water discharged:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3">
+            <b
+              >Water discharge by destination and level of treatment (in
+              kilolitres)</b
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><b>(i) To Surface water</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.surface_water_no_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.surface_water_no_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.surface_water_no_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.surface_water_no_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged
+                  ?.surface_water_with_treatment?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.surface_water_no_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged
+                  ?.surface_water_with_treatment?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.surface_water_no_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(ii) To Groundwater</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.ground_water_no_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.ground_water_no_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.ground_water_no_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.ground_water_no_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.ground_water_with_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.ground_water_with_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.ground_water_with_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.ground_water_with_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(iii) To Seawater</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.sea_water_no_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged?.sea_water_no_treatment
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.sea_water_no_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged?.sea_water_no_treatment
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.sea_water_with_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.sea_water_with_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.sea_water_with_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.sea_water_with_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(iv) Sent to third-parties</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.third_parties_no_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.third_parties_no_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.third_parties_no_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.third_parties_no_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged
+                  ?.third_parties_with_treatment?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.third_parties_with_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged
+                  ?.third_parties_with_treatment?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.third_parties_with_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>(v) Others</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.others_no_treatment
+                  ?.current_financial_year >= 0
+                  ? details_related_to_water_discharged?.others_no_treatment
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged?.others_no_treatment
+                  ?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged?.others_no_treatment
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged
+                  ?.third_parties_with_treatment?.current_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.third_parties_with_treatment?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_related_to_water_discharged
+                  ?.third_parties_with_treatment?.previous_financial_year >= 0
+                  ? details_related_to_water_discharged
+                      ?.third_parties_with_treatment?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total water discharged (in kilolitres)</b>
+          </td>
+          <td>
+            {{ getSum("3", "current") }}
+          </td>
+          <td>
+            {{ getSum("3", "previous") }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_leader_2 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_leader_2 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ indicate_if_any_independent_assessment_name_leader_2 || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold">
+      3. Water withdrawal, consumption and discharge in areas of water stress
+      (in kilolitres):<br />For each facility / plant located in areas of water
+      stress, provide the following information:</label
+    >
+    <label style="font-weight: bold"> Name of the area</label>
+    <p>
+      {{
+        water_withdrawal_in_areas_of_water_stress?.nature_of_operations || "--"
+      }}
+    </p>
+    <label style="font-weight: bold"> Nature of operations</label>
+    <p>
+      {{
+        water_withdrawal_in_areas_of_water_stress?.nature_of_operations || "--"
+      }}
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3">
+            <b>Water withdrawal by source (in kilolitres)</b>
+          </td>
+        </tr>
+        <tr>
+          <td>(i) Surface water</td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_surface_water?.current_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_surface_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_surface_water?.previous_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_surface_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>(ii) Groundwater</td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_ground_water?.current_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_ground_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_ground_water?.previous_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_ground_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>(iii) Third party water</td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_third_party_water
+                  ?.current_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_third_party_water
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_third_party_water
+                  ?.previous_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_third_party_water
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>(iv) Seawater / desalinated water</td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_sea_water?.current_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_sea_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_sea_water?.previous_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_sea_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>(v) Others</td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_others_water?.current_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_others_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_others_water?.previous_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_others_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>(v) Others</td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_others_water?.current_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_others_water?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                water_withdrawal_in_areas_of_water_stress
+                  ?.water_withdrawal_others_water?.previous_financial_year >= 0
+                  ? water_withdrawal_in_areas_of_water_stress
+                      ?.water_withdrawal_others_water?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total volume of water withdrawal (in kilolitres)</b>
+          </td>
+          <td>
+            {{ getSum("4", "current") }}
+          </td>
+          <td>
+            {{ getSum("4", "previous") }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Water intensity per rupee of turnover</b>(Water consumed /
+            turnover)
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.water_intensity_per_rupee_of_turnover
+                ?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.water_intensity_per_rupee_of_turnover
+                    ?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.water_intensity_per_rupee_of_turnover
+                ?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.water_intensity_per_rupee_of_turnover
+                    ?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Water intensity</b>(optional) – the relevant metric may be
+            selected by the entity
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.water_intensity
+                ?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress?.water_intensity
+                    ?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.water_intensity
+                ?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress?.water_intensity
+                    ?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total volume of water consumption (in kilolitres)</b></td>
+          <td>
+            {{ getSum("6", "current") }}
+          </td>
+          <td>
+            {{ getSum("6", "previous") }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <b
+              >Water discharge by destination and level of treatment (in
+              kilolitres)</b
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><b>(i) Into Surface water</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.surface_water_no_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.surface_water_no_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.surface_water_no_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.surface_water_no_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.surface_water_with_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.surface_water_with_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.surface_water_with_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.surface_water_with_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>(ii) Into Groundwater</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.ground_water_no_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.ground_water_no_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.ground_water_no_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.ground_water_no_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.ground_water_with_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.ground_water_with_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.ground_water_with_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.ground_water_with_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>(iii) Into Seawater</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.sea_water_no_treatment
+                ?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.sea_water_no_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.sea_water_no_treatment
+                ?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.sea_water_no_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.sea_water_with_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.sea_water_with_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.sea_water_with_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.sea_water_with_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>(iv) Sent to third-parties</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.third_parties_no_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.third_parties_no_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.third_parties_no_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.third_parties_no_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.third_parties_with_treatment?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.third_parties_with_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress
+                ?.third_parties_with_treatment?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.third_parties_with_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>(v) Others</b></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>- No treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.others_no_treatment
+                ?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress?.others_no_treatment
+                    ?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.others_no_treatment
+                ?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress?.others_no_treatment
+                    ?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>- With treatment – please specify level of treatment</td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.others_with_treatment
+                ?.current_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.others_with_treatment?.current_financial_year
+                : "--"
+            }}
+          </td>
+          <td>
+            {{
+              water_withdrawal_in_areas_of_water_stress?.others_with_treatment
+                ?.previous_financial_year >= 0
+                ? water_withdrawal_in_areas_of_water_stress
+                    ?.others_with_treatment?.previous_financial_year
+                : "--"
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total water discharged (in kilolitres)</b>
+          </td>
+          <td>
+            {{ getSum("5", "current") }}
+          </td>
+          <td>
+            {{ getSum("5", "previous") }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_leader_3 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_leader_3 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ indicate_if_any_independent_assessment_leader_3 || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold">
+      4. Please provide details of total Scope 3 emissions & its intensity, in
+      the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Unit</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <b>Total Scope 3 emissions</b>(Break-up of the GHG into CO2, CH4,
+            N2O, HFCs, PFCs, SF6, NF3, if available)
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions?.total_scope_3_emissions
+                  ?.unit || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions?.total_scope_3_emissions
+                  ?.current_financial_year >= 0
+                  ? details_of_total_Scope_3_emissions?.total_scope_3_emissions
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions?.total_scope_3_emissions
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_Scope_3_emissions?.total_scope_3_emissions
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Total Scope 3 emissions per rupee of turnover</b>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions
+                  ?.total_scope_3_emissions_per_rupee_of_turnover?.unit || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions
+                  ?.total_scope_3_emissions_per_rupee_of_turnover
+                  ?.current_financial_year >= 0
+                  ? details_of_total_Scope_3_emissions
+                      ?.total_scope_3_emissions_per_rupee_of_turnover
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions
+                  ?.total_scope_3_emissions_per_rupee_of_turnover
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_Scope_3_emissions
+                      ?.total_scope_3_emissions_per_rupee_of_turnover
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Scope 3 emission intensity(optional) – the relevant metric
+              may be selected by the entity</b
+            >
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions
+                  ?.total_scope_3_emissions_intensity?.unit || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions
+                  ?.total_scope_3_emissions_intensity?.current_financial_year >=
+                0
+                  ? details_of_total_Scope_3_emissions
+                      ?.total_scope_3_emissions_intensity
+                      ?.current_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_total_Scope_3_emissions
+                  ?.total_scope_3_emissions_intensity
+                  ?.previous_financial_year >= 0
+                  ? details_of_total_Scope_3_emissions
+                      ?.total_scope_3_emissions_intensity
+                      ?.previous_financial_year
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >Note: Indicate if any independent assessment/ evaluation/assurance has
+      been carried out by an external agency? (Y/N) If yes, name of the external
+      agency.</label
+    >
+    <p>
+      {{ indicate_if_any_independent_assessment_leader_4 || "--" }}
+    </p>
+    <ng-container
+      *ngIf="indicate_if_any_independent_assessment_leader_4 == 'Yes'"
+    >
+      <label style="font-weight: bold">Name of the external agency</label>
+      <p>{{ indicate_if_any_independent_assessment_name_leader_4 || "--" }}</p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold"
+      >5. With respect to the ecologically sensitive areas reported at Question
+      10 of Essential Indicators above, provide details of significant direct &
+      indirect impact of the entity on biodiversity in such areas along-with
+      prevention and remediation activities.</label
+    >
+    <p>
+      {{
+        details_of_significant_direct_indirect_impact_on_biodiversity || "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      6. If the entity has undertaken any specific initiatives or used
+      innovative technology or solutions to improve resource efficiency, or
+      reduce impact due to emissions / effluent discharge / waste generated,
+      please provide details of the same as well as outcome of such initiatives,
+      as per the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Initiative undertaken</th>
+
+          <th>
+            Details of the initiative<br />
+            (Web-link, if any, may be provided along-with summary)
+          </th>
+          <th>Outcome of the initiative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eachValue of used_innovative_technology; let i = index">
+          <td>
+            <p>{{ eachValue.initiative_undertaken || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue.details_of_the_initiative || "--" }}</p>
+            <p>{{ eachValue.web_link || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue.outcome_of_the_initiative || "--" }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >7. Does the entity have a business continuity and disaster management
+      plan? Give details in 100 words</label
+    >
+    <p>
+      {{ business_continuity_and_disaster_management_plan || "--" }}
+    </p>
+
+    <label style="font-weight: bold">Web Link</label>
+    <p>
+      {{ business_continuity_and_disaster_management_plan_web_link || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >8. Disclose any significant adverse impact to the environment, arising
+      from the value chain of the entity. What mitigation or adaptation measures
+      have been taken by the entity in this regard.</label
+    >
+    <p>
+      {{ significant_adverse_impact_to_the_environment || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >9. Percentage of value chain partners (by value of business done with
+      such partners) that were assessed for environmental impacts.</label
+    >
+    <p>
+      {{ percentage_of_value_chain_partners || "--" }}
+    </p>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center font-medium">
+        <div>
+          <a class="whitespace-nowrap text-primary-500">Dashboard</a>
+        </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+          <mat-icon
+            class="icon-size-5 text-secondary"
+            [svgIcon]="'heroicons_solid:chevron-right'"
+          ></mat-icon>
+          <a class="ml-1 text-primary-500">Generate BRSR Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <h4 *ngIf="selectedForms.length == 0">
+        <u>Select The Financial Year and Download your BRSR Report</u>
+      </h4>
+
+      <div
+        class="grid sm:grid-cols-12 gap-6 w-full mt-8"
+        *ngIf="selectedForms.length == 0"
+      >
+        <!-- Title -->
+        <div class="sm:col-span-5">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose Month</mat-label>
+            <mat-select [(ngModel)]="selectedMonth">
+              <mat-option [value]="''">Select</mat-option>
+
+              <mat-option
+                *ngFor="let eachMonth of allMonths; let i = index"
+                [value]="i + 1"
+                >{{ eachMonth }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <p class="error">{{ error1 }}</p>
+        </div>
+        <div class="sm:col-span-5">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose Year</mat-label>
+            <mat-select [(ngModel)]="selectedYear">
+              <mat-option [value]="''">Select</mat-option>
+
+              <mat-option
+                *ngFor="let eachYear of allYears"
+                [value]="eachYear"
+                >{{ eachYear }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <p class="error">{{ error2 }}</p>
+        </div>
+
+        <div class="sm:col-span-2">
+          <button
+            class="fuse-mat-button-large w-full mt-6"
+            mat-flat-button
+            [color]="'primary'"
+            [disabled]="disableBtn"
+            (click)="generateReport()"
+          >
+            <span *ngIf="!disableBtn"> Generate Report </span>
+            <mat-progress-spinner
+              *ngIf="disableBtn"
+              [diameter]="24"
+              [mode]="'indeterminate'"
+            ></mat-progress-spinner>
+          </button>
+        </div>
+      </div>
+      <a
+        id="dowload_file"
+        class="dowload_file"
+        href="assets/BRSR-Format.PDF"
+        download
+        >download</a
+      >
+    </div>
+    <div id="pdfTable" #pdfTable style="display: none">
+      <h2>
+        BRSR Report for {{ getMonth(selectedMonth) + "," + selectedYear }}
+      </h2>
+      <app-report-listed-entity [data]="data"></app-report-listed-entity>
+      <app-product-services-report [data]="data"></app-product-services-report>
+      <app-operations-to-transparency
+        [data]="data"
+      ></app-operations-to-transparency>
+      <app-section-b-report [data]="sectionBData"></app-section-b-report>
+      <app-principle-one [data]="pOneData"></app-principle-one>
+      <app-principle-two [data]="pTwoData"></app-principle-two>
+      <app-principle-three-one-to-eight
+        [data]="pThreeData"
+      ></app-principle-three-one-to-eight>
+      <app-ten-fifteen-leader-all
+        [data]="pThreeData"
+      ></app-ten-fifteen-leader-all>
+      <app-principle-four [data]="pFourData"></app-principle-four>
+      <app-principle-five [data]="pFiveData"></app-principle-five>
+      <app-principle-vi-i-to-v [data]="pSixData"></app-principle-vi-i-to-v>
+      <app-principle-vi-vi-to-x [data]="pSixData"></app-principle-vi-vi-to-x>
+      <app-principle-six-eleven-to-all
+        [data]="pSixData"
+      ></app-principle-six-eleven-to-all>
+      <app-principle-seven [data]="pSevenData"></app-principle-seven>
+      <app-principle-eight [data]="pEightData"></app-principle-eight>
+      <app-principle-nine [data]="pNineData"></app-principle-nine>
+    </div>
+  </div>
+</div>

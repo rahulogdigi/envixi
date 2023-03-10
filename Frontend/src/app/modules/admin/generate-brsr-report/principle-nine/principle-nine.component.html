@@ -1,0 +1,769 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 9:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Describe the mechanisms in place to receive and respond to consumer
+      complaints and feedback.
+    </label>
+    <p>
+      {{
+        describe_the_mechanisms_in_place_to_receive_and_respond_to_consumer_complaints_and_feedback ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      2. Turnover of products and/ services as a percentage of turnover from all
+      products/service that carry information about:
+    </label>
+
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>As a percentage to total turnover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Environmental and social parameters relevant to the product</td>
+          <td>
+            <p>
+              {{
+                turnover_of_products_and_services?.percentage_to_total_turnover
+                  ?.environmental_and_social_parameters_relevant_to_the_product >=
+                0
+                  ? turnover_of_products_and_services
+                      ?.percentage_to_total_turnover
+                      ?.environmental_and_social_parameters_relevant_to_the_product
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Safe and responsible usage</td>
+          <td>
+            <p>
+              {{
+                turnover_of_products_and_services?.percentage_to_total_turnover
+                  ?.safe_and_responsible_usage >= 0
+                  ? turnover_of_products_and_services
+                      ?.percentage_to_total_turnover?.safe_and_responsible_usage
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      3. Number of consumer complaints in respect of the following:
+    </label>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Received during the year</th>
+          <th>Pending resolution at end of year</th>
+          <th>Remarks</th>
+
+          <th>Received during the year</th>
+          <th>Pending resolution at end of year</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data privacy</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.data_privacy?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.data_privacy
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.data_privacy?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.data_privacy
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.data_privacy?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.data_privacy
+                  ?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.data_privacy
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.data_privacy
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.data_privacy
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.data_privacy?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Advertising</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.advertising?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.advertising
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.advertising?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.advertising
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.advertising?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.advertising
+                  ?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.advertising
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.advertising
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.advertising
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.advertising?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Cyber-security</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.cyber_security?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.cyber_security
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.cyber_security?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.cyber_security
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.cyber_security?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.cyber_security
+                  ?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.cyber_security
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.cyber_security
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.cyber_security
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.cyber_security?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Delivery of essential services</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.delivery_of_essential_services?.received_during_the_year >=
+                0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.delivery_of_essential_services
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.delivery_of_essential_services
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.delivery_of_essential_services
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.delivery_of_essential_services?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.delivery_of_essential_services
+                  ?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.delivery_of_essential_services
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.delivery_of_essential_services
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.delivery_of_essential_services
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.delivery_of_essential_services
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Restrictive Trade Practices</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.restrictive_trade_practices?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.restrictive_trade_practices
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.restrictive_trade_practices
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.restrictive_trade_practices
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.restrictive_trade_practices?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.restrictive_trade_practices
+                  ?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.restrictive_trade_practices
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.restrictive_trade_practices
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.restrictive_trade_practices
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.restrictive_trade_practices
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Unfair Trade Practices</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.unfair_trade_practices?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.unfair_trade_practices
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.unfair_trade_practices?.pending_resolution_at_end_of_year >=
+                0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.unfair_trade_practices
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.unfair_trade_practices?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.unfair_trade_practices
+                  ?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.unfair_trade_practices
+                      ?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.unfair_trade_practices
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.unfair_trade_practices
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.unfair_trade_practices?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Other</td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.other?.received_during_the_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.other?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.other?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.current_financial_year?.other
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect?.current_financial_year
+                  ?.other?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.other?.received_during_the_year >=
+                0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.other?.received_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.other
+                  ?.pending_resolution_at_end_of_year >= 0
+                  ? number_of_consumer_complaints_in_respect
+                      ?.previous_financial_year?.other
+                      ?.pending_resolution_at_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_consumer_complaints_in_respect
+                  ?.previous_financial_year?.other?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      4. Details of instances of product recalls on account of safety issues:
+    </label>
+
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Number</th>
+          <th>Reasons for recall</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Voluntary recalls</td>
+          <td>
+            <p>
+              {{
+                details_of_instances_of_product_recalls_on_account_of_safety_issues
+                  ?.voluntary_recalls?.number >= 0
+                  ? details_of_instances_of_product_recalls_on_account_of_safety_issues
+                      ?.voluntary_recalls?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_instances_of_product_recalls_on_account_of_safety_issues
+                  ?.voluntary_recalls?.reason_for_recall || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Forced recalls</td>
+          <td>
+            <p>
+              {{
+                details_of_instances_of_product_recalls_on_account_of_safety_issues
+                  ?.forced_recalls?.number >= 0
+                  ? details_of_instances_of_product_recalls_on_account_of_safety_issues
+                      ?.forced_recalls?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_instances_of_product_recalls_on_account_of_safety_issues
+                  ?.forced_recalls?.reason_for_recall || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      5. Does the entity have a framework/ policy on cyber security and risks
+      related to data privacy? If available, provide a web-link of the policy.
+    </label>
+    <p>
+      {{
+        does_the_entity_have_a_framework_policy_boolean == true
+          ? "Yes"
+          : does_the_entity_have_a_framework_policy_boolean == false
+          ? "No"
+          : "--"
+      }}
+    </p>
+    <ng-container *ngIf="does_the_entity_have_a_framework_policy_boolean">
+      <label style="font-weight: bold"> Web Link </label>
+      <p>
+        {{ does_the_entity_have_a_framework_policy || "--" }}
+      </p>
+    </ng-container>
+    <hr />
+    <label style="font-weight: bold">
+      6. Provide details of any corrective actions taken or underway on issues
+      relating to advertising, and delivery of essential services; cyber
+      security and data privacy of customers; re-occurrence of instances of
+      product recalls; penalty / action taken by regulatory authorities on
+      safety of products / services.
+    </label>
+    <p>
+      {{
+        provide_details_of_any_corrective_actions_taken_or_underway_on_issues_relating ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Channels / platforms where information on products and services of the
+      entity can be accessed (provide web link, if available).
+    </label>
+    <p>
+      {{ channels_or_platforms_where_information || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      2. Steps taken to inform and educate consumers about safe and responsible
+      usage of products and/or services.
+    </label>
+    <p>
+      {{
+        steps_taken_to_inform_and_educate_consumers_about_safe_and_responsible ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      3. Mechanisms in place to inform consumers of any risk of
+      disruption/discontinuation of essential services.
+    </label>
+    <p>
+      {{
+        mechanisms_in_place_to_inform_consumers_of_any_risk_of_disruption_or_discontinuation_of_essential_services ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      4. Does the entity display product information on the product over and
+      above what is mandated as per local laws?
+    </label>
+    <p>
+      {{
+        does_the_entity_display_product_information_on_the_product_over || "--"
+      }}
+    </p>
+    <ng-container
+      *ngIf="
+        does_the_entity_display_product_information_on_the_product_over == 'Yes'
+      "
+    >
+      <label style="font-weight: bold"> Provide details in brief </label>
+      <p>
+        {{
+          does_the_entity_display_product_information_on_the_product_over_brief ||
+            "--"
+        }}
+      </p>
+    </ng-container>
+    <label style="font-weight: bold">
+      Did your entity carry out any survey with regard to consumer satisfaction
+      relating to the major products / services of the entity, significant
+      locations of operation of the entity or the entity as a whole? (Yes/No)
+    </label>
+    <p>
+      {{
+        does_the_entity_display_product_information_on_the_product_over_survey ==
+        true
+          ? "Yes"
+          : does_the_entity_display_product_information_on_the_product_over_survey ==
+            false
+          ? "No"
+          : "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      Provide the following information relating to data breaches:
+    </label>
+    <label style="font-weight: bold">
+      a. Number of instances of data breaches along-with impact
+    </label>
+    <p>
+      {{
+        five_a_number_of_instances_of_data_breaches_along_with_impact || "--"
+      }}
+    </p>
+    <label style="font-weight: bold">
+      b. Percentage of data breaches involving personally identifiable
+      information of customers
+    </label>
+    <p>
+      {{
+        five_b_percentage_of_data_breaches_involving_personally_identifiable_information_of_customer ||
+          "--"
+      }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,298 @@
+<p class="header-p mb-4">
+  10. If the entity has operations/offices in/around ecologically sensitive
+  areas (such as national parks, wildlife sanctuaries, biosphere reserves,
+  wetlands, biodiversity hotspots, forests, coastal regulation zones etc.) where
+  environmental approvals / clearances are required, please specify details in
+  the following format:
+</p>
+<ng-container>
+  <button
+    class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+    type="button"
+    (click)="addField(1)"
+  >
+    Add New Detail
+  </button>
+  <table class="en-table">
+    <thead>
+      <tr>
+        <th>Location of operations/offices</th>
+        <th>Type of operations</th>
+        <th>
+          Whether the conditions of environmental approval / clearance are being
+          complied with? (Y/N) If no, the reasons thereof and corrective action
+          taken, if any.
+        </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eachValue of ecologically_sensitive_areas; let i = index">
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.office_location"
+              (keypress)="_utilities.textLimit($event, 500)"
+              (blur)="_utilities.trimExtra($event, 500)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.types_of_operation"
+              (keypress)="_utilities.textLimit($event, 500)"
+              (blur)="_utilities.trimExtra($event, 500)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select [(ngModel)]="eachValue.is_environmental_approval">
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field
+            class="fuse-mat-no-subscript w-full mt-4"
+            *ngIf="eachValue.is_environmental_approval == false"
+          >
+            <mat-label>Details</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="eachValue.details"
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              cdkTextareaAutosize
+              [cdkAutosizeMinRows]="3"
+            ></textarea>
+          </mat-form-field>
+        </td>
+        <td style="width: 10%">
+          <button
+            class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+            type="button"
+            (click)="removeField(i, 1)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<!-- Divider -->
+<div class="mt-8 mb-6 border-t"></div>
+<p class="header-p mb-4">
+  11. Details of environmental impact assessments of projects undertaken by the
+  entity based on applicable laws, in the current financial year:
+</p>
+<ng-container>
+  <button
+    class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+    type="button"
+    (click)="addField(2)"
+  >
+    Add New Detail
+  </button>
+  <table class="en-table">
+    <thead>
+      <tr>
+        <th>Name and brief details of project</th>
+        <th>EIA Notification No.</th>
+        <th>Date</th>
+        <th>Whether conducted by independent external agency (Yes / No)</th>
+        <th>Results communicated in public domain (Yes / No)</th>
+        <th>Relevant Web link</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let eachValue of details_of_environmental_impact_assessments;
+          let i = index
+        "
+      >
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.project_detail"
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.eia"
+              (keypress)="_utilities.textLimit($event, 50)"
+              (blur)="_utilities.trimExtra($event, 50)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.date"
+              (keypress)="_utilities.textLimit($event, 50)"
+              (blur)="_utilities.trimExtra($event, 50)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select
+              [(ngModel)]="eachValue.conducted_by_independent_external_agency"
+            >
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <mat-select [(ngModel)]="eachValue.communicated_in_public_domain">
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.web_link"
+              (keypress)="_utilities.textLimit($event, 500)"
+              (blur)="_utilities.trimExtra($event, 500)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td style="width: 10%">
+          <button
+            class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+            type="button"
+            (click)="removeField(i, 2)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<!-- Divider -->
+<div class="mt-8 mb-6 border-t"></div>
+<p class="header-p mb-4">
+  12. Is the entity compliant with the applicable environmental law/
+  regulations/ guidelines in India; such as the Water (Prevention and Control of
+  Pollution) Act, Air (Prevention and Control of Pollution) Act, Environment
+  protection act and rules thereunder (Y/N). If not, provide details of all such
+  non-compliances, in the following format:
+</p>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-5">
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="is_entity_compliant_with_the_applicable_environmental_law"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<ng-container
+  *ngIf="is_entity_compliant_with_the_applicable_environmental_law == 'No'"
+>
+  <button
+    class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+    type="button"
+    (click)="addField(3)"
+  >
+    Add New Detail
+  </button>
+  <table class="en-table">
+    <thead>
+      <tr>
+        <th>
+          Specify the law / regulation / guidelines which was not complied with
+        </th>
+        <th>Provide details of the non- compliance</th>
+        <th>
+          Any fines / penalties / action taken by regulatory agencies such as
+          pollution control boards or by courts
+        </th>
+        <th>Corrective action taken, if any</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eachValue of non_compliances_details; let i = index">
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.guidelines_which_was_not_complied"
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.details_of_the_non_compliance"
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.action_taken_by_regulatory_agencies"
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="fuse-mat-no-subscript w-full">
+            <input
+              [(ngModel)]="eachValue.corrective_action_taken"
+              (keypress)="_utilities.textLimit($event, 5000)"
+              (blur)="_utilities.trimExtra($event, 5000)"
+              matInput
+            />
+          </mat-form-field>
+        </td>
+
+        <td style="width: 10%">
+          <button
+            class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+            type="button"
+            (click)="removeField(i, 3)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<!-- Divider -->
+<div class="mt-8 mb-6 border-t"></div>

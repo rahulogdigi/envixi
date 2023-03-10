@@ -1,0 +1,223 @@
+<div class="w-full">
+  <!-- Form -->
+
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Details of business activities (accounting for 90% of the turnover):
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            The details of business activities shall be in line those given in
+            Form MGT-7 prescribed by MCA.
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-7 gap-6 w-full mt-8">
+    <div class="sm:col-span-7">
+      <button
+        class="mat-focus-indicator mat-flat-button mat-button-base mat-primary"
+        type="button"
+        (click)="addField('activity')"
+      >
+        Add Business activity
+      </button>
+    </div>
+    <div class="sm:col-span-7">
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th>Description of Main Activity</th>
+            <th>Description of Business Activity</th>
+            <th>% of Turnover of the entity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="let eachActivity of business_activity; let i = index"
+          >
+            <tr>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachActivity.description_of_main_activity"
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachActivity.business_activity_description"
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachActivity.total_turnover_percentage"
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <button
+                  class="mat-focus-indicator mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField('activity', i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Products/Services sold by the entity (accounting for 90% of the entity’s
+      Turnover):
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                The entity shall disclose the top products manufactured or
+                services provided by the listed entity that account for 90% of
+                its turnover (in descending order) along-with the individual
+                contribution of such products / services to the total turnover.
+              </li>
+              <li>
+                The National Industrial Classification (NIC) codes are available
+                at the following link:
+                <a
+                  href="http://mospi.nic.in/classification/national- industrial-classification/alphabetic-index-5digit"
+                  target="_blank"
+                  >http://mospi.nic.in/classification/national-
+                  industrial-classification/alphabetic-index-5digit</a
+                >.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-7 gap-6 w-full mt-8">
+    <div class="sm:col-span-7">
+      <button
+        class="mat-focus-indicator mat-flat-button mat-button-base mat-primary"
+        type="button"
+        (click)="addField('sold')"
+      >
+        Add Products/Services Sold Details
+      </button>
+    </div>
+    <div class="sm:col-span-7">
+      <table class="en-table">
+        <thead>
+          <tr>
+            <th>Product/Service</th>
+            <th>NIC Code</th>
+            <th>% of total Turnover contributed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="
+              let eachDetail of products_services_sold_by_the_entity;
+              let i = index
+            "
+          >
+            <tr>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachDetail.product_or_service"
+                    (keypress)="_utilities.textLimit($event, 150)"
+                    (blur)="_utilities.trimExtra($event, 150)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachDetail.nic_code"
+                    (keypress)="_utilities.textLimit($event, 80)"
+                    (blur)="_utilities.trimExtra($event, 80)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachDetail.total_turnover_percentage"
+                    type="number"
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <button
+                  class="mat-focus-indicator mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField('sold', i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Update profile
+    </button>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+<div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
+  <div class="w-full max-w-screen-xl mx-auto p-6">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full min-w-0"
+    >
+      <!-- Summary -->
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Total HSE Training (in Hr)
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-blue-500"
+          >
+            80
+          </div>
+        </div>
+      </div>
+      <!-- Overdue -->
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Total Career Development Training (in Hr)
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-red-500"
+          >
+            90
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="flex items-start justify-between">
+          <div class="text-md font-medium tracking-tight leading-6 truncate">
+            Complaints Redressal
+          </div>
+        </div>
+        <div class="flex flex-col items-center mt-2">
+          <div
+            class="text-6xl sm:text-7xl font-bold tracking-tight leading-none text-blue-500"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0 pt-4">
+      <!-- Budget distribution -->
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Workplace Accidents
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart1">
+            <apx-chart
+              [series]="chartOptions1.series"
+              [chart]="chartOptions1.chart"
+              [xaxis]="chartOptions1.xaxis"
+              [dataLabels]="chartOptions1.dataLabels"
+              [grid]="chartOptions1.grid"
+              [stroke]="chartOptions1.stroke"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Permanent Employee Hired
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart2">
+            <apx-chart
+              [series]="chartOptions2.series"
+              [chart]="chartOptions2.chart"
+              [dataLabels]="chartOptions2.dataLabels"
+              [plotOptions]="chartOptions2.plotOptions"
+              [yaxis]="chartOptions2.yaxis"
+              [legend]="chartOptions2.legend"
+              [fill]="chartOptions2.fill"
+              [stroke]="chartOptions2.stroke"
+              [tooltip]="chartOptions2.tooltip"
+              [xaxis]="chartOptions2.xaxis"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-6 gap-6 w-full min-w-0 pt-4">
+      <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          No. of Employees Covered Under Health Insurance
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart3">
+            <apx-chart
+              [series]="chartOptions3.series"
+              [chart]="chartOptions3.chart"
+              [labels]="chartOptions3.labels"
+              [responsive]="chartOptions3.responsive"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+            <div
+        class="sm:col-span-3 lg:col-span-3 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden"
+      >
+        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+          Retention of Contractual Workers
+        </div>
+        <div class="flex flex-col flex-auto">
+          <div id="chart4">
+            <apx-chart
+              [series]="chartOptions4.series"
+              [chart]="chartOptions4.chart"
+              [dataLabels]="chartOptions4.dataLabels"
+              [plotOptions]="chartOptions4.plotOptions"
+              [yaxis]="chartOptions4.yaxis"
+              [legend]="chartOptions4.legend"
+              [fill]="chartOptions4.fill"
+              [stroke]="chartOptions4.stroke"
+              [tooltip]="chartOptions4.tooltip"
+              [xaxis]="chartOptions4.xaxis"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

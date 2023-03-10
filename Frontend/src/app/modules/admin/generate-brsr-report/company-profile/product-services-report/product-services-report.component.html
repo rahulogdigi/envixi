@@ -1,0 +1,82 @@
+<div class="w-full">
+  <!-- Form -->
+  <div>
+    <!-- Title -->
+
+    <h6><u>Products/services</u></h6>
+    <p>Details of business activities (accounting for 90% of the turnover):</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Description of Main Activity</th>
+          <th>Description of Business Activity</th>
+          <th>% of Turnover of the entity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachActivity of business_activity; let i = index"
+        >
+          <tr>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachActivity?.description_of_main_activity || "--" }}
+              </p>
+            </td>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachActivity?.business_activity_description || "--" }}
+              </p>
+            </td>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachActivity?.total_turnover_percentage || "--" }}
+              </p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+    <p>
+      Products/Services sold by the entity (accounting for 90% of the entity’s
+      Turnover):
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Product/Service</th>
+          <th>NIC Code</th>
+          <th>% of total Turnover contributed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="
+            let eachActivity of products_services_sold_by_the_entity;
+            let i = index
+          "
+        >
+          <tr>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachActivity?.product_or_service || "--" }}
+              </p>
+            </td>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachActivity?.nic_code || "--" }}
+              </p>
+            </td>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachActivity?.total_turnover_percentage || "--" }}
+              </p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,2435 @@
+<p class="header-p mt-4 mb-4">
+  7. Membership of employees and worker in association(s) or Unions recognised
+  by the listed entity:
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Category</th>
+      <th colspan="3">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="3">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th>Total employees / workers in respective category (A)</th>
+      <th>
+        No. of employees / workers in respective category, who are part of
+        association(s) or Union (B)
+      </th>
+      <th>% (B / A)</th>
+      <th>Total employees / workers in respective category (C)</th>
+      <th>
+        No. of employees / workers in respective category, who are part of
+        association(s) or Union (D)
+      </th>
+      <th>% (D / C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="7"><b>Employees</b></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees.male
+                .total_employee_category_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_employees',
+                'male',
+                'total_employee_category_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees.male
+                .no_employee_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_employees',
+                'male',
+                'no_employee_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees.male
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees.male
+                .total_employee_category_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_employees',
+                'male',
+                'total_employee_category_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees.male
+                .no_employee_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_employees',
+                'male',
+                'no_employee_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees.male
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees.female
+                .total_employee_category_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_employees',
+                'female',
+                'total_employee_category_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees.female
+                .no_employee_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_employees',
+                'female',
+                'no_employee_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees.female
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees.female
+                .total_employee_category_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_employees',
+                'female',
+                'total_employee_category_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees.female
+                .no_employee_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_employees',
+                'female',
+                'no_employee_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees.female
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Total Permanent Employees</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees
+                .total_employee_category_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees
+                .no_employee_or_workers_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_employees
+                .percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees
+                .total_employee_category_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees
+                .no_employee_or_workers_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_employees
+                .percentage_d_divided_by_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Workers-->
+    <tr>
+      <td colspan="7"><b>Workers</b></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers.male
+                .total_employee_category_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_workers',
+                'male',
+                'total_employee_category_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers.male
+                .no_employee_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_workers',
+                'male',
+                'no_employee_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers.male
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers.male
+                .total_employee_category_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_workers',
+                'male',
+                'total_employee_category_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers.male
+                .no_employee_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_workers',
+                'male',
+                'no_employee_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers.male
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers.female
+                .total_employee_category_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_workers',
+                'female',
+                'total_employee_category_a'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers.female
+                .no_employee_or_workers_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'current_financial_year',
+                'total_permanent_workers',
+                'female',
+                'no_employee_or_workers_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers.female
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers.female
+                .total_employee_category_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_workers',
+                'female',
+                'total_employee_category_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers.female
+                .no_employee_or_workers_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '3',
+                'previous_financial_year',
+                'total_permanent_workers',
+                'female',
+                'no_employee_or_workers_d'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers.female
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td><b>Total Permanent Workers</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers
+                .total_employee_category_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers
+                .no_employee_or_workers_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .current_financial_year.total_permanent_workers
+                .percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers
+                .total_employee_category_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers
+                .no_employee_or_workers_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              membership_of_employees_and_worker_in_association
+                .previous_financial_year.total_permanent_workers
+                .percentage_d_divided_by_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  8. Details of training given to employees and workers:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            Training on health and safety can include general training on health
+            and safety as well as training on specific work-related hazards,
+            hazardous activities, or hazardous situations. It can also include
+            training on mental health.
+          </li>
+          <li>
+            Training programs on skill upgradation can include both internal
+            training courses and funding support for external training or
+            education.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="3">Category</th>
+      <th colspan="5">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="5">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th rowspan="2">Total<br />(A)</th>
+      <th colspan="2">On Health and safety measures</th>
+      <th colspan="2">On skill upgradation</th>
+      <th rowspan="2">Total<br />(D)</th>
+      <th colspan="2">On Health and safety measures</th>
+      <th colspan="2">On Skill upgradation</th>
+    </tr>
+    <tr class="sub-sub-header">
+      <th>Number(B)</th>
+      <th>%(B / A)</th>
+      <th>Number(C)</th>
+      <th>%(C / A)</th>
+      <th>Number(E)</th>
+      <th>%(E / D)</th>
+      <th>Number(F)</th>
+      <th>%(F / D)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="11" class="table-subheader">
+        <b>Employees</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('4', 'current_financial_year', 'total_a', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.male
+                .on_health_and_safety_measures.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'current_financial_year',
+                'on_health_and_safety_measures',
+                'male',
+                'no_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.male
+                .on_health_and_safety_measures.percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.male.on_skill_upgrade.no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'current_financial_year',
+                'on_skill_upgrade',
+                'male',
+                'no_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.male.on_skill_upgrade
+                .percentage_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.male.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('4', 'previous_financial_year', 'total_d', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.male
+                .on_health_and_safety_measures.no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'previous_financial_year',
+                'on_health_and_safety_measures',
+                'male',
+                'no_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.male
+                .on_health_and_safety_measures.percentage_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.male.on_skill_upgrade.no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'previous_financial_year',
+                'on_skill_upgrade',
+                'male',
+                'no_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.male.on_skill_upgrade
+                .percentage_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Female-->
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('4', 'current_financial_year', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.female
+                .on_health_and_safety_measures.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'current_financial_year',
+                'on_health_and_safety_measures',
+                'female',
+                'no_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.female
+                .on_health_and_safety_measures.percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.female.on_skill_upgrade.no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'current_financial_year',
+                'on_skill_upgrade',
+                'female',
+                'no_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.female.on_skill_upgrade
+                .percentage_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.female.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('4', 'previous_financial_year', 'total_d', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.female
+                .on_health_and_safety_measures.no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'previous_financial_year',
+                'on_health_and_safety_measures',
+                'female',
+                'no_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.female
+                .on_health_and_safety_measures.percentage_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.female.on_skill_upgrade.no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '4',
+                'previous_financial_year',
+                'on_skill_upgrade',
+                'female',
+                'no_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.female.on_skill_upgrade
+                .percentage_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Total-->
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.total.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.total
+                .on_health_and_safety_measures.no_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.total
+                .on_health_and_safety_measures.percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.total.on_skill_upgrade.no_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.employees.total.on_skill_upgrade
+                .percentage_c_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.total.total_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.total
+                .on_health_and_safety_measures.no_e
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.total
+                .on_health_and_safety_measures.percentage_e_divided_by_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.total.on_skill_upgrade.no_f
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.employees.total.on_skill_upgrade
+                .percentage_f_divided_by_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <!--Workers-->
+
+    <tr>
+      <td colspan="11" class="table-subheader">
+        <b>Workers</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('5', 'current_financial_year', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.male
+                .on_health_and_safety_measures.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'current_financial_year',
+                'on_health_and_safety_measures',
+                'male',
+                'no_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.male
+                .on_health_and_safety_measures.percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.male.on_skill_upgrade.no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'current_financial_year',
+                'on_skill_upgrade',
+                'male',
+                'no_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.male.on_skill_upgrade
+                .percentage_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.male.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('5', 'previous_financial_year', 'total_d', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.male
+                .on_health_and_safety_measures.no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'previous_financial_year',
+                'on_health_and_safety_measures',
+                'male',
+                'no_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.male
+                .on_health_and_safety_measures.percentage_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.male.on_skill_upgrade.no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'previous_financial_year',
+                'on_skill_upgrade',
+                'male',
+                'no_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.male.on_skill_upgrade
+                .percentage_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Female-->
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('5', 'current_financial_year', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.female
+                .on_health_and_safety_measures.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'current_financial_year',
+                'on_health_and_safety_measures',
+                'female',
+                'no_b'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.female
+                .on_health_and_safety_measures.percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.female.on_skill_upgrade.no_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'current_financial_year',
+                'on_skill_upgrade',
+                'female',
+                'no_c'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.female.on_skill_upgrade
+                .percentage_c_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.female.total_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('5', 'previous_financial_year', 'total_d', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.female
+                .on_health_and_safety_measures.no_e
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'previous_financial_year',
+                'on_health_and_safety_measures',
+                'female',
+                'no_e'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.female
+                .on_health_and_safety_measures.percentage_e_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.female.on_skill_upgrade.no_f
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp(
+                '5',
+                'previous_financial_year',
+                'on_skill_upgrade',
+                'female',
+                'no_f'
+              )
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.female.on_skill_upgrade
+                .percentage_f_divided_by_d
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Total-->
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.total.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.total
+                .on_health_and_safety_measures.no_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.total
+                .on_health_and_safety_measures.percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.total.on_skill_upgrade.no_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .current_financial_year.workers.total.on_skill_upgrade
+                .percentage_c_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.total.total_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.total
+                .on_health_and_safety_measures.no_e
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.total
+                .on_health_and_safety_measures.percentage_e_divided_by_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.total.on_skill_upgrade.no_f
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_training_given_to_employees_and_workers
+                .previous_financial_year.workers.total.on_skill_upgrade
+                .percentage_f_divided_by_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  9. Details of performance and career development reviews of employees and
+  worker:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        Regular performance and career development review refers to review based
+        on criteria known to the employee / worker and his or her superior. Such
+        a review is undertaken with the knowledge of the employee.
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Category</th>
+      <th colspan="3">
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th colspan="3">
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+    <tr>
+      <th>Total<br />(A)</th>
+      <th>No. (B)</th>
+      <th>% (B / A)</th>
+      <th>Total (C)</th>
+      <th>No. (D)</th>
+      <th>% (D / C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="7" class="table-subheader">
+        <b>Employees</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'current_financial_year', 'total_a', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.male.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'current_financial_year', 'no_b', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.male.percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.male.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'previous_financial_year', 'total_a', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.male.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'previous_financial_year', 'no_b', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.male
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <!--female-->
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'current_financial_year', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.female.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'current_financial_year', 'no_b', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.female
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.female.total_a
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'previous_financial_year', 'total_a', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.female.no_b
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('6', 'previous_financial_year', 'no_b', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.female
+                .percentage_b_divided_by_a
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <!--Total-->
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.no_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.employees.percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.total_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.no_b
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.employees.percentage_b_divided_by_a
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <!--Workers-->
+    <tr>
+      <td colspan="7" class="table-subheader">
+        <b>Workers</b>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Male</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.male.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'current_financial_year', 'total_c', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.male.no_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'current_financial_year', 'no_d', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.male.percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.male.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'previous_financial_year', 'total_c', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.male.no_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'previous_financial_year', 'no_d', 'male')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.male.percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <!--female-->
+    <tr>
+      <td><b>Female</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.female.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'current_financial_year', 'total_c', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.female.no_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'current_financial_year', 'no_d', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.female.percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.female.total_c
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'previous_financial_year', 'total_c', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.female.no_d
+            "
+            (keypress)="_utilities.numberOnly($event, 8, true)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('7', 'previous_financial_year', 'no_d', 'female')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.female
+                .percentage_d_divided_by_c
+            "
+            readonly
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <!--Total-->
+    <tr>
+      <td><b>Total</b></td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.total_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.no_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .current_financial_year.workers.percentage_d_divided_by_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.total_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.no_d
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_of_performance_and_career_development_reviews_of_employees_and_worker
+                .previous_financial_year.workers.percentage_d_divided_by_c
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>

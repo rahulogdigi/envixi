@@ -1,0 +1,1565 @@
+<div class="w-full">
+  <!-- Form -->
+  <div>
+    <!-- Title -->
+    <h6><u>Operations</u></h6>
+    <label style="font-weight: bold"
+      >Number of locations where plants and/or operations/offices of the entity
+      are situated:</label
+    >
+    <table>
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Number of plants</th>
+          <th>Number of offices</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>National</b></td>
+          <td>
+            <p style="font-size: 14px">
+              {{ location?.national_operations?.number_of_plants || "--" }}
+            </p>
+          </td>
+          <td>
+            <p style="font-size: 14px">
+              {{ location?.national_operations?.number_of_office || "--" }}
+            </p>
+          </td>
+          <td>
+            {{
+              getSum(
+                location?.national_operations?.number_of_plants,
+                location?.national_operations?.number_of_office
+              )
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td><b>International</b></td>
+          <td>
+            <p style="font-size: 14px">
+              {{ location?.international_operations?.number_of_plants || "--" }}
+            </p>
+          </td>
+          <td>
+            <p style="font-size: 14px">
+              {{ location?.international_operations?.number_of_office || "--" }}
+            </p>
+          </td>
+          <td>
+            {{
+              getSum(
+                location?.international_operations?.number_of_plants,
+                location?.international_operations?.number_of_office
+              )
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold">Markets served by the entity:</label>
+    <table>
+      <thead>
+        <tr>
+          <th>Locations</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>National (No. of States)</td>
+          <td>
+            <p style="font-size: 14px">
+              {{
+                market_served_by_entity?.number_of_location?.number_of_states ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>International (No. of Countries)</td>
+          <td>
+            <p style="font-size: 14px">
+              {{
+                market_served_by_entity?.number_of_location
+                  ?.number_of_countries || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label style="font-weight: bold">
+      What is the contribution of exports as a percentage of the total turnover
+      of the entity?</label
+    >
+    <p style="font-size: 14px">
+      {{ market_served_by_entity?.seventeen_b || "--" }}
+    </p>
+    <label style="font-weight: bold">A brief on types of customers</label>
+    <p style="font-size: 14px">
+      {{ market_served_by_entity?.seventeen_c || "--" }}
+    </p>
+    <hr />
+
+    <!-- Employees -->
+    <h6><u>Employees</u></h6>
+    <label style="font-weight: bold"
+      >Details as at the end of Financial Year:</label
+    >
+    <p>Employees and workers (including differently abled):</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Total(A)</th>
+          <th>Male<br />No. (B)</th>
+          <th>Male<br />% (B / A)</th>
+          <th>Female<br />No. (C)</th>
+          <th>Female<br />% (C / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6"><u>EMPLOYEES</u></td>
+        </tr>
+
+        <tr>
+          <td><b>Permanent (D)</b></td>
+          <td>
+            <p>
+              {{ employees_and_worker?.employees?.permanent_d?.total || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.permanent_d?.male?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.permanent_d?.male?.no_b_a ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.permanent_d?.female?.no_c ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.permanent_d?.female?.no_c_a ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (E)</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.other_than_permanent_e
+                  ?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.other_than_permanent_e?.male
+                  ?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.other_than_permanent_e?.male
+                  ?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.other_than_permanent_e?.female
+                  ?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.employees?.other_than_permanent_e?.female
+                  ?.no_c_a || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total employees<br />
+              (D + E)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.total,
+                employees_and_worker.employees.other_than_permanent_e.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.male.no_a,
+                employees_and_worker.employees.other_than_permanent_e.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.male.no_b_a,
+                employees_and_worker.employees.other_than_permanent_e.male
+                  .no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.female.no_c,
+                employees_and_worker.employees.other_than_permanent_e.female
+                  .no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.female.no_c_a,
+                employees_and_worker.employees.other_than_permanent_e.female
+                  .no_c_a
+              )
+            }}
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="6"><u>WORKERS</u></td>
+        </tr>
+        <tr>
+          <td><b>Permanent (F)</b></td>
+          <td>
+            <p>
+              {{ employees_and_worker?.workers?.permanent_f?.total || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.permanent_f?.male?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.permanent_f?.male?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.permanent_f?.female?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.permanent_f?.female?.no_c_a ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (G)</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.other_than_permanent_g?.total ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.other_than_permanent_g?.male
+                  ?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.other_than_permanent_g?.male
+                  ?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.other_than_permanent_g?.female
+                  ?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_worker?.workers?.other_than_permanent_g?.female
+                  ?.no_c_a || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Workers<br />
+              (F + G)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.total,
+                employees_and_worker.workers.other_than_permanent_g.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.male.no_a,
+                employees_and_worker.workers.other_than_permanent_g.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.male.no_b_a,
+                employees_and_worker.workers.other_than_permanent_g.male.no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.female.no_c,
+                employees_and_worker.workers.other_than_permanent_g.female.no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.female.no_c_a,
+                employees_and_worker.workers.other_than_permanent_g.female
+                  .no_c_a
+              )
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Differently abled Employees and workers:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Total(A)</th>
+          <th>Male<br />No. (B)</th>
+          <th>Male<br />% (B / A)</th>
+          <th>Female<br />No. (C)</th>
+          <th>Female<br />% (C / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6">
+            <u>DIFFERENTLY ABLED EMPLOYEES</u>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Permanent (D)</b></td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.male?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.male?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.female?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.female?.no_c_a || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (E)</b></td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.male?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.male?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.female?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.female?.no_c_a || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total employees<br />
+              (D + E)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.total,
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker?.added_employees
+                  .permanent_d?.male?.no_a,
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.male?.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.male?.no_b_a,
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.male?.no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.female?.no_c,
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.female?.no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.female?.no_c_a,
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.other_than_permanent_e?.female?.no_c_a
+              )
+            }}
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="6"><u>DIFFERENTLY ABLED WORKERS</u></td>
+        </tr>
+        <tr>
+          <td><b>Permanent (F)</b></td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers
+                  ?.permanent_f?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers.permanent_f
+                  ?.male?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers.permanent_f
+                  ?.male?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers.permanent_f
+                  ?.female?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_employees
+                  ?.permanent_d?.female?.no_c_a || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (G)</b></td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers
+                  ?.other_than_permanent_g?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers
+                  ?.other_than_permanent_g?.male?.no_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers
+                  ?.other_than_permanent_g?.male?.no_b_a || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers
+                  ?.other_than_permanent_g?.female?.no_c || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                diffrently_added_employees_and_worker?.added_workers
+                  ?.other_than_permanent_g?.female?.no_c_a || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Workers<br />
+              (F + G)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .total,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .male.no_a,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .male.no_b_a,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.male.no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .female.no_c,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.female.no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .female.no_c_a,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.female.no_c_a
+              )
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Participation/Inclusion/Representation of women</p>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Role</th>
+          <th rowspan="2">Total(A)</th>
+          <th colspan="2">No. and percentage of Females</th>
+        </tr>
+        <tr>
+          <th>No. (B)</th>
+          <th>% (B / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Board of Directors</b></td>
+          <td>
+            <p>
+              {{ participation_or_representation_of_women?.bod?.total || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ participation_or_representation_of_women?.bod?.no_a || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                participation_or_representation_of_women?.bod?.no_a_b || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Key Management Personnel</b></td>
+          <td>
+            <p>
+              {{ participation_or_representation_of_women?.kmp?.total || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ participation_or_representation_of_women?.kmp?.no_a || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                participation_or_representation_of_women?.kmp?.no_a_b || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Turnover rate for permanent employees and workers (Disclose trends for the
+      past 3 years):
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="3">
+            FY
+            {{
+              turnover_rate_for_permanent_employees_and_workers
+                .permanent_employees.first_year.fy_year
+            }}<br />
+            (Turnover rate in current FY)
+          </th>
+          <th colspan="3">
+            FY
+            {{
+              turnover_rate_for_permanent_employees_and_workers
+                .permanent_employees.second_year.fy_year
+            }}<br />
+            (Turnover rate in previous FY)
+          </th>
+          <th colspan="3">
+            FY
+            {{
+              turnover_rate_for_permanent_employees_and_workers
+                .permanent_employees.third_year.fy_year
+            }}<br />
+            (Turnover rate in the year prior to the previous FY)
+          </th>
+        </tr>
+        <tr>
+          <th>Male</th>
+          <th>Female</th>
+          <th>Total</th>
+          <th>Male</th>
+          <th>Female</th>
+          <th>Total</th>
+          <th>Male</th>
+          <th>Female</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Permanent Employees</b></td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.first_year?.male || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.first_year?.female || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.first_year?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.second_year?.male || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.second_year?.female || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.second_year?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.third_year?.male || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.third_year?.female || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_employees?.third_year?.total || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent Workers</b></td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.first_year?.male || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.first_year?.female || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.first_year?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.second_year?.male || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.second_year?.female || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.second_year?.total || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.third_year?.male || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.third_year?.female || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                turnover_rate_for_permanent_employees_and_workers
+                  ?.permanent_workers?.third_year?.total || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+
+    <!-- Holding, Subsidiary and Associate Companies (including joint ventures) -->
+    <h6>
+      <u
+        >Holding, Subsidiary and Associate Companies (including joint
+        ventures)</u
+      >
+    </h6>
+    <p>Names of holding / subsidiary / associate companies / joint ventures:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Name of the holding / subsidiary / associate companies / joint
+            ventures (A)
+          </th>
+          <th>
+            Indicate whether holding/ Subsidiary/ Associate/ Joint Venture
+          </th>
+          <th>% of shares held by listed entity</th>
+          <th>
+            Does the entity indicated at column A, participate in the Business
+            Responsibility initiatives of the listed entity?
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachValue of v_associate_companies; let i = index"
+        >
+          <tr>
+            <td>
+              <p>
+                {{ eachValue.name_of_holding_or_associate_companies || "--" }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{
+                  eachValue.indicate_whether_holding_or_subsidiary_or_associate_joint_venture ||
+                    "--"
+                }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{
+                  eachValue.percentage_of_shares_held_by_listed_entity || "--"
+                }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{
+                  eachValue.does_the_entity_indicated_at_column_A_participate_in_the_business_esponsibility_initiatives_of_the_listed_entity ||
+                    "--"
+                }}
+              </p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <hr />
+
+    <!-- CSR-->
+    <h6>
+      <u>CSR Details</u>
+    </h6>
+    <label style="font-weight: bold">
+      Whether CSR is applicable as per section 135 of Companies Act, 2013</label
+    >
+    <p style="font-size: 14px">
+      {{ is_csr_applicable || "--" }}
+    </p>
+    <label style="font-weight: bold"> Turnover (in Rs.)</label>
+    <p style="font-size: 14px">
+      {{ turnover_in_rs || "--" }}
+    </p>
+    <label style="font-weight: bold"> CNet worth (in Rs.)</label>
+    <p style="font-size: 14px">
+      {{ net_worth || "--" }}
+    </p>
+    <hr />
+
+    <h6>
+      <u>Transparency and Disclosures Compliances</u>
+    </h6>
+
+    <p>
+      Complaints/Grievances on any of the principles (Principles 1 to 9) under
+      the National Guidelines on Responsible Business Conduct:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Stakeholder group from whom complaint is received</th>
+          <th rowspan="2">
+            Grievance Redressal Mechanism in Place (Yes/No) (If Yes, then
+            provide web-link for grievance redress policy)
+          </th>
+
+          <th colspan="3">
+            FY {{ stakeholder_group.communities.current_fy.year }} Current
+            Financial Year
+          </th>
+          <th colspan="3">
+            FY {{ stakeholder_group.communities.previous_fy.year }} Previous
+            Financial Year
+          </th>
+        </tr>
+        <tr>
+          <th>Number of complaints filed during the year</th>
+          <th>Number of complaints pending resolution at close of the year</th>
+          <th>Remarks</th>
+          <th>Number of complaints filed during the year</th>
+          <th>Number of complaints pending resolution at close of the year</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Communities</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.communities
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.communities
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.communities?.current_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.communities?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group.communities?.current_fy?.remarks || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.communities.previous_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.communities.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group?.communities.previous_fy?.remarks || "--" }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Investors (other than shareholders)</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.investors
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.investors
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.investors?.current_fy?.number_of_complaints ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.investors?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group.investors?.current_fy?.remarks || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.investors.previous_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.investors.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group?.investors.previous_fy?.remarks || "--" }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Shareholders</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.shareholders
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.shareholders
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.shareholders?.current_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.shareholders?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group.shareholders?.current_fy?.remarks || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.shareholders.previous_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.shareholders.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group?.shareholders.previous_fy?.remarks || "--" }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Employees and workers</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.employee_and_workers
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.employee_and_workers
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.employee_and_workers?.current_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.employee_and_workers?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.employee_and_workers?.current_fy?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.employee_and_workers.previous_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.employee_and_workers.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.employee_and_workers.previous_fy?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Customers</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.customers
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.customers
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.customers?.current_fy?.number_of_complaints ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.customers?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group.customers?.current_fy?.remarks || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.customers.previous_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.customers.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group?.customers.previous_fy?.remarks || "--" }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Value Chain Partners</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.value_chain_partner
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.value_chain_partner
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.value_chain_partner?.current_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.value_chain_partner?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.value_chain_partner?.current_fy?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.value_chain_partner.previous_fy
+                  ?.number_of_complaints || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.value_chain_partner.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.value_chain_partner.previous_fy?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Other</td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.others
+                  ?.grievance_redressal_mechanism_in_place == false
+                  ? "False"
+                  : stakeholder_group.others
+                      ?.grievance_redressal_mechanism_in_place == true
+                  ? "True"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.others?.current_fy?.number_of_complaints ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group.others?.current_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group.others?.current_fy?.remarks || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.others.previous_fy?.number_of_complaints ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                stakeholder_group?.others.previous_fy
+                  ?.number_of_complaints_pending_resolution_at_close || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ stakeholder_group?.others.previous_fy?.remarks || "--" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Overview of the entity’s material responsible business conduct issues:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Material issue identified</th>
+          <th>Indicate whether risk or opportunity (R/O)</th>
+          <th>Rationale for identifying the risk / opportunity</th>
+          <th>In case of risk, approach to adapt or mitigate</th>
+          <th>
+            Financial implications of the risk or opportunity (Indicate positive
+            or negative implications)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachValue of business_conduct_issues; let i = index"
+        >
+          <tr>
+            <td>
+              <p>
+                {{ eachValue?.material_issue_identified || "--" }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{ eachValue?.indicate_whether_risk_or_opportunity || "--" }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{ eachValue?.rational_of_identifying || "--" }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{ eachValue?.in_case_of_risk || "--" }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{ eachValue?.financial_implications || "--" }}
+              </p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,348 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 7
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="scollable-container">
+        <h4><u>Essential Indicators</u></h4>
+        <div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+          <!-- Title -->
+          <div class="sm:col-span-9">
+            <label style="font-size: 16px; font-weight: 500"
+              >1. a.Number of affiliations with trade and industry chambers/
+              associations.</label
+            ><br />
+          </div>
+          <div class="sm:col-span-4">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  one_a_number_of_affiliations_with_trade_and_industry_chambers_associations
+                "
+                (keypress)="_utilities.numberOnly($event, 15)"
+                (blur)="_utilities.trimExtra($event, 15)"
+                matInput
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+
+        <p class="header-p mb-4">
+          b. List the top 10 trade and industry chambers/ associations
+          (determined based on the total members of such body) the entity is a
+          member of/ affiliated to.
+        </p>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>S. No.</th>
+              <th>Name of the trade and industry chambers/ associations</th>
+              <th>
+                Reach of trade and industry chambers/ associations
+                (State/National)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of one_b_list_the_top_10_trade_and_industry_chambers;
+                let i = index
+              "
+            >
+              <td>{{ i + 1 }}</td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.name_of_the_trade_and_industry_chambers_associations
+                    "
+                    (keypress)="_utilities.textLimit($event, 250)"
+                    (blur)="_utilities.trimExtra($event, 250)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.reach_of_trade_and_industry_chambers_associations_state_national
+                    "
+                    (keypress)="_utilities.textLimit($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-8 mb-6 border-t"></div>
+        <p class="header-p mb-4">
+          2. Provide details of corrective action taken or underway on any
+          issues related to anti- competitive conduct by the entity, based on
+          adverse orders from regulatory authorities.
+        </p>
+        <ng-container>
+          <button
+            class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+            type="button"
+            (click)="addField(1)"
+          >
+            Add New Detail
+          </button>
+          <table class="en-table">
+            <thead>
+              <tr>
+                <th>Name of authority</th>
+                <th>Brief of the case</th>
+                <th>Corrective action taken</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let eachValue of two_provide_details_of_corrective_action_taken_or_underway_on_any_issues;
+                  let i = index
+                "
+              >
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="eachValue.name_of_authority"
+                      (keypress)="_utilities.textLimit($event, 100)"
+                      (blur)="_utilities.trimExtra($event, 100)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <textarea
+                      matInput
+                      [(ngModel)]="eachValue.brief_of_the_case"
+                      (keypress)="_utilities.textLimit($event, 1000)"
+                      (blur)="_utilities.trimExtra($event, 1000)"
+                      cdkTextareaAutosize
+                      [cdkAutosizeMinRows]="5"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <textarea
+                      matInput
+                      [(ngModel)]="eachValue.corrective_action_taken"
+                      (keypress)="_utilities.textLimit($event, 5000)"
+                      (blur)="_utilities.trimExtra($event, 5000)"
+                      cdkTextareaAutosize
+                      [cdkAutosizeMinRows]="5"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+                <td style="width: 10%">
+                  <button
+                    class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                    type="button"
+                    (click)="removeField(1, i)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+        <h4><u>Leadership Indicators</u></h4>
+        <p class="header-p mb-4">
+          1. Details of public policy positions advocated by the entity:
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                <ol>
+                  <li>
+                    The listed shall disclose issues that are the focus of its
+                    participation in public policy development.
+                  </li>
+                  <li>
+                    Further, the entity shall provide the details of methods
+                    resorted to in each case including affiliation with other
+                    similar business entities by forming coalitions,
+                    representing through trade chambers, social marketing, etc.
+                  </li>
+                  <li>
+                    The entity shall select Yes or No, as the case may be, for
+                    the availability of information on each public policy
+                    advocated in public domain.
+                  </li>
+                  <li>
+                    Select the appropriate frequency of Board review, such as:
+                    <ul>
+                      <li>Quarterly</li>
+                      <li>Half-yearly</li>
+                      <li>Annually</li>
+                      <li>Others, please specify</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Also provide the link of the document containing details of
+                    such public policy position advocated in the public domain,
+                    if available.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </span>
+        </p>
+        <ng-container>
+          <button
+            class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+            type="button"
+            (click)="addField(2)"
+          >
+            Add New Detail
+          </button>
+          <table class="en-table">
+            <thead>
+              <tr>
+                <th>Public policy advocated</th>
+                <th>Method resorted for such advocacy</th>
+                <th>
+                  Whether information available in public domain? (Yes/No)
+                </th>
+                <th>
+                  Frequency of Review by Board (Annually/ Half yearly/ Quarterly
+                  / Others – please specify)
+                </th>
+                <th>Web Link, if available</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let eachValue of details_of_public_policy_positions_advocated_by_the_entity;
+                  let i = index
+                "
+              >
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <textarea
+                      matInput
+                      [(ngModel)]="eachValue.public_policy_advocated"
+                      (keypress)="_utilities.textLimit($event, 150)"
+                      (blur)="_utilities.trimExtra($event, 150)"
+                      matInput
+                      cdkTextareaAutosize
+                      [cdkAutosizeMinRows]="5"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <textarea
+                      matInput
+                      [(ngModel)]="eachValue.method_resorted_for_such_advocacy"
+                      (keypress)="_utilities.textLimit($event, 1500)"
+                      (blur)="_utilities.trimExtra($event, 1500)"
+                      cdkTextareaAutosize
+                      [cdkAutosizeMinRows]="5"
+                    ></textarea>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="
+                        eachValue.whether_information_available_in_public
+                      "
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="true">Yes</mat-option>
+                      <mat-option [value]="false">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-select
+                      [(ngModel)]="eachValue.frequency_of_review_by_board"
+                    >
+                      <mat-option [value]="''">Select</mat-option>
+                      <mat-option [value]="'Annually'">Annually</mat-option>
+                      <mat-option [value]="'Half yearly'"
+                        >Half yearly</mat-option
+                      >
+                      <mat-option [value]="'Quarterly'">Quarterly</mat-option>
+                      <mat-option [value]="'Others'">Others</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <input
+                      [(ngModel)]="eachValue.web_link"
+                      (keypress)="_utilities.textLimit($event, 500)"
+                      (blur)="_utilities.trimExtra($event, 500)"
+                      matInput
+                    />
+                  </mat-form-field>
+                </td>
+                <td style="width: 10%">
+                  <button
+                    class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                    type="button"
+                    (click)="removeField(2, i)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+      <!-- Divider -->
+      <div class="mt-11 mb-4 border-t"></div>
+      <!-- Actions -->
+    </div>
+  </div>
+</div>

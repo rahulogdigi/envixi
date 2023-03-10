@@ -1,0 +1,2652 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 5:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <label style="font-weight: bold"
+      >1. Employees and workers who have been provided training on human rights
+      issues and policy(ies) of the entity, in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Total<br />(A)</th>
+          <th>No. of employees / workers covered (B)</th>
+          <th>% (B / A)</th>
+          <th>Total (C)</th>
+          <th>No. of employees / workers covered (D)</th>
+          <th>% (D / C)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7">
+            <b>Employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.permanent?.total_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.permanent?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.permanent
+                  ?.no_of_employees_or_workers_b >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.permanent
+                      ?.no_of_employees_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.permanent
+                  ?.percentage_b_divided_by_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.permanent
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.permanent?.total_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.permanent?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.permanent
+                  ?.no_of_employees_or_workers_d >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.permanent
+                      ?.no_of_employees_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.permanent
+                  ?.percentage_d_divided_by_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.permanent
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than permanent</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.other_permanent
+                  ?.total_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.other_permanent
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.other_permanent
+                  ?.no_of_employees_or_workers_b >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.other_permanent
+                      ?.no_of_employees_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.other_permanent
+                  ?.percentage_b_divided_by_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.other_permanent
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.other_permanent
+                  ?.total_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.other_permanent
+                      ?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.other_permanent
+                  ?.no_of_employees_or_workers_d >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.other_permanent
+                      ?.no_of_employees_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.other_permanent
+                  ?.percentage_d_divided_by_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.other_permanent
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.total_employees
+                  ?.total_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.total_employees
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.total_employees
+                  ?.no_of_employees_or_workers_b >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.total_employees
+                      ?.no_of_employees_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.employees?.total_employees
+                  ?.percentage_b_divided_by_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.employees?.total_employees
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.total_employees
+                  ?.total_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.total_employees
+                      ?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.total_employees
+                  ?.no_of_employees_or_workers_d >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.total_employees
+                      ?.no_of_employees_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.employees?.total_employees
+                  ?.percentage_d_divided_by_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.employees?.total_employees
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7">
+            <b>Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.permanent?.total_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.permanent?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.permanent
+                  ?.no_of_employees_or_workers_b >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.permanent
+                      ?.no_of_employees_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.permanent
+                  ?.percentage_b_divided_by_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.permanent
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.permanent?.total_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.permanent?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.permanent
+                  ?.no_of_employees_or_workers_d >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.permanent
+                      ?.no_of_employees_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.permanent
+                  ?.percentage_d_divided_by_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.permanent
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than permanent</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.other_permanent?.total_a >=
+                0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.other_permanent
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.other_permanent
+                  ?.no_of_employees_or_workers_b >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.other_permanent
+                      ?.no_of_employees_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.other_permanent
+                  ?.percentage_b_divided_by_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.other_permanent
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.other_permanent
+                  ?.total_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.other_permanent
+                      ?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.other_permanent
+                  ?.no_of_employees_or_workers_d >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.other_permanent
+                      ?.no_of_employees_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.other_permanent
+                  ?.percentage_d_divided_by_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.other_permanent
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.total_workers?.total_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.total_workers?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.total_workers
+                  ?.no_of_employees_or_workers_b >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.total_workers
+                      ?.no_of_employees_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.current_financial_year?.workers?.total_workers
+                  ?.percentage_b_divided_by_a >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.current_financial_year?.workers?.total_workers
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.total_workers?.total_c >=
+                0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.total_workers?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.total_workers
+                  ?.no_of_employees_or_workers_d >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.total_workers
+                      ?.no_of_employees_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                employees_and_workers_who_have_been_provided_training_on_human_rights
+                  ?.previous_financial_year?.workers?.total_workers
+                  ?.percentage_d_divided_by_c >= 0
+                  ? employees_and_workers_who_have_been_provided_training_on_human_rights
+                      ?.previous_financial_year?.workers?.total_workers
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >2. Details of minimum wages paid to employees and workers, in the
+      following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="3">Category</th>
+          <th colspan="5">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th rowspan="2">Total<br />(A)</th>
+          <th colspan="2">Equal to Minimum Wage</th>
+          <th colspan="2">More Than Minimum Wage</th>
+        </tr>
+        <tr class="sub-sub-header">
+          <th>Number(B)</th>
+          <th>%(B / A)</th>
+          <th>Number(C)</th>
+          <th>%(C / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6">
+            <b>Employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_male
+                  ?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_male
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_male
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_male
+                      ?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_male
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_male
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_male
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_male
+                      ?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_male
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_male
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_female
+                  ?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_female
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_female
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_female
+                      ?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_female
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_female
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_female
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_female
+                      ?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.permanent_female
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees?.permanent_female
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.other_than_permanent_male
+                  ?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_male?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_male
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_male?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_male
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees
+                  ?.other_than_permanent_female?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees
+                  ?.other_than_permanent_female?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_female?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees
+                  ?.other_than_permanent_female
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_female
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees
+                  ?.other_than_permanent_female?.more_than_minimum_wage_no_c >=
+                0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_female?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.employees
+                  ?.other_than_permanent_female
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.employees
+                      ?.other_than_permanent_female
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <b>Workers</b>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_male?.total_a >=
+                0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_male
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_male
+                      ?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_male
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_male
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_male
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_male
+                      ?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_male
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_male
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_female
+                  ?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_female
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_female
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_female
+                      ?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_female
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_female
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_female
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_female
+                      ?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.permanent_female
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers?.permanent_female
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_male
+                  ?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_male?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_male
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_male?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_male
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_female
+                  ?.total_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_female
+                  ?.equal_to_minimum_wage_no_b >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_female?.equal_to_minimum_wage_no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_female
+                  ?.equal_to_minimum_wage_no_b_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_female
+                      ?.equal_to_minimum_wage_no_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_female
+                  ?.more_than_minimum_wage_no_c >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_female?.more_than_minimum_wage_no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.current_financial_year?.workers?.other_than_permanent_female
+                  ?.more_than_minimum_wage_no_c_divided_by_a >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.current_financial_year?.workers
+                      ?.other_than_permanent_female
+                      ?.more_than_minimum_wage_no_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="3">Category</th>
+
+          <th colspan="5">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th rowspan="2">Total<br />(D)</th>
+          <th colspan="2">Equal to Minimum Wage</th>
+          <th colspan="2">More Than Minimum Wage</th>
+        </tr>
+        <tr class="sub-sub-header">
+          <th>Number(E)</th>
+          <th>%(E / D)</th>
+          <th>Number(F)</th>
+          <th>%(F / D)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6">
+            <b>Employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_male
+                  ?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_male
+                      ?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_male
+                  ?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_male
+                      ?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_male
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_male
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_male
+                  ?.more_than_minimum_wage_no_f >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_male
+                      ?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_male
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_male
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_female
+                  ?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_female
+                      ?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_female
+                  ?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_female
+                      ?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_female
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_female
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_female
+                  ?.more_than_minimum_wage_no_f >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_female
+                      ?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees?.permanent_female
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees?.permanent_female
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_male?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_male?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_male?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_male?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_male
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_male?.more_than_minimum_wage_no_f >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_male?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_male
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_female?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_female?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_female?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_female?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_female
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_female
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_female?.more_than_minimum_wage_no_f >=
+                0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_female?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.employees
+                  ?.other_than_permanent_female
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.employees
+                      ?.other_than_permanent_female
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <b>Workers</b>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_male?.total_d >=
+                0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_male
+                      ?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_male
+                  ?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_male
+                      ?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_male
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_male
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_male
+                  ?.more_than_minimum_wage_no_f >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_male
+                      ?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_male
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_male
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_female
+                  ?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_female
+                      ?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_female
+                  ?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_female
+                      ?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_female
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_female
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_female
+                  ?.more_than_minimum_wage_no_f >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_female
+                      ?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.permanent_female
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers?.permanent_female
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent</b></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.other_than_permanent_male
+                  ?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_male?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_male?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.other_than_permanent_male
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_male
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_f >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_male?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers?.other_than_permanent_male
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_male
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers
+                  ?.other_than_permanent_female?.total_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_female?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers
+                  ?.other_than_permanent_female?.equal_to_minimum_wage_no_e >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_female?.equal_to_minimum_wage_no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers
+                  ?.other_than_permanent_female
+                  ?.equal_to_minimum_wage_no_e_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_female
+                      ?.equal_to_minimum_wage_no_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers
+                  ?.other_than_permanent_female?.more_than_minimum_wage_no_f >=
+                0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_female?.more_than_minimum_wage_no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_minimum_wages_paid_to_employees
+                  ?.previous_financial_year?.workers
+                  ?.other_than_permanent_female
+                  ?.more_than_minimum_wage_no_f_divided_by_d >= 0
+                  ? details_of_minimum_wages_paid_to_employees
+                      ?.previous_financial_year?.workers
+                      ?.other_than_permanent_female
+                      ?.more_than_minimum_wage_no_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >3. Details of remuneration/salary/wages, in the following format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th colspan="2">Male</th>
+          <th colspan="2">Female</th>
+        </tr>
+        <tr>
+          <th>Number</th>
+          <th>Median remuneration/ salary/ wages of respective category</th>
+          <th>Number</th>
+          <th>Median remuneration/ salary/ wages of respective category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Board of Directors (BoD)</b></td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.boards_of_directors?.male?.number >= 0
+                  ? details_of_remuneration?.boards_of_directors?.male?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.boards_of_directors?.male
+                  ?.median_remuneration >= 0
+                  ? details_of_remuneration?.boards_of_directors?.male
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.boards_of_directors?.female?.number >=
+                0
+                  ? details_of_remuneration?.boards_of_directors?.female?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.boards_of_directors?.female
+                  ?.median_remuneration >= 0
+                  ? details_of_remuneration?.boards_of_directors?.female
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Key Managerial Personnel</b></td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.key_managerial?.male?.number >= 0
+                  ? details_of_remuneration?.key_managerial?.male?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.key_managerial?.male
+                  ?.median_remuneration >= 0
+                  ? details_of_remuneration?.key_managerial?.male
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.key_managerial?.female?.number >= 0
+                  ? details_of_remuneration?.key_managerial?.female?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.key_managerial?.female
+                  ?.median_remuneration >= 0
+                  ? details_of_remuneration?.key_managerial?.female
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Employees other than BoD and KMP</b></td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.other_than_bod_and_kmp?.male?.number >=
+                0
+                  ? details_of_remuneration?.other_than_bod_and_kmp?.male
+                      ?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.other_than_bod_and_kmp?.male
+                  ?.median_remuneration >= 0
+                  ? details_of_remuneration?.other_than_bod_and_kmp?.male
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.other_than_bod_and_kmp?.female
+                  ?.number >= 0
+                  ? details_of_remuneration?.other_than_bod_and_kmp?.female
+                      ?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.other_than_bod_and_kmp?.female
+                  ?.median_remuneration >= 0
+                  ? details_of_remuneration?.other_than_bod_and_kmp?.female
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Workers</b></td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.workers?.male?.number >= 0
+                  ? details_of_remuneration?.workers?.male?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.workers?.male?.median_remuneration >= 0
+                  ? details_of_remuneration?.workers?.male?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.workers?.female?.number >= 0
+                  ? details_of_remuneration?.workers?.female?.number
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_remuneration?.workers?.female?.median_remuneration >=
+                0
+                  ? details_of_remuneration?.workers?.female
+                      ?.median_remuneration
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >4. Do you have a focal point (Individual/ Committee) responsible for
+      addressing human rights impacts or issues caused or contributed to by the
+      business?</label
+    >
+    <p>
+      {{
+        do_you_have_a_focal_point_individual_or_committee_responsible_for_addressing_human_rights_impacts_or_issues_caused_or_contributed_to_by_the_business ==
+        false
+          ? "No"
+          : do_you_have_a_focal_point_individual_or_committee_responsible_for_addressing_human_rights_impacts_or_issues_caused_or_contributed_to_by_the_business
+          ? "Yes"
+          : "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >5. Describe the internal mechanisms in place to redress grievances
+      related to human rights issues.</label
+    >
+    <p>
+      {{
+        describe_the_internal_mechanisms_in_place_to_redress_grievances || "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >6. Number of Complaints on the following made by employees and
+      workers:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Filed during the year</th>
+          <th>Pending resolution at the end of year</th>
+          <th>Remarks</th>
+          <th>Filed during the year</th>
+          <th>Pending resolution at the end of year</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Sexual Harassment</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.sexual_harassment
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.current_financial_year
+                      ?.sexual_harassment?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.sexual_harassment
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.current_financial_year
+                      ?.sexual_harassment?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.sexual_harassment
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.sexual_harassment
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.previous_financial_year
+                      ?.sexual_harassment?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.sexual_harassment
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.previous_financial_year
+                      ?.sexual_harassment?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.sexual_harassment
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Discrimination at workplace</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year
+                  ?.discrimination_at_workplace?.filed_during_the_year >= 0
+                  ? number_of_complaints.current_financial_year
+                      ?.discrimination_at_workplace?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year
+                  ?.discrimination_at_workplace
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.current_financial_year
+                      ?.discrimination_at_workplace
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year
+                  ?.discrimination_at_workplace?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year
+                  ?.discrimination_at_workplace?.filed_during_the_year >= 0
+                  ? number_of_complaints.previous_financial_year
+                      ?.discrimination_at_workplace?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year
+                  ?.discrimination_at_workplace
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.previous_financial_year
+                      ?.discrimination_at_workplace
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year
+                  ?.discrimination_at_workplace?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Child Labour</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.child_labour
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.current_financial_year?.child_labour
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.child_labour
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.current_financial_year?.child_labour
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.child_labour
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.child_labour
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.previous_financial_year?.child_labour
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.child_labour
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.previous_financial_year?.child_labour
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.child_labour
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Forced Labour/Involuntary Labour</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.forced_labour
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.current_financial_year?.forced_labour
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.forced_labour
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.current_financial_year?.forced_labour
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.forced_labour
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.forced_labour
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.previous_financial_year?.forced_labour
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.forced_labour
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.previous_financial_year?.forced_labour
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.forced_labour
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Wages</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.wages
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.current_financial_year?.wages
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.wages
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.current_financial_year?.wages
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year?.wages?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.wages
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints.previous_financial_year?.wages
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.wages
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.previous_financial_year?.wages
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year?.wages?.remarks ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other human rights related issues</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year
+                  ?.others_human_rights_related_issued?.filed_during_the_year >=
+                0
+                  ? number_of_complaints.current_financial_year
+                      ?.others_human_rights_related_issued
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year
+                  ?.others_human_rights_related_issued
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.current_financial_year
+                      ?.others_human_rights_related_issued
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.current_financial_year
+                  ?.others_human_rights_related_issued?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year
+                  ?.others_human_rights_related_issued?.filed_during_the_year >=
+                0
+                  ? number_of_complaints.previous_financial_year
+                      ?.others_human_rights_related_issued
+                      ?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year
+                  ?.others_human_rights_related_issued
+                  ?.pending_resolution_at_the_end_of_year >= 0
+                  ? number_of_complaints.previous_financial_year
+                      ?.others_human_rights_related_issued
+                      ?.pending_resolution_at_the_end_of_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints.previous_financial_year
+                  ?.others_human_rights_related_issued?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >7. Mechanisms to prevent adverse consequences to the complainant in
+      discrimination and harassment cases.</label
+    >
+    <p>
+      {{
+        mechanisms_to_prevent_adverse_consequences_to_the_complainant_in_discrimination_and_harassment_cases ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >8. Do human rights requirements form part of your business agreements and
+      contracts?</label
+    >
+    <p>
+      {{
+        do_human_rights_requirements_form_part_of_your_business_agreements_and_contracts ==
+        false
+          ? "No"
+          : do_human_rights_requirements_form_part_of_your_business_agreements_and_contracts
+          ? "Yes"
+          : "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">9. Assessments for the year:</label>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            % of your plants and offices that were assessed<br />
+            (by entity or statutory authorities or third parties)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Child labour</b></td>
+          <td>
+            <p>
+              {{
+                assessments_for_the_year?.child_labour_percentage_of_your_plants_and_offices >=
+                0
+                  ? assessments_for_the_year?.child_labour_percentage_of_your_plants_and_offices
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Forced/involuntary labour</b></td>
+          <td>
+            <p>
+              {{
+                assessments_for_the_year?.involuntary_labour_percentage_of_your_plants_and_offices >=
+                0
+                  ? assessments_for_the_year?.involuntary_labour_percentage_of_your_plants_and_offices
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Sexual harassment</b></td>
+          <td>
+            <p>
+              {{
+                assessments_for_the_year?.sexual_harassment_percentage_of_your_plants_and_offices >=
+                0
+                  ? assessments_for_the_year?.sexual_harassment_percentage_of_your_plants_and_offices
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Discrimination at workplace</b></td>
+          <td>
+            <p>
+              {{
+                assessments_for_the_year?.discrimination_at_workplace_percentage_of_your_plants_and_offices >=
+                0
+                  ? assessments_for_the_year?.discrimination_at_workplace_percentage_of_your_plants_and_offices
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Wages</b></td>
+          <td>
+            <p>
+              {{
+                assessments_for_the_year?.wages_percentage_of_your_plants_and_offices >=
+                0
+                  ? assessments_for_the_year?.wages_percentage_of_your_plants_and_offices
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Others – please specify</b></td>
+          <td>
+            <p>
+              {{
+                assessments_for_the_year?.others_percentage_of_your_plants_and_offices >=
+                0
+                  ? assessments_for_the_year?.others_percentage_of_your_plants_and_offices
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >10. Provide details of any corrective actions taken or underway to
+      address significant risks / concerns arising from the assessments at
+      Question 9 above.</label
+    >
+    <p>
+      {{ provide_details_of_any_corrective_actions_taken || "--" }}
+    </p>
+    <hr />
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold"
+      >1. Details of a business process being modified / introduced as a result
+      of addressing human rights grievances/complaints.</label
+    >
+    <p>
+      {{ details_of_a_business_process_being_modified || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >2. Details of the scope and coverage of any Human rights due-diligence
+      conducted.</label
+    >
+    <p>
+      {{
+        details_of_the_scope_and_coverage_of_any_human_rights_due_diligence_conducted ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >3. Is the premise/office of the entity accessible to differently abled
+      visitors, as per the requirements of the Rights of Persons with
+      Disabilities Act, 2016?</label
+    >
+    <p>
+      {{
+        is_the_premise_or_office_of_the_entity_accessible_to_differently_abled_visitors ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >4. Details on assessment of value chain partners:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            % of value chain partners <br />
+            (by value of business done with such partners) that were assessed
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Sexual Harassment</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners?.sexual_harassment_percentage_of_value_chain_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners?.sexual_harassment_percentage_of_value_chain_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Discrimination at workplace</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners?.discrimination_at_workplace_percentage_of_value_chain_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners?.discrimination_at_workplace_percentage_of_value_chain_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Child Labour</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners?.child_labour_percentage_of_value_chain_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners?.child_labour_percentage_of_value_chain_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Forced Labour/Involuntary Labour</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners?.involuntary_labour_percentage_of_value_chain_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners?.involuntary_labour_percentage_of_value_chain_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Wages</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners?.wages_percentage_of_value_chain_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners?.wages_percentage_of_value_chain_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Others – please specify</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners?.others_percentage_of_value_chain_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners?.others_percentage_of_value_chain_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >5. Provide details of any corrective actions taken or underway to address
+      significant risks / concerns arising from the assessments at Question 4
+      above.</label
+    >
+    <p>
+      {{ provide_details_of_any_corrective_actions_taken_1 || "--" }}
+    </p>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.dowload_file {
+  visibility: hidden;
+}
+.mat-form-field.mat-form-field-appearance-fill {
+  width: 100% !important;
+}
+.error {
+  color: red;
+  margin-top: -10px;
+}
+.example-month-picker .mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.example-month-picker .mat-calendar-arrow {
+  display: none;
+}
+.scollable-container {
+  position: relative;
+  overflow-x: scroll;
+}
+.en-alert {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  z-index: 99;
+}

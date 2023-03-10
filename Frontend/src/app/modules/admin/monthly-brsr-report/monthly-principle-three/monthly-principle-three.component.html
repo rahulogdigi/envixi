@@ -1,0 +1,64 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 3
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="scollable-container">
+        <h4><u>Essential Indicators</u></h4>
+        <app-principle-iii-one-to-three
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-one-to-three>
+        <app-principle-iii-four-to-six
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-four-to-six>
+        <app-principle-iii-seven-to-nine
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-seven-to-nine>
+        <app-principle-iii-ten-to-twelve
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-ten-to-twelve>
+        <app-principle-iii-thirteen-to-fifteen
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-thirteen-to-fifteen>
+        <h4><u>Leadership Indicators</u></h4>
+        <app-principle-iii-leaderhip-indicator
+          [response]="response"
+          (_emitter)="callBackFunction($event)"
+        ></app-principle-iii-leaderhip-indicator>
+      </div>
+    </div>
+  </div>
+</div>

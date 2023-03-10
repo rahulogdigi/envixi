@@ -1,0 +1,821 @@
+<div class="w-full">
+  <!-- Form -->
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 1:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <p>
+      1. Percentage coverage by training and awareness programmes on any of the
+      Principles during the financial year:
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th style="min-width: 250px">Segment</th>
+          <th>Total number of training awareness programmes held and</th>
+          <th>Topics / principles covered under the training and its impact</th>
+          <th>
+            %age of persons in respective category covered by the awareness
+            programmes
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>Board of Directors</p></td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.segment_board_of_director
+                  ?.total_number_of_training >= 0
+                  ? principles_during_the_financial_year
+                      ?.segment_board_of_director?.total_number_of_training
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.segment_board_of_director
+                  ?.topics >= 0
+                  ? principles_during_the_financial_year
+                      ?.segment_board_of_director?.topics
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.segment_board_of_director
+                  ?.percentage_of_person >= 0
+                  ? principles_during_the_financial_year
+                      ?.segment_board_of_director?.percentage_of_person
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Key Managerial Personnel</p></td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.key_managerial_personnel
+                  ?.total_number_of_training >= 0
+                  ? principles_during_the_financial_year
+                      ?.key_managerial_personnel?.total_number_of_training
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.key_managerial_personnel
+                  ?.topics >= 0
+                  ? principles_during_the_financial_year
+                      ?.key_managerial_personnel?.topics
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.key_managerial_personnel
+                  ?.percentage_of_person >= 0
+                  ? principles_during_the_financial_year
+                      ?.key_managerial_personnel?.percentage_of_person
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Employees other than BoD and KMPs</p></td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year
+                  ?.employees_other_than_bod_and_kmps
+                  ?.total_number_of_training >= 0
+                  ? principles_during_the_financial_year
+                      ?.employees_other_than_bod_and_kmps
+                      ?.total_number_of_training
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year
+                  ?.employees_other_than_bod_and_kmps?.topics >= 0
+                  ? principles_during_the_financial_year
+                      ?.employees_other_than_bod_and_kmps?.topics
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year
+                  ?.employees_other_than_bod_and_kmps?.percentage_of_person >= 0
+                  ? principles_during_the_financial_year
+                      ?.employees_other_than_bod_and_kmps?.percentage_of_person
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Workers</p></td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.workers
+                  ?.total_number_of_training >= 0
+                  ? principles_during_the_financial_year?.workers
+                      ?.total_number_of_training
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.workers?.topics >= 0
+                  ? principles_during_the_financial_year?.workers?.topics
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                principles_during_the_financial_year?.workers
+                  ?.percentage_of_person >= 0
+                  ? principles_during_the_financial_year?.workers
+                      ?.percentage_of_person
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      2. Details of fines / penalties /punishment/ award/ compounding fees/
+      settlement amount paid in proceedings (by the entity or by directors /
+      KMPs) with regulators/ law enforcement agencies/ judicial institutions, in
+      the financial year, in the following format (Note: the entity shall make
+      disclosures on the basis of materiality as specified in Regulation 30 of
+      SEBI (Listing Obligations and Disclosure Obligations) Regulations, 2015
+      and as disclosed on the entity’s website):
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>NGRBC Principle</th>
+          <th>
+            Name of the regulatory/ enforcement agencies/ judicial institutions
+          </th>
+          <th>Amount (In INR)</th>
+          <th>Brief of the Case</th>
+          <th>Has an appeal been preferred? (Yes/No)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>Penalty/ Fine</p></td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.penality
+                  ?.ngrbc_principal || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.penality
+                  ?.name_of_the_regulatory || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.penality?.amount_in_inr >=
+                0
+                  ? details_of_fines_penalties?.monetary?.penality
+                      ?.amount_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary.penality
+                  ?.brief_of_the_case || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.penality
+                  ?.has_an_appeal_been_preferred
+                  ? "Yes"
+                  : details_of_fines_penalties?.monetary?.penality
+                      ?.has_an_appeal_been_preferred === false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Settlement</p></td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.settlement
+                  ?.ngrbc_principal || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.settlement
+                  ?.name_of_the_regulatory || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.settlement
+                  ?.amount_in_inr >= 0
+                  ? details_of_fines_penalties?.monetary?.settlement
+                      ?.amount_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary.settlement
+                  ?.brief_of_the_case || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.settlement
+                  ?.has_an_appeal_been_preferred
+                  ? "Yes"
+                  : details_of_fines_penalties?.monetary?.settlement
+                      ?.has_an_appeal_been_preferred === false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Compounding fee</p></td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.compounding_fee
+                  ?.ngrbc_principal || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.compounding_fee
+                  ?.name_of_the_regulatory || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.compounding_fee
+                  ?.amount_in_inr >= 0
+                  ? details_of_fines_penalties?.monetary?.compounding_fee
+                      ?.amount_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary.compounding_fee
+                  ?.brief_of_the_case || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.monetary?.compounding_fee
+                  ?.has_an_appeal_been_preferred
+                  ? "Yes"
+                  : details_of_fines_penalties?.monetary?.compounding_fee
+                      ?.has_an_appeal_been_preferred === false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6">Non-Monetary</td>
+        </tr>
+        <tr>
+          <td><p>Compounding fee</p></td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.imprisonment
+                  ?.ngrbc_principal || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.imprisonment
+                  ?.name_of_the_regulatory || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.imprisonment
+                  ?.amount_in_inr >= 0
+                  ? details_of_fines_penalties?.non_monetary?.imprisonment
+                      ?.amount_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.imprisonment
+                  ?.brief_of_the_case || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.imprisonment
+                  ?.has_an_appeal_been_preferred
+                  ? "Yes"
+                  : details_of_fines_penalties?.non_monetary?.imprisonment
+                      ?.has_an_appeal_been_preferred === false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Punishment</p></td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.punishment
+                  ?.ngrbc_principal || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.punishment
+                  ?.name_of_the_regulatory || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.punishment
+                  ?.amount_in_inr >= 0
+                  ? details_of_fines_penalties?.non_monetary?.punishment
+                      ?.amount_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.punishment
+                  ?.brief_of_the_case || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_fines_penalties?.non_monetary?.punishment
+                  ?.has_an_appeal_been_preferred
+                  ? "Yes"
+                  : details_of_fines_penalties?.non_monetary?.punishment
+                      ?.has_an_appeal_been_preferred === false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      3. Of the instances disclosed in Question 2 above, details of the Appeal/
+      Revision preferred in cases where monetary or non-monetary action has been
+      appealed.
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Case Details</th>
+          <th>
+            Name of the regulatory/ enforcement agencies/ judicial institutions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="
+            let eachValue of monetary_or_non_monetary_action_appealed;
+            let i = index
+          "
+        >
+          <tr>
+            <td>
+              <p>{{ eachValue?.case_details || "--" }}</p>
+            </td>
+            <td>
+              <p>{{ eachValue?.judicial_institutions || "--" }}</p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <label style="font-weight: bold"
+      >4. Does the entity have an anti-corruption or anti-bribery policy? If
+      yes, provide details in brief and if available, provide a web-link to the
+      policy.</label
+    >
+    <p style="font-size: 14px">
+      {{ anti_corruption_or_anti_bribery_policy || "--" }}
+    </p>
+    <ng-container
+      *ngIf="
+        anti_corruption_or_anti_bribery_policy &&
+        anti_corruption_or_anti_bribery_policy != 'No'
+      "
+    >
+      <label style="font-weight: bold">Web Link</label>
+      <p style="font-size: 14px">{{ web_link_to_the_policy || "--" }}</p>
+    </ng-container>
+    <p>
+      5. Number of Directors/KMPs/employees/workers against whom disciplinary
+      action was taken by any law enforcement agency for the charges of bribery/
+      corruption:
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            FY
+            {{ number_of_directors?.current_financial_yr?.year }}<br />
+            (Current Financial Year)
+          </th>
+          <th>
+            FY
+            {{ number_of_directors?.previous_financial_yr?.year }}<br />
+            (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p>Directors</p></td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.current_financial_yr?.directors >= 0
+                  ? number_of_directors.current_financial_yr.directors
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.previous_financial_yr?.directors >= 0
+                  ? number_of_directors.current_financial_yr.directors
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>KMPs</p></td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.current_financial_yr?.kmps >= 0
+                  ? number_of_directors.current_financial_yr.kmps
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.previous_financial_yr?.kmps >= 0
+                  ? number_of_directors.current_financial_yr.kmps
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Employees</p></td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.current_financial_yr?.employees >= 0
+                  ? number_of_directors.current_financial_yr.employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.previous_financial_yr?.employees >= 0
+                  ? number_of_directors.current_financial_yr.employees
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><p>Workers</p></td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.current_financial_yr?.workers >= 0
+                  ? number_of_directors.current_financial_yr.workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_directors?.previous_financial_yr?.workers >= 0
+                  ? number_of_directors.current_financial_yr.workers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>6. Details of complaints with regard to conflict of interest:</p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="2">
+            FY
+            {{ details_of_complaints.current_financial_yr.year }}<br />
+            (Current Financial Year)
+          </th>
+          <th colspan="2">
+            FY
+            {{ details_of_complaints.previous_financial_yr.year }}<br />
+            (Previous Financial Year)
+          </th>
+        </tr>
+        <tr>
+          <th>Number</th>
+          <th>Remarks</th>
+          <th>Number</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>
+              Number of complaints received in relation to issues of Conflict of
+              Interest of the Directors
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.current_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                  ?.numbers >= 0
+                  ? details_of_complaints?.current_financial_yr
+                      ?.number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                      ?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.current_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.previous_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                  ?.numbers >= 0
+                  ? details_of_complaints?.previous_financial_yr
+                      ?.number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                      ?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.previous_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_directors
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              Number of complaints received in relation to issues of Conflict of
+              Interest of the KMPs
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.current_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                  ?.numbers >= 0
+                  ? details_of_complaints?.current_financial_yr
+                      ?.number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                      ?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.current_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.previous_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                  ?.numbers >= 0
+                  ? details_of_complaints?.previous_financial_yr
+                      ?.number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                      ?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_complaints?.previous_financial_yr
+                  ?.number_of_complaints_received_of_conflict_of_interes_of_the_kmps
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label style="font-weight: bold"
+      >7. Provide details of any corrective action taken or underway on issues
+      related to fines / penalties / action taken by regulators/ law enforcement
+      agencies/ judicial institutions, on cases of corruption and conflicts of
+      interest.</label
+    >
+    <p style="font-size: 14px">
+      {{
+        provide_details_of_any_corrective_action_taken_or_underway_on_issues_related_to_fines ||
+          "--"
+      }}
+    </p>
+
+    <h6><u>Leadership Indicators</u></h6>
+    <p>
+      1. Awareness programmes conducted for value chain partners on any of the
+      Principles during the financial year:
+    </p>
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Total number of awareness programmes held</th>
+          <th>Topics / principles covered under the training</th>
+          <th>
+            %age of value chain partners covered (by value of business done with
+            such partners) under the awareness programmes
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="
+            let eachValue of awareness_programmes_conducted;
+            let i = index
+          "
+        >
+          <tr>
+            <td>
+              <p>
+                {{
+                  eachValue?.total_number_of_awareness_programmes_held >= 0
+                    ? eachValue.total_number_of_awareness_programmes_held
+                    : "--"
+                }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{ eachValue?.principles_covered_under_the_training || "--" }}
+              </p>
+            </td>
+            <td>
+              <p>
+                {{
+                  eachValue?.percetage_of_age >= 0
+                    ? eachValue.percetage_of_age
+                    : "--"
+                }}
+              </p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+    <label style="font-weight: bold">
+      2. Does the entity have processes in place to avoid/ manage conflict of
+      interests involving members of the Board? (Yes/No) If Yes, provide details
+      of the same.</label
+    >
+    <p style="font-size: 14px">
+      {{
+        manage_conflict_of_interests_involving_members_of_the_board == "No"
+          ? "No"
+          : manage_conflict_of_interests_involving_members_of_the_board
+          ? manage_conflict_of_interests_involving_members_of_the_board
+          : "--"
+      }}
+    </p>
+  </div>
+</div>

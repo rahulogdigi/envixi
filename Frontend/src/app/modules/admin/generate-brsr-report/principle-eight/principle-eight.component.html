@@ -1,0 +1,453 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div style="width: 100%">
+    <!-- Title -->
+    <h6><u>Principle 8:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Details of Social Impact Assessments (SIA) of projects undertaken by
+      the entity based on applicable laws, in the current financial year.</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Name and brief details of project</th>
+          <th>SIA Notification No.</th>
+          <th>Date of notification</th>
+          <th>Whether conducted by independent external agency (Yes / No)</th>
+          <th>Results communicated in public domain (Yes / No)</th>
+          <th>Relevant Web link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eachValue of sia; let i = index">
+          <td>
+            <p>{{ eachValue?.name_and_breif_details_of_project || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.sia_notification_no || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.date_of_notofication || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.whether_conducted_by_independent_external_agency ==
+                true
+                  ? "Yes"
+                  : eachValue?.whether_conducted_by_independent_external_agency ==
+                    false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.results_communicated_in_public_domain == true
+                  ? "Yes"
+                  : eachValue?.results_communicated_in_public_domain == false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ eachValue?.weh_url || "--" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      2. Provide information on project(s) for which ongoing Rehabilitation and
+      Resettlement (R&R) is being undertaken by your entity, in the following
+      format:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Name of Project for which R&R is ongoing</th>
+          <th>State</th>
+          <th>District</th>
+          <th>No. of Project Affected Families (PAFs)</th>
+          <th>% of PAFs covered by R&R</th>
+          <th>Amounts paid to PAFs in the FY (In INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eachValue of r_and_r; let i = index">
+          <td>
+            <p>
+              {{
+                eachValue?.name_of_project_for_which_r_and_r_is_going || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>{{ eachValue?.state || "--" }}</p>
+          </td>
+          <td>
+            <p>{{ eachValue?.district || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.no_of_project_affected >= 0
+                  ? eachValue?.no_of_project_affected
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.percentage_of_pafs >= 0
+                  ? eachValue?.percentage_of_pafs
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.amounts_paid_to_pafs_in_inr >= 0
+                  ? eachValue?.amounts_paid_to_pafs_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      3. Describe the mechanisms to receive and redress grievances of the
+      community.</label
+    >
+    <p>
+      {{
+        describe_the_mechanisms_to_receive_and_redress_grievances_of_the_community ||
+          "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold">
+      4. Percentage of input material (inputs to total inputs by value) sourced
+      from suppliers:</label
+    >
+
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+        <tr>
+          <td>Directly sourced from MSMEs/ small producers</td>
+          <td>
+            <p>
+              {{
+                percentage_of_input_material?.current_financial_year
+                  ?.directly_sourced_from_msmes >= 0
+                  ? percentage_of_input_material?.current_financial_year
+                      ?.directly_sourced_from_msmes
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_input_material?.previous_financial_year
+                  ?.directly_sourced_from_msmes >= 0
+                  ? percentage_of_input_material?.previous_financial_year
+                      ?.directly_sourced_from_msmes
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Sourced directly from within the district and neighbouring districts
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_input_material?.current_financial_year
+                  ?.sourced_directly_from_within_the_district_and_neighbouring_districts >=
+                0
+                  ? percentage_of_input_material?.current_financial_year
+                      ?.sourced_directly_from_within_the_district_and_neighbouring_districts
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_input_material?.previous_financial_year
+                  ?.sourced_directly_from_within_the_district_and_neighbouring_districts >=
+                0
+                  ? percentage_of_input_material?.previous_financial_year
+                      ?.sourced_directly_from_within_the_district_and_neighbouring_districts
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold">
+      1. Provide details of actions taken to mitigate any negative social
+      impacts identified in the Social Impact Assessments (Reference: Question 1
+      of Essential Indicators above):</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Details of negative social impact identified</th>
+          <th>Corrective action taken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of provide_details_of_actions_taken_to_mitigate;
+            let i = index
+          "
+        >
+          <td>
+            <p>
+              {{
+                eachValue?.details_of_negative_social_impact_identified || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>{{ eachValue?.corrective_action_taken || "--" }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      2. Provide the following information on CSR projects undertaken by your
+      entity in designated aspirational districts as identified by government
+      bodies:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Aspirational District</th>
+          <th>Amount spent (In INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of provide_the_following_information_on_csr_projects;
+            let i = index
+          "
+        >
+          <td>
+            <p>
+              {{ eachValue?.state || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>{{ eachValue?.aspirational_district || "--" }}</p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.amount_spent_in_inr >= 0
+                  ? eachValue?.amount_spent_in_inr
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      3. Do you have a preferential procurement policy where you give preference
+      to purchase from suppliers comprising marginalized /vulnerable
+      groups?</label
+    >
+    <p>{{ three_a == true ? "Yes" : three_a == false ? "No" : "--" }}</p>
+    <label style="font-weight: bold">
+      From which marginalized /vulnerable groups do you procure?</label
+    >
+    <p>{{ three_b || "--" }}</p>
+    <label style="font-weight: bold">
+      What percentage of total procurement (by value) does it constitute?</label
+    >
+    <p>{{ three_c || "--" }}</p>
+    <hr />
+    <label style="font-weight: bold">
+      4. Details of the benefits derived and shared from the intellectual
+      properties owned or acquired by your entity (in the current financial
+      year), based on traditional knowledge:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Intellectual Property based on traditional knowledge</th>
+          <th>Owned/ Acquired (Yes/No)</th>
+          <th>Benefit shared (Yes / No)</th>
+          <th>Basis of calculating benefit share</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of details_of_the_benefits_derived_and_shared_from_the_intellectual_properties;
+            let i = index
+          "
+        >
+          <td>
+            <p>
+              {{
+                eachValue?.intellectual_property_based_on_traditional_knowledge ||
+                  "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.owned_acquired == true
+                  ? "Yes"
+                  : eachValue?.owned_acquired == false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.benefit_shared == true
+                  ? "Yes"
+                  : eachValue?.benefit_shared == false
+                  ? "No"
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ eachValue?.basis_of_calculating_benefit_share || "--" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      5. Details of corrective actions taken or underway, based on any adverse
+      order in intellectual property related disputes wherein usage of
+      traditional knowledge is involved.</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Name of authority</th>
+          <th>Brief of the Case</th>
+          <th>Corrective action taken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of details_of_corrective_actions_taken_or_underway_based_on_any_adverse;
+            let i = index
+          "
+        >
+          <td>
+            <p>
+              {{ eachValue?.name_of_authority || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ eachValue?.brief_of_the_case || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{ eachValue?.corrective_action_taken || "--" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold">
+      6. Details of beneficiaries of CSR Projects:</label
+    >
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>CSR Project</th>
+          <th>No. of persons benefitted from CSR Projects</th>
+          <th>% of beneficiaries from vulnerable and marginalized groups</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let eachValue of details_of_beneficiaries_of_csr_projects;
+            let i = index
+          "
+        >
+          <td>
+            <p>
+              {{ eachValue?.csr_project || "--" }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.no_of_persons_benefitted_from_csr_project >= 0
+                  ? eachValue?.no_of_persons_benefitted_from_csr_project
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                eachValue?.percentage_of_beneficiaries_from_vulnerable_and_marginalized_groups >=
+                0
+                  ? eachValue?.percentage_of_beneficiaries_from_vulnerable_and_marginalized_groups
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

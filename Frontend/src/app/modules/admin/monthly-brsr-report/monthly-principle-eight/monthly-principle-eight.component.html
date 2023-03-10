@@ -1,0 +1,945 @@
+<div class="flex flex-col flex-auto min-w-0">
+  <!-- Header -->
+  <div
+    class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent"
+  >
+    <div class="flex-1 min-w-0">
+      <div class="en-alert" *ngIf="showAlert">
+        <fuse-alert
+          class="mt-8 -mb-4"
+          [appearance]="'outline'"
+          [showIcon]="false"
+          [dismissed]="false"
+          [type]="alert.type"
+          [name]="'alert_message'"
+        >
+          {{ alert.message }}
+        </fuse-alert>
+      </div>
+
+      <!-- Title -->
+      <div class="mt-2">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+        >
+          PRINCIPLE 8
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="w-full">
+      <div class="scollable-container">
+        <h4><u>Essential Indicators</u></h4>
+
+        <p class="header-p mt-4 mb-4">
+          1. Details of Social Impact Assessments (SIA) of projects undertaken
+          by the entity based on applicable laws, in the current financial year.
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                This disclosure shall be made, if the entity has undertaken SIA
+                in compliance with laws such as the Right to Fair Compensation
+                and Transparency in Land Acquisition, Rehabilitation and
+                Resettlement Act, 2013.
+              </div>
+            </div>
+          </span>
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(1)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Name and brief details of project</th>
+              <th>SIA Notification No.</th>
+              <th>Date of notification</th>
+              <th>
+                Whether conducted by independent external agency (Yes / No)
+              </th>
+              <th>Results communicated in public domain (Yes / No)</th>
+              <th>Relevant Web link</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let eachValue of sia; let i = index">
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <textarea
+                    matInput
+                    [(ngModel)]="eachValue.name_and_breif_details_of_project"
+                    (keypress)="_utilities.textLimit($event, 250)"
+                    (blur)="_utilities.trimExtra($event, 250)"
+                    matInput
+                    cdkTextareaAutosize
+                    [cdkAutosizeMinRows]="5"
+                  ></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.sia_notification_no"
+                    (keypress)="_utilities.textLimit($event, 25)"
+                    (blur)="_utilities.trimExtra($event, 25)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.date_of_notofication"
+                    (keypress)="_utilities.textLimit($event, 25)"
+                    (blur)="_utilities.trimExtra($event, 25)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <mat-select
+                    [(ngModel)]="
+                      eachValue.whether_conducted_by_independent_external_agency
+                    "
+                  >
+                    <mat-option [value]="''">Select</mat-option>
+                    <mat-option [value]="true">Yes</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <mat-select
+                    [(ngModel)]="
+                      eachValue.results_communicated_in_public_domain
+                    "
+                  >
+                    <mat-option [value]="''">Select</mat-option>
+                    <mat-option [value]="true">Yes</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.weh_url"
+                    (keypress)="_utilities.textLimit($event, 250)"
+                    (blur)="_utilities.trimExtra($event, 250)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(1, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          2. Provide information on project(s) for which ongoing Rehabilitation
+          and Resettlement (R&R) is being undertaken by your entity, in the
+          following format:
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(2)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Name of Project for which R&R is ongoing</th>
+              <th>State</th>
+              <th>District</th>
+              <th>No. of Project Affected Families (PAFs)</th>
+              <th>% of PAFs covered by R&R</th>
+              <th>Amounts paid to PAFs in the FY (In INR)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let eachValue of r_and_r; let i = index">
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.name_of_project_for_which_r_and_r_is_going
+                    "
+                    (keypress)="_utilities.textLimit($event, 250)"
+                    (blur)="_utilities.trimExtra($event, 250)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.state"
+                    (keypress)="_utilities.textLimit($event, 50)"
+                    (blur)="_utilities.trimExtra($event, 50)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.district"
+                    (keypress)="_utilities.textLimit($event, 50)"
+                    (blur)="_utilities.trimExtra($event, 50)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.no_of_project_affected"
+                    (keypress)="_utilities.numberOnly($event, 12)"
+                    (blur)="_utilities.trimExtra($event, 12)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.percentage_of_pafs"
+                    (keypress)="_utilities.numberOnly($event, 6)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.amounts_paid_to_pafs_in_inr"
+                    (keypress)="_utilities.numberOnly($event, 12)"
+                    (blur)="_utilities.trimExtra($event, 12)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(2, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          3. Describe the mechanisms to receive and redress grievances of the
+          community.
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                Local communities are defined as persons or groups of persons
+                living and/or working in any areas that are economically,
+                socially or environmentally impacted (positively or negatively)
+                by an organization’s operations. The local community can range
+                from persons living adjacent to an organization's operations, to
+                those living at a distance who are still likely to be impacted
+                by these operations.
+              </div>
+            </div>
+          </span>
+        </p>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <textarea
+            matInput
+            [(ngModel)]="
+              describe_the_mechanisms_to_receive_and_redress_grievances_of_the_community
+            "
+            (keypress)="_utilities.textLimit($event, 5000)"
+            (blur)="_utilities.trimExtra($event, 5000)"
+            cdkTextareaAutosize
+            [cdkAutosizeMinRows]="5"
+          ></textarea>
+        </mat-form-field>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mb-4">
+          4. Percentage of input material (inputs to total inputs by value)
+          sourced from suppliers:
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                <ol>
+                  <li>
+                    Small producers mean those where the owner herself or
+                    himself is a worker and includes informal and/or producers
+                    such as self-help groups and home-based workers as well as
+                    producer-owned entities such as cooperatives, producer
+                    companies.
+                  </li>
+                  <li>
+                    MSME is defined by Ministry of MSME as:
+                    <ul>
+                      <li>
+                        Micro: Investment in Plant and Machinery or Equipment
+                        not more than Rs.1 crore and Annual Turnover not more
+                        than Rs. 5 crore
+                      </li>
+                      <li>
+                        Small: Investment in Plant and Machinery or Equipment
+                        not more than Rs.10 crore and Annual Turnover not more
+                        than Rs. 50 crore
+                      </li>
+                      <li>
+                        Medium: Investment in Plant and Machinery or Equipment
+                        not more than Rs.50 crore and Annual Turnover not more
+                        than Rs. 250 crore
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </span>
+        </p>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>
+                FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+                Year
+              </th>
+              <th>
+                FY {{ _utilities.previousFinancialYear }}<br />Previous
+                Financial Year
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Directly sourced from MSMEs/ small producers</td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      percentage_of_input_material.current_financial_year
+                        .directly_sourced_from_msmes
+                    "
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      percentage_of_input_material.previous_financial_year
+                        .directly_sourced_from_msmes
+                    "
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Sourced directly from within the district and neighbouring
+                districts
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      percentage_of_input_material.current_financial_year
+                        .sourced_directly_from_within_the_district_and_neighbouring_districts
+                    "
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      percentage_of_input_material.previous_financial_year
+                        .sourced_directly_from_within_the_district_and_neighbouring_districts
+                    "
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <h4><u>Leadership Indicators</u></h4>
+        <p class="header-p mt-4 mb-4">
+          1. Provide details of actions taken to mitigate any negative social
+          impacts identified in the Social Impact Assessments (Reference:
+          Question 1 of Essential Indicators above):
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(3)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Details of negative social impact identified</th>
+              <th>Corrective action taken</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of provide_details_of_actions_taken_to_mitigate;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <textarea
+                    matInput
+                    [(ngModel)]="
+                      eachValue.details_of_negative_social_impact_identified
+                    "
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    matInput
+                    cdkTextareaAutosize
+                    [cdkAutosizeMinRows]="5"
+                  ></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <textarea
+                    matInput
+                    [(ngModel)]="eachValue.corrective_action_taken"
+                    matInput
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    cdkTextareaAutosize
+                    [cdkAutosizeMinRows]="5"
+                  ></textarea>
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(3, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          2. Provide the following information on CSR projects undertaken by
+          your entity in designated aspirational districts as identified by
+          government bodies:
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                As per the ‘Transformation of Aspirational Districts’ programme
+                of the Government, a list of districts has been identified for
+                quick and effective transformation. For additional details,
+                refer to the following link:
+                https://niti.gov.in/about-aspirational-districts- programme
+              </div>
+            </div>
+          </span>
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(4)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Aspirational District</th>
+              <th>Amount spent (In INR)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of provide_the_following_information_on_csr_projects;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.state"
+                    (keypress)="_utilities.textLimit($event, 50)"
+                    (blur)="_utilities.trimExtra($event, 50)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.aspirational_district"
+                    (keypress)="_utilities.textLimit($event, 50)"
+                    (blur)="_utilities.trimExtra($event, 50)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.amount_spent_in_inr"
+                    (keypress)="_utilities.numberOnly($event, 15)"
+                    (blur)="_utilities.trimExtra($event, 15)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(4, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-8 mb-6 border-t"></div>
+        <div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+          <!-- Title -->
+          <div class="sm:col-span-3">
+            <label style="font-size: 16px; font-weight: 500"
+              >3. Do you have a preferential procurement policy where you give
+              preference to purchase from suppliers comprising marginalized
+              /vulnerable groups?</label
+            ><br />
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-select [(ngModel)]="three_a">
+                <mat-option [value]="''">Select</mat-option>
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="sm:col-span-3">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-label
+                >From which marginalized /vulnerable groups do you
+                procure?</mat-label
+              >
+              <input
+                [(ngModel)]="three_b"
+                (keypress)="_utilities.textLimit($event, 150)"
+                (blur)="_utilities.trimExtra($event, 150)"
+                matInput
+              />
+            </mat-form-field>
+          </div>
+          <div class="sm:col-span-3">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <mat-label
+                >What percentage of total procurement (by value) does it
+                constitute?</mat-label
+              >
+              <input
+                [(ngModel)]="three_c"
+                (keypress)="_utilities.numberOnly($event, 6)"
+                (blur)="_utilities.trimExtra($event, 6)"
+                matInput
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          4. Details of the benefits derived and shared from the intellectual
+          properties owned or acquired by your entity (in the current financial
+          year), based on traditional knowledge:
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                <p>
+                  Provide brief information of intellectual properties based on
+                  traditional knowledge owned or acquired by the business in the
+                  current Financial Year, mention Yes / No for Owned or
+                  Acquired, as the case may be. Select Yes or No as the case may
+                  be whether benefit arising out of such IPRs are shared on the
+                  lines of Access to Biological Resources and Associated
+                  Knowledge and Benefits Sharing Regulations, 2014.
+                </p>
+                <br />
+                <p>
+                  <b>Intellectual Properties</b><br />
+                  Intellectual property refers to creations of the mind: such as
+                  inventions, literary, musical and artistic works, and symbols,
+                  names, images and designs used in commerce, for which the IP
+                  owners are granted certain exclusive rights under the
+                  corresponding national IP laws. Common types of IP include
+                  patents (inventions), copyrights, trademarks, industrial
+                  designs, software, geographic indications and trade secrets,
+                  etc.
+                </p>
+                <p>
+                  <b>Traditional Knowledge</b> refers to any indigenous,
+                  technical, ecological, scientific, medical or cultural
+                  knowledge which is not necessarily documented but is in use by
+                  or generally known to communities. Typical examples include
+                  antiseptic properties of neem, turmeric, etc.
+                </p>
+                <p>
+                  Briefly outline the basis for calculating the benefits shared
+                  by the company with the “owners” of such traditional
+                  knowledge.
+                </p>
+              </div>
+            </div>
+          </span>
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(5)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Intellectual Property based on traditional knowledge</th>
+              <th>Owned/ Acquired (Yes/No)</th>
+              <th>Benefit shared (Yes / No)</th>
+              <th>Basis of calculating benefit share</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of details_of_the_benefits_derived_and_shared_from_the_intellectual_properties;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.intellectual_property_based_on_traditional_knowledge
+                    "
+                    (keypress)="_utilities.textLimit($event, 150)"
+                    (blur)="_utilities.trimExtra($event, 150)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <mat-select [(ngModel)]="eachValue.owned_acquired">
+                    <mat-option [value]="''">Select</mat-option>
+                    <mat-option [value]="true">Yes</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <mat-select [(ngModel)]="eachValue.benefit_shared">
+                    <mat-option [value]="''">Select</mat-option>
+                    <mat-option [value]="true">Yes</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.basis_of_calculating_benefit_share"
+                    (keypress)="_utilities.textLimit($event, 150)"
+                    (blur)="_utilities.trimExtra($event, 150)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(5, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          5. Details of corrective actions taken or underway, based on any
+          adverse order in intellectual property related disputes wherein usage
+          of traditional knowledge is involved.
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(6)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>Name of authority</th>
+              <th>Brief of the Case</th>
+              <th>Corrective action taken</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of details_of_corrective_actions_taken_or_underway_based_on_any_adverse;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.name_of_authority"
+                    (keypress)="_utilities.textLimit($event, 150)"
+                    (blur)="_utilities.trimExtra($event, 150)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <textarea
+                    matInput
+                    [(ngModel)]="eachValue.brief_of_the_case"
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    matInput
+                    cdkTextareaAutosize
+                    [cdkAutosizeMinRows]="5"
+                  ></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <textarea
+                    matInput
+                    [(ngModel)]="eachValue.corrective_action_taken"
+                    (keypress)="_utilities.textLimit($event, 5000)"
+                    (blur)="_utilities.trimExtra($event, 5000)"
+                    matInput
+                    cdkTextareaAutosize
+                    [cdkAutosizeMinRows]="5"
+                  ></textarea>
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(6, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Divider -->
+        <div class="mt-11 mb-4 border-t"></div>
+        <p class="header-p mt-4 mb-4">
+          6. Details of beneficiaries of CSR Projects:
+          <span class="re-tooltip">
+            <mat-icon
+              svgIcon="heroicons_solid:information-circle"
+              class="icon-size-4"
+            ></mat-icon>
+            <div class="re-tooltiptext">
+              <div class="content">
+                For each CSR Project undertaken by the company, enter:
+                <ol>
+                  <li>Total number of beneficiaries,</li>
+                  <li>
+                    Percentage of such beneficiaries belonging to marginalised
+                    groups vulnerable and
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </span>
+        </p>
+        <button
+          class="mat-focus-indicator mat-flat-button mat-button-base mat-primary mb-4 mt-4"
+          type="button"
+          (click)="addField(7)"
+        >
+          Add New Detail
+        </button>
+        <table class="en-table">
+          <thead>
+            <tr>
+              <th>CSR Project</th>
+              <th>No. of persons benefitted from CSR Projects</th>
+              <th>
+                % of beneficiaries from vulnerable and marginalized groups
+              </th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let eachValue of details_of_beneficiaries_of_csr_projects;
+                let i = index
+              "
+            >
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="eachValue.csr_project"
+                    (keypress)="_utilities.textLimit($event, 500)"
+                    (blur)="_utilities.trimExtra($event, 500)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.no_of_persons_benefitted_from_csr_project
+                    "
+                    (keypress)="_utilities.numberOnly($event, 12, true)"
+                    (blur)="_utilities.trimExtra($event, 12)"
+                    type="number"
+                    min="0"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                  <input
+                    [(ngModel)]="
+                      eachValue.percentage_of_beneficiaries_from_vulnerable_and_marginalized_groups
+                    "
+                    (keypress)="_utilities.numberOnly($event, 6)"
+                    (blur)="_utilities.trimExtra($event, 6)"
+                    matInput
+                  />
+                </mat-form-field>
+              </td>
+              <td style="width: 10%">
+                <button
+                  class="mat-focus-indicator ml-4 mat-flat-button mat-button-base mat-primary"
+                  type="button"
+                  (click)="removeField(7, i)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     
+    </div>
+  </div>
+</div>

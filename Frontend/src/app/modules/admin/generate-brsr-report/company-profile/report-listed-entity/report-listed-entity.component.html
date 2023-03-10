@@ -1,0 +1,77 @@
+<div class="w-full">
+  <!-- Form -->
+  <div>
+    <!-- Title -->
+    <h6><u>SECTION A:</u></h6>
+    <h6><u>Details of the listed entity</u></h6>
+    <label style="font-weight: bold"
+      >Corporate Identity Number (CIN) of the Listed Entity</label
+    >
+    <p style="font-size: 14px">{{ corporate_identity_number }}</p>
+
+    <label style="font-weight: bold">Name of the Listed Entity</label>
+    <p style="font-size: 14px">{{ company_name }}</p>
+
+    <label style="font-weight: bold">Year of incorporation</label>
+    <p style="font-size: 14px">{{ incorporation_year || "--" }}</p>
+
+    <label style="font-weight: bold">Registered office address</label>
+    <p style="font-size: 14px">{{ registered_office_address || "--" }}</p>
+
+    <label style="font-weight: bold">Corporate address</label>
+    <p style="font-size: 14px">{{ corporate_office_address || "--" }}</p>
+
+    <label style="font-weight: bold">E-mail</label>
+    <p style="font-size: 14px">{{ emai_id || "--" }}</p>
+
+    <label style="font-weight: bold">Telephone</label>
+    <p style="font-size: 14px">{{ contact_number || "--" }}</p>
+
+    <label style="font-weight: bold">Website</label>
+    <p style="font-size: 14px">{{ website_url || "--" }}</p>
+
+    <label style="font-weight: bold"
+      >Financial year for which reporting is being done</label
+    >
+    <p style="font-size: 14px">{{ financial_year || "--" }}</p>
+
+    <label style="font-weight: bold"
+      >Name of the Stock Exchange(s) where shares are listed</label
+    >
+    <p style="font-size: 14px">{{ stock_exchange_name || "--" }}</p>
+
+    <label style="font-weight: bold">Paid-up Capital</label>
+    <p style="font-size: 14px">{{ paid_up_capital || "--" }}</p>
+
+    <label style="font-weight: bold">Reporting Boundary</label>
+    <p style="font-size: 14px">{{ reporting_boundary || "--" }}</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Contact Person</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let eachContact of contact_details; let i = index"
+        >
+          <tr>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachContact?.contact_person || "--" }}
+              </p>
+            </td>
+            <td>
+              <p style="font-size: 14px">
+                {{ eachContact.contact_number || "--" }}
+              </p>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+</div>

@@ -1,0 +1,321 @@
+<p class="header-p mt-4 mb-4">
+  1. Does the entity extend any life insurance or any compensatory package in
+  the event of death of:
+</p>
+<div class="grid sm:grid-cols-8 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500">Employees</label><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="does_the_entity_extend_any_life_insurance_employees"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500">Workers</label><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="does_the_entity_extend_any_life_insurance_workers"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  2. Provide the measures undertaken by the entity to ensure that statutory dues
+  have been deducted and deposited by the value chain partners.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="provide_the_measures_undertaken_by_the_entity"
+    (keypress)="_utilities.textLimit($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  3. Provide the number of employees / workers having suffered high consequence
+  work- related injury / ill-health / fatalities (as reported in Q11 of
+  Essential Indicators above), who have been are rehabilitated and placed in
+  suitable employment or whose family members have been placed in suitable
+  employment:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            Of the employees / workers having suffered high consequence injuries
+            / ill-health, the listed entity shall disclose the number of
+            employees/ workers rehabilitated or placed in suitable employment
+            during the reporting period. This disclosure can also include family
+            members of the affected employees / workers, who have been placed in
+            suitable employment.
+          </li>
+          <li>
+            ‘Rehabilitation’ refers to a process aimed at enabling persons with
+            disabilities to attain and maintain optimal, physical, sensory,
+            intellectual, psychological environmental or social function levels.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="2">Total no. of affected employees/ workers</th>
+      <th colspan="2">
+        No. of employees/workers that are rehabilitated and placed in suitable
+        employment or whose family members have been placed in suitable
+        employment
+      </th>
+    </tr>
+    <tr>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }} (Previous Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }} (Previous Financial Year)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .total_number_of_affected_employees_or_workers
+                .current_financial_year.employees
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .total_number_of_affected_employees_or_workers
+                .previous_financial_year.employees
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .no_of_employees_or_workers_that_are_rehabilitated
+                .current_financial_year.employees
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .no_of_employees_or_workers_that_are_rehabilitated
+                .previous_financial_year.employees
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .total_number_of_affected_employees_or_workers
+                .current_financial_year.workers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .total_number_of_affected_employees_or_workers
+                .previous_financial_year.workers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .no_of_employees_or_workers_that_are_rehabilitated
+                .current_financial_year.workers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              high_consequence_work_related_injury
+                .no_of_employees_or_workers_that_are_rehabilitated
+                .previous_financial_year.workers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  4. Does the entity provide transition assistance programs to facilitate
+  continued employability and the management of career endings resulting from
+  retirement or termination of employment?
+</p>
+<div class="grid sm:grid-cols-8 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="does_the_entity_provide_transition_assistance_programs"
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  5. Details on assessment of value chain partners:
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th></th>
+
+      <th>
+        % of value chain partners (by value of business done with such partners)
+        that were assessed
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Health and safety practices</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners
+                .health_and_safety_practices.percentage_of_value_partners
+            "
+            (keypress)="_utilities.textLimit($event, 6)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Working Conditions</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              details_on_assessment_of_value_chain_partners.working_conditions
+                .percentage_of_value_partners
+            "
+            (keypress)="_utilities.textLimit($event, 6)"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  6. Provide details of any corrective actions taken or underway to address
+  significant risks / concerns arising from assessments of health and safety
+  practices and working conditions of value chain partners.
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="details_of_any_corrective_actions_taken"
+    (keypress)="_utilities.textLimit($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>

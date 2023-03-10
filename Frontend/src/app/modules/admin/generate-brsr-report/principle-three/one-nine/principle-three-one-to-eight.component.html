@@ -1,0 +1,4368 @@
+<div class="w-full">
+  <!-- Form -->
+  <div>
+    <!-- Title -->
+    <h6><u>PRINCIPLE 3:</u></h6>
+    <h6><u>Essential Indicators</u></h6>
+    <label style="font-weight: bold"
+      >1. a. Details of measures for the well-being of employees:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="8">% of employees covered by</th>
+        </tr>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th rowspan="2">Total<br />(A)</th>
+          <th colspan="2">Health insurance</th>
+          <th colspan="2">Accident insurance</th>
+          <th colspan="2">Maternity benefits</th>
+        </tr>
+        <tr>
+          <th>Number(B)</th>
+          <th>%(B / A)</th>
+          <th>Number(C)</th>
+          <th>%(C / A)</th>
+          <th>Number(D)</th>
+          <th>%(D / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="8">
+            <b>Permanent employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.total_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.health_insurance?.number_b >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.accident_insurance?.number_c >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.total_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.health_insurance?.number_b >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.accident_insurance?.number_c >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.total_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.health_insurance?.number_b >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.accident_insurance?.number_c >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="8">
+            <b>Other than Permanent employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.total_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.health_insurance?.number_b >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.health_insurance
+                      ?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.health_insurance
+                      ?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.accident_insurance?.number_c >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.accident_insurance
+                      ?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.accident_insurance
+                      ?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.maternity_benifits
+                      ?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.maternity_benifits
+                      ?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.total_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.health_insurance?.number_b >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female?.health_insurance
+                      ?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female?.health_insurance
+                      ?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.accident_insurance?.number_c >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.total_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.health_insurance?.number_b >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total?.health_insurance
+                      ?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total?.health_insurance
+                      ?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.accident_insurance?.number_c >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">% of employees covered by</th>
+        </tr>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th rowspan="2">Total<br />(A)</th>
+          <th colspan="2">Paternity Benefits</th>
+          <th colspan="2">Day Care<br />facilities</th>
+        </tr>
+        <tr>
+          <th>Number(E)</th>
+          <th>%(E / A)</th>
+          <th>Number(F)</th>
+          <th>%(F / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6">
+            <b>Permanent employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.total_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.male
+                  ?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.male
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.total_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.female
+                  ?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.female
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.total_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.permanent_employees?.total
+                  ?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_employees_covered?.permanent_employees?.total
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="6">
+            <b>Other than Permanent employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.total_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.paternity_benifits
+                      ?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male?.paternity_benifits
+                      ?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.male?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.male
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.total_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.female?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.female
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.total_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_employees_covered?.other_than_permanent_employees
+                  ?.total?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_employees_covered
+                      ?.other_than_permanent_employees?.total
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label style="font-weight: bold"
+      >b. Details of measures for the well-being of workers:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="8">% of workers covered by</th>
+        </tr>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th rowspan="2">Total<br />(A)</th>
+          <th colspan="2">Health insurance</th>
+          <th colspan="2">Accident insurance</th>
+          <th colspan="2">Maternity benefits</th>
+        </tr>
+        <tr>
+          <th>Number(B)</th>
+          <th>%(B / A)</th>
+          <th>Number(C)</th>
+          <th>%(C / A)</th>
+          <th>Number(D)</th>
+          <th>%(D / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="8">
+            <b>Permanent Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.total_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.health_insurance?.number_b >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.accident_insurance?.number_c >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.total_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.health_insurance?.number_b >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.accident_insurance?.number_c >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.total_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.health_insurance?.number_b >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.accident_insurance?.number_c >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="8">
+            <b>Other than Permanent Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.total_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.health_insurance?.number_b >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.accident_insurance?.number_c >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.total_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.health_insurance?.number_b >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.accident_insurance?.number_c >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.total_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.health_insurance?.number_b >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.health_insurance?.number_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.health_insurance?.percent_of_b_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.health_insurance?.percent_of_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.accident_insurance?.number_c >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.accident_insurance?.number_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.accident_insurance?.percent_of_c_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.accident_insurance?.percent_of_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.maternity_benifits?.number_d >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.maternity_benifits?.number_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.maternity_benifits?.percent_of_d_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.maternity_benifits?.percent_of_d_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">% of workers covered by</th>
+        </tr>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th rowspan="2">Total<br />(A)</th>
+          <th colspan="2">Paternity Benefits</th>
+          <th colspan="2">Day Care<br />facilities</th>
+        </tr>
+        <tr>
+          <th>Number(E)</th>
+          <th>%(E / A)</th>
+          <th>Number(F)</th>
+          <th>%(F / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6">
+            <b>Permanent Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.total_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.male
+                  ?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.male
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.total_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.female
+                  ?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.female
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.total_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.permanent_workers?.total
+                  ?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.permanent_workers?.total
+                      ?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="6">
+            <b>Other than Permanent Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.total_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.male?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.male?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.total_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.female?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.female?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.total_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.paternity_benifits?.number_e >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.paternity_benifits?.number_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.paternity_benifits?.percent_of_e_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.paternity_benifits?.percent_of_e_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.day_care_facilities?.number_f >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.day_care_facilities?.number_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                percentage_of_workers_covered?.other_than_permanent_workers
+                  ?.total?.day_care_facilities?.percent_of_f_divided_by_a >= 0
+                  ? percentage_of_workers_covered?.other_than_permanent_workers
+                      ?.total?.day_care_facilities?.percent_of_f_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >2. Details of retirement benefits, for Current FY and Previous Financial
+      Year.
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Benefits</th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>No. of employees covered as a % of total employees</th>
+          <th>No. of workers covered as a % of total workers</th>
+          <th>Deducted and deposited with the authority (Y/N/N.A.)</th>
+          <th>No. of employees covered as a % of total employees</th>
+          <th>No. of workers covered as a % of total workers</th>
+          <th>Deducted and deposited with the authority (Y/N/N.A.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>PF</td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.pf
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.current_financial_year?.pf
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.pf
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.current_financial_year?.pf
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.pf
+                  ?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.pf
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.previous_financial_year?.pf
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.pf
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.previous_financial_year?.pf
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.pf
+                  ?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Gratutity</td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year
+                  ?.gratutity
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.current_financial_year
+                      ?.gratutity
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year
+                  ?.gratutity
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.current_financial_year
+                      ?.gratutity
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year
+                  ?.gratutity?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year
+                  ?.gratutity
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.previous_financial_year
+                      ?.gratutity
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year
+                  ?.gratutity
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.previous_financial_year
+                      ?.gratutity
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year
+                  ?.gratutity?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>ESI</td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.esi
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.current_financial_year?.esi
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.esi
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.current_financial_year?.esi
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.esi
+                  ?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.esi
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.previous_financial_year?.esi
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.esi
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.previous_financial_year?.esi
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.esi
+                  ?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Others – please specify</td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.others
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.current_financial_year
+                      ?.others
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.others
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.current_financial_year
+                      ?.others
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.current_financial_year?.others
+                  ?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.others
+                  ?.no_of_employees_covered_as_a_percentage_of_total_employees >=
+                0
+                  ? details_of_retirement_benefits?.previous_financial_year
+                      ?.others
+                      ?.no_of_employees_covered_as_a_percentage_of_total_employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.others
+                  ?.no_of_workers_covered_as_a_percentage_of_total_workers >= 0
+                  ? details_of_retirement_benefits?.previous_financial_year
+                      ?.others
+                      ?.no_of_workers_covered_as_a_percentage_of_total_workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_retirement_benefits?.previous_financial_year?.others
+                  ?.deducted_and_deposited_with_the_authority || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >3. Are the premises / offices of the entity accessible to differently
+      abled employees and workers, as per the requirements of the Rights of
+      Persons with Disabilities Act, 2016?
+    </label>
+    <p style="font-size: 14px">
+      {{
+        accessibility_of_workplaces == "Yes"
+          ? "Yes"
+          : !accessibility_of_workplaces
+          ? "--"
+          : "No"
+      }}
+    </p>
+    <label style="font-weight: bold"
+      >What percentage of inputs were sourced sustainably?</label
+    >
+    <p style="font-size: 14px">
+      {{
+        accessibility_of_workplaces != "Yes"
+          ? accessibility_of_workplaces
+          : "--"
+      }}
+    </p>
+
+    <label style="font-weight: bold"
+      >4. Does the entity have an equal opportunity policy as per the Rights of
+      Persons with Disabilities Act, 2016?</label
+    >
+    <p style="font-size: 14px">
+      {{
+        does_entity_have_an_equal_opportunity_policy == "No"
+          ? "No"
+          : !does_entity_have_an_equal_opportunity_policy
+          ? "--"
+          : "Yes"
+      }}
+    </p>
+    <label style="font-weight: bold">Web-link to the policy</label>
+    <p style="font-size: 14px">
+      {{
+        does_entity_have_an_equal_opportunity_policy != "No"
+          ? does_entity_have_an_equal_opportunity_policy
+          : "--"
+      }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >5. Return to work and Retention rates of permanent employees and workers
+      that took parental leave.
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Gender</th>
+          <th colspan="2">Permanent employees</th>
+          <th colspan="2">Permanent workers</th>
+        </tr>
+        <tr>
+          <th>Return to work rate</th>
+          <th>Retention rate</th>
+          <th>Return to work rate</th>
+          <th>Retention rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_employees?.male?.return_to_work_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.male?.return_to_work_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.male?.return_to_work_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_employees?.male?.retention_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.male?.retention_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.male?.retention_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_workers?.male?.return_to_work_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.male?.return_to_work_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.male?.return_to_work_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_workers?.male?.retention_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.male?.retention_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.male?.retention_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_employees?.female?.return_to_work_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.female?.return_to_work_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.female?.return_to_work_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_employees?.female?.retention_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.female?.retention_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.female?.retention_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_workers?.female?.return_to_work_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.female?.return_to_work_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.female?.return_to_work_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_workers?.female?.retention_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.female?.retention_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.female?.retention_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_employees?.total?.return_to_work_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.total?.return_to_work_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.total?.return_to_work_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_employees?.total?.retention_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.total?.retention_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_employees?.total?.retention_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_workers?.total?.return_to_work_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.total?.return_to_work_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.total?.return_to_work_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                retention_rates_of_permanent_employees_and_workers
+                  ?.permanent_workers?.total?.retention_rate == 0
+                  ? "0"
+                  : retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.total?.retention_rate
+                  ? retention_rates_of_permanent_employees_and_workers
+                      ?.permanent_workers?.total?.retention_rate
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >6. Is there a mechanism available to receive and redress grievances for
+      the following categories of employees and worker? If yes, give details of
+      the mechanism in brief.
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Yes/No (If Yes, then give details of the mechanism in brief)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Permanent Workers</b></td>
+          <td>
+            <p>
+              {{
+                mechanism_available_to_receive_and_redress_grievances?.permanent_workers ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent Workers</b></td>
+          <td>
+            <p>
+              {{
+                mechanism_available_to_receive_and_redress_grievances?.other_than_permanent_workers ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent Employees</b></td>
+          <td>
+            <p>
+              {{
+                mechanism_available_to_receive_and_redress_grievances?.permanent_employees ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent Employees</b></td>
+          <td>
+            <p>
+              {{
+                mechanism_available_to_receive_and_redress_grievances?.other_than_permanent_employees ||
+                  "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >7. Membership of employees and worker in association(s) or Unions
+      recognised by the listed entity:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Total employees / workers in respective category (A)</th>
+          <th>
+            No. of employees / workers in respective category, who are part of
+            association(s) or Union (B)
+          </th>
+          <th>% (B / A)</th>
+          <th>Total employees / workers in respective category (C)</th>
+          <th>
+            No. of employees / workers in respective category, who are part of
+            association(s) or Union (D)
+          </th>
+          <th>% (D / C)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7"><b>Employees</b></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees?.male
+                  ?.total_employee_category_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees?.male
+                      ?.total_employee_category_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees?.male
+                  ?.no_employee_or_workers_b >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees?.male
+                      ?.no_employee_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees?.male
+                  ?.percentage_b_divided_by_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees?.male
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees?.male
+                  ?.total_employee_category_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees?.male
+                      ?.total_employee_category_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees?.male
+                  ?.no_employee_or_workers_d >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees?.male
+                      ?.no_employee_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees?.male
+                  ?.percentage_d_divided_by_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees?.male
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees?.female
+                  ?.total_employee_category_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees
+                      ?.female?.total_employee_category_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees?.female
+                  ?.no_employee_or_workers_b >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees
+                      ?.female?.no_employee_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees?.female
+                  ?.percentage_b_divided_by_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees
+                      ?.female?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees?.female
+                  ?.total_employee_category_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees
+                      ?.female?.total_employee_category_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees?.female
+                  ?.no_employee_or_workers_d >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees
+                      ?.female?.no_employee_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees?.female
+                  ?.percentage_d_divided_by_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees
+                      ?.female?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total Permanent Employees</b></td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees
+                  ?.total_employee_category_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees
+                      ?.total_employee_category_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees
+                  ?.no_employee_or_workers_b >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees
+                      ?.no_employee_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_employees
+                  ?.percentage_b_divided_by_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_employees
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees
+                  ?.total_employee_category_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees
+                      ?.total_employee_category_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees
+                  ?.no_employee_or_workers_d >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees
+                      ?.no_employee_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_employees
+                  ?.percentage_d_divided_by_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_employees
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7"><b>Workers</b></td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers?.male
+                  ?.total_employee_category_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers?.male
+                      ?.total_employee_category_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers?.male
+                  ?.no_employee_or_workers_b >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers?.male
+                      ?.no_employee_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers?.male
+                  ?.percentage_b_divided_by_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers?.male
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers?.male
+                  ?.total_employee_category_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers?.male
+                      ?.total_employee_category_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers?.male
+                  ?.no_employee_or_workers_d >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers?.male
+                      ?.no_employee_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers?.male
+                  ?.percentage_d_divided_by_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers?.male
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers?.female
+                  ?.total_employee_category_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers?.female
+                      ?.total_employee_category_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers?.female
+                  ?.no_employee_or_workers_b >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers?.female
+                      ?.no_employee_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers?.female
+                  ?.percentage_b_divided_by_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers?.female
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers?.female
+                  ?.total_employee_category_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers?.female
+                      ?.total_employee_category_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers?.female
+                  ?.no_employee_or_workers_d >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers?.female
+                      ?.no_employee_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers?.female
+                  ?.percentage_d_divided_by_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers?.female
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total Permanent Employees</b></td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers
+                  ?.total_employee_category_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers
+                      ?.total_employee_category_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers
+                  ?.no_employee_or_workers_b >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers
+                      ?.no_employee_or_workers_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.current_financial_year?.total_permanent_workers
+                  ?.percentage_b_divided_by_a >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.current_financial_year?.total_permanent_workers
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers
+                  ?.total_employee_category_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers
+                      ?.total_employee_category_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers
+                  ?.no_employee_or_workers_d >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers
+                      ?.no_employee_or_workers_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                membership_of_employees_and_worker_in_association
+                  ?.previous_financial_year?.total_permanent_workers
+                  ?.percentage_d_divided_by_c >= 0
+                  ? membership_of_employees_and_worker_in_association
+                      ?.previous_financial_year?.total_permanent_workers
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <label style="font-weight: bold"
+      >8. Details of training given to employees and workers:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="3">Category</th>
+          <th colspan="5">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th rowspan="2">Total<br />(A)</th>
+          <th colspan="2">On Health and safety measures</th>
+          <th colspan="2">On skill upgradation</th>
+        </tr>
+        <tr>
+          <th>Number(B)</th>
+          <th>%(B / A)</th>
+          <th>Number(C)</th>
+          <th>%(C / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6" class="table-subheader">
+            <b>Employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.male?.total_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.male
+                  ?.on_health_and_safety_measures?.no_b >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.male
+                      ?.on_health_and_safety_measures?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.male
+                  ?.on_health_and_safety_measures?.percentage_b_divided_by_a >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.male
+                      ?.on_health_and_safety_measures?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.male?.on_skill_upgrade
+                  ?.no_c >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.male
+                      ?.on_skill_upgrade?.no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.male?.on_skill_upgrade
+                  ?.percentage_c_divided_by_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.male
+                      ?.on_skill_upgrade?.percentage_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.female?.total_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.female
+                  ?.on_health_and_safety_measures?.no_b >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.female
+                      ?.on_health_and_safety_measures?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.female
+                  ?.on_health_and_safety_measures?.percentage_b_divided_by_a >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.female
+                      ?.on_health_and_safety_measures?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.female?.on_skill_upgrade
+                  ?.no_c >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.female
+                      ?.on_skill_upgrade?.no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.female?.on_skill_upgrade
+                  ?.percentage_c_divided_by_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.female
+                      ?.on_skill_upgrade?.percentage_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.total?.total_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.total?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.total
+                  ?.on_health_and_safety_measures?.no_b >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.total
+                      ?.on_health_and_safety_measures?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.total
+                  ?.on_health_and_safety_measures?.percentage_b_divided_by_a >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.total
+                      ?.on_health_and_safety_measures?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.total?.on_skill_upgrade
+                  ?.no_c >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.total
+                      ?.on_skill_upgrade?.no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.employees?.total?.on_skill_upgrade
+                  ?.percentage_c_divided_by_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.employees?.total
+                      ?.on_skill_upgrade?.percentage_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="6" class="table-subheader">
+            <b>Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.male?.total_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.male
+                  ?.on_health_and_safety_measures?.no_b >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.male
+                      ?.on_health_and_safety_measures?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.male
+                  ?.on_health_and_safety_measures?.percentage_b_divided_by_a >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.male
+                      ?.on_health_and_safety_measures?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.male?.on_skill_upgrade
+                  ?.no_c >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.male?.on_skill_upgrade
+                      ?.no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.male?.on_skill_upgrade
+                  ?.percentage_c_divided_by_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.male?.on_skill_upgrade
+                      ?.percentage_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.female?.total_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.female
+                  ?.on_health_and_safety_measures?.no_b >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.female
+                      ?.on_health_and_safety_measures?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.female
+                  ?.on_health_and_safety_measures?.percentage_b_divided_by_a >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.female
+                      ?.on_health_and_safety_measures?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.female?.on_skill_upgrade
+                  ?.no_c >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.female
+                      ?.on_skill_upgrade?.no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.female?.on_skill_upgrade
+                  ?.percentage_c_divided_by_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.female
+                      ?.on_skill_upgrade?.percentage_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.total?.total_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.total?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.total
+                  ?.on_health_and_safety_measures?.no_b >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.total
+                      ?.on_health_and_safety_measures?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.total
+                  ?.on_health_and_safety_measures?.percentage_b_divided_by_a >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.total
+                      ?.on_health_and_safety_measures?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.total?.on_skill_upgrade
+                  ?.no_c >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.total?.on_skill_upgrade
+                      ?.no_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.current_financial_year?.workers?.total?.on_skill_upgrade
+                  ?.percentage_c_divided_by_a >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.current_financial_year?.workers?.total?.on_skill_upgrade
+                      ?.percentage_c_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="3">Category</th>
+          <th colspan="5">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th rowspan="2">Total<br />(D)</th>
+          <th colspan="2">On Health and safety measures</th>
+          <th colspan="2">On Skill upgradation</th>
+        </tr>
+        <tr>
+          <th>Number(E)</th>
+          <th>%(E / D)</th>
+          <th>Number(F)</th>
+          <th>%(F / D)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6" class="table-subheader">
+            <b>Employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.male?.total_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.male?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.male
+                  ?.on_health_and_safety_measures?.no_e >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.male
+                      ?.on_health_and_safety_measures?.no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.male
+                  ?.on_health_and_safety_measures?.percentage_e_divided_by_d >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.male
+                      ?.on_health_and_safety_measures?.percentage_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.male?.on_skill_upgrade
+                  ?.no_f >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.male
+                      ?.on_skill_upgrade?.no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.male?.on_skill_upgrade
+                  ?.percentage_f_divided_by_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.male
+                      ?.on_skill_upgrade?.percentage_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.female?.total_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.female?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.female
+                  ?.on_health_and_safety_measures?.no_e >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.female
+                      ?.on_health_and_safety_measures?.no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.female
+                  ?.on_health_and_safety_measures?.percentage_e_divided_by_d >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.female
+                      ?.on_health_and_safety_measures?.percentage_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.female?.on_skill_upgrade
+                  ?.no_f >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.female
+                      ?.on_skill_upgrade?.no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.female?.on_skill_upgrade
+                  ?.percentage_f_divided_by_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.female
+                      ?.on_skill_upgrade?.percentage_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.total?.total_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.total?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.total
+                  ?.on_health_and_safety_measures?.no_e >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.total
+                      ?.on_health_and_safety_measures?.no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.total
+                  ?.on_health_and_safety_measures?.percentage_e_divided_by_d >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.total
+                      ?.on_health_and_safety_measures?.percentage_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.total?.on_skill_upgrade
+                  ?.no_f >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.total
+                      ?.on_skill_upgrade?.no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.employees?.total?.on_skill_upgrade
+                  ?.percentage_f_divided_by_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.employees?.total
+                      ?.on_skill_upgrade?.percentage_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6" class="table-subheader">
+            <b>Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.male?.total_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.male?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.male
+                  ?.on_health_and_safety_measures?.no_e >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.male
+                      ?.on_health_and_safety_measures?.no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.male
+                  ?.on_health_and_safety_measures?.percentage_e_divided_by_d >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.male
+                      ?.on_health_and_safety_measures?.percentage_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.male?.on_skill_upgrade
+                  ?.no_f >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.male?.on_skill_upgrade
+                      ?.no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.male?.on_skill_upgrade
+                  ?.percentage_f_divided_by_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.male?.on_skill_upgrade
+                      ?.percentage_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.female?.total_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.female?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.female
+                  ?.on_health_and_safety_measures?.no_e >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.female
+                      ?.on_health_and_safety_measures?.no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.female
+                  ?.on_health_and_safety_measures?.percentage_e_divided_by_d >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.female
+                      ?.on_health_and_safety_measures?.percentage_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.female?.on_skill_upgrade
+                  ?.no_f >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.female
+                      ?.on_skill_upgrade?.no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.female?.on_skill_upgrade
+                  ?.percentage_f_divided_by_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.female
+                      ?.on_skill_upgrade?.percentage_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.total?.total_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.total?.total_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.total
+                  ?.on_health_and_safety_measures?.no_e >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.total
+                      ?.on_health_and_safety_measures?.no_e
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.total
+                  ?.on_health_and_safety_measures?.percentage_e_divided_by_d >=
+                0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.total
+                      ?.on_health_and_safety_measures?.percentage_e_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.total?.on_skill_upgrade
+                  ?.no_f >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.total
+                      ?.on_skill_upgrade?.no_f
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_training_given_to_employees_and_workers
+                  ?.previous_financial_year?.workers?.total?.on_skill_upgrade
+                  ?.percentage_f_divided_by_d >= 0
+                  ? details_of_training_given_to_employees_and_workers
+                      ?.previous_financial_year?.workers?.total
+                      ?.on_skill_upgrade?.percentage_f_divided_by_d
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <label style="font-weight: bold"
+      >9. Details of performance and career development reviews of employees and
+      worker:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Category</th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Total<br />(A)</th>
+          <th>No. (B)</th>
+          <th>% (B / A)</th>
+          <th>Total (C)</th>
+          <th>No. (D)</th>
+          <th>% (D / C)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7" class="table-subheader">
+            <b>Employees</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.male?.total_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.male?.no_b >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.male?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.male
+                  ?.percentage_b_divided_by_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.male
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.male?.total_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.male?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.male?.no_b >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.male?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.male
+                  ?.percentage_b_divided_by_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.male
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.female?.total_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.female?.no_b >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.female?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.female
+                  ?.percentage_b_divided_by_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.female
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.female?.total_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.female?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.female?.no_b >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.female?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.female
+                  ?.percentage_b_divided_by_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.female
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Total</b></td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.total_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees?.no_b >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.employees
+                  ?.percentage_b_divided_by_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.employees
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.total_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.total_a
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees?.no_b >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees?.no_b
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.employees
+                  ?.percentage_b_divided_by_a >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.employees
+                      ?.percentage_b_divided_by_a
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="7" class="table-subheader">
+            <b>Workers</b>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Male</b></td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.male?.total_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.male?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.male?.no_d >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.male?.no_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.male
+                  ?.percentage_d_divided_by_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.male
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.male?.total_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.male?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.male?.no_d >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.male?.no_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.male
+                  ?.percentage_d_divided_by_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.male
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Female</b></td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.female?.total_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.female?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.female?.no_d >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.female?.no_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.female
+                  ?.percentage_d_divided_by_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.female
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.female?.total_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.female?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.female?.no_d >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.female?.no_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.female
+                  ?.percentage_d_divided_by_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.female
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Workers</b></td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.total_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers?.no_d >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers?.no_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.current_financial_year?.workers
+                  ?.percentage_d_divided_by_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.current_financial_year?.workers
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.total_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.total_c
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers?.no_d >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers?.no_d
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                details_of_performance_and_career_development_reviews_of_employees_and_worker
+                  ?.previous_financial_year?.workers
+                  ?.percentage_d_divided_by_c >= 0
+                  ? details_of_performance_and_career_development_reviews_of_employees_and_worker
+                      ?.previous_financial_year?.workers
+                      ?.percentage_d_divided_by_c
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

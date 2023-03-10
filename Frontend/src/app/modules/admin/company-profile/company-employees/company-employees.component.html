@@ -1,0 +1,1592 @@
+<div class="w-full">
+  <!-- Form -->
+
+  <!-- Section -->
+  <div class="w-full">
+    <div class="text-xl">
+      Details as at the end of Financial Year:
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                The entity shall disclose the total number of employees and
+                workers, along-with the associated break-up by gender (male /
+                female) and into permanent / other than permanent.
+              </li>
+              <li>
+                The term “Employee” is defined under Sec 2(l) of the Industrial
+                Relations Code, 2020 and means, any person (other than an
+                apprentice engaged under the Apprentices Act, 1961), employed on
+                wages by an establishment to do any skilled, semi-skilled or
+                unskilled, manual, operational, supervisory, managerial,
+                administrative, technical or clerical work for hire or reward,
+                whether the terms of employment be express or implied, and also
+                includes a person declared to be an employee by the appropriate
+                Government, but does not include any member of the Armed Forces
+                of the Union. Ref-
+                <a
+                  href="http://egazette.nic.in/WriteReadData/2020/222118.pdf"
+                  target="_blank"
+                  >http://egazette.nic.in/WriteReadData/2020/222118.pdf</a
+                >.
+              </li>
+              <li>
+                The term “Worker” is defined under Sec 2(zr) of the Industrial
+                Relations Code, 2020 and means any person (except an apprentice
+                as defined under clause (aa) of section 2 of the Apprentices
+                Act, 1961) employed in any industry to do any manual, unskilled,
+                skilled, technical, operational, clerical or supervisory work
+                for hire or reward, whether the terms of employment be express
+                or implied, and includes working journalists as defined in
+                clause (f) of section 2 of the Working Journalists and other
+                Newspaper Employees (Conditions of Service) and Miscellaneous
+                Provisions Act, 1955 and sales promotion employees as defined in
+                clause (d) of section 2 of the Sales Promotion Employees
+                (Conditions of Service) Act, 1976, and for the purposes of any
+                proceeding under this Code in relation to an industrial dispute,
+                includes any such person who has been dismissed, discharged or
+                retrenched or otherwise terminated in connection with, or as a
+                consequence of, that dispute, or whose dismissal, discharge or
+                retrenchment has led to that dispute, but does not include any
+                such person -—
+                <ul>
+                  <li>
+                    who is subject to the Air Force Act, 1950 (45 of 1950), or
+                    the Army Act, 1950 (46 of 1950), or the Navy Act, 1957 (62
+                    of 1957); or
+                  </li>
+                  <li>
+                    who is employed in the police service or as an officer or
+                    other employee of a prison; or
+                  </li>
+                  <li>
+                    who is employed mainly in a managerial or administrative
+                    capacity; or
+                  </li>
+                  <li>
+                    who is employed in a supervisory capacity drawing wages
+                    exceeding eighteen thousand rupees per month or an amount as
+                    may be notified by the Central Government from time to time.
+                  </li>
+                </ul>
+                Ref.-<a
+                  href="http://egazette.nic.in/WriteReadData/2020/222118.pdf"
+                  target="_blank"
+                  >http://egazette.nic.in/WriteReadData/2020/222118.pdf
+                </a>
+              </li>
+              <li>
+                The term “permanent employee or “permanent worker” refers to an
+                employee or worker, employed for full-time or part- time work,
+                for an indeterminate period. The term “other than permanent
+                employee” or “other than permanent worker” refers to employees
+                or workers who are employed for a fixed term that ends when a
+                specific time period expires, or on completion of a specific
+                task or an event such as the end of a project or return of a
+                replaced employee. “Other than permanent” employees or workers
+                could be employed directly by the entity or through third party
+                contractors.
+              </li>
+              <li>
+                Differently abled employees / workers may be identified on the
+                basis of the definition of “persons with disabilities” in The
+                Rights of Persons with Disabilities Act, 2016 and rules made
+                thereunder.
+              </li>
+              <li>
+                The entity should provide details as at the end of the reporting
+                period; however, in case there is any significant change in
+                number of employees / workers from the beginning to the end of
+                the reporting period, the reasons for the same should be
+                indicated.Differently abled employees / workers may be
+                identified on the basis of the definition of “persons with
+                disabilities” in The Rights of Persons with Disabilities Act,
+                2016 and rules made thereunder.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="w-full mt-8">
+    <p>Employees and workers (including differently abled):</p>
+    <br />
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Total(A)</th>
+          <th>Male<br />No. (B)</th>
+          <th>Male<br />% (B / A)</th>
+          <th>Female<br />No. (C)</th>
+          <th>Female<br />% (C / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7" class="table-subheader"><u>EMPLOYEES</u></td>
+        </tr>
+        <tr>
+          <td><b>Permanent (D)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="employees_and_worker.employees.permanent_d.total"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'employees', 'permanent_d')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.permanent_d.male.no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'employees', 'permanent_d')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.permanent_d.male.no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.permanent_d.female.no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'employees', 'permanent_d')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.permanent_d.female.no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (E)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.other_than_permanent_e.total
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'employees', 'other_than_permanent_e')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.other_than_permanent_e.male
+                    .no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'employees', 'other_than_permanent_e')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.other_than_permanent_e.male
+                    .no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.other_than_permanent_e.female
+                    .no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'employees', 'other_than_permanent_e')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.employees.other_than_permanent_e.female
+                    .no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total employees<br />
+              (D + E)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.total,
+                employees_and_worker.employees.other_than_permanent_e.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.male.no_a,
+                employees_and_worker.employees.other_than_permanent_e.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.male.no_b_a,
+                employees_and_worker.employees.other_than_permanent_e.male
+                  .no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.female.no_c,
+                employees_and_worker.employees.other_than_permanent_e.female
+                  .no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.employees.permanent_d.female.no_c_a,
+                employees_and_worker.employees.other_than_permanent_e.female
+                  .no_c_a
+              )
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" class="table-subheader"><u>WORKERS</u></td>
+        </tr>
+        <tr>
+          <td><b>Permanent (F)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="employees_and_worker.workers.permanent_f.total"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'workers', 'permanent_f')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="employees_and_worker.workers.permanent_f.male.no_a"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'workers', 'permanent_f')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.permanent_f.male.no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.permanent_f.female.no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'workers', 'permanent_f')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.permanent_f.female.no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (G)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.other_than_permanent_g.total
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'workers', 'other_than_permanent_g')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.other_than_permanent_g.male.no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'workers', 'other_than_permanent_g')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.other_than_permanent_g.male
+                    .no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.other_than_permanent_g.female
+                    .no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateData($event, 'workers', 'other_than_permanent_g')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  employees_and_worker.workers.other_than_permanent_g.female
+                    .no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Workers<br />
+              (F + G)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.total,
+                employees_and_worker.workers.other_than_permanent_g.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.male.no_a,
+                employees_and_worker.workers.other_than_permanent_g.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.male.no_b_a,
+                employees_and_worker.workers.other_than_permanent_g.male.no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.female.no_c,
+                employees_and_worker.workers.other_than_permanent_g.female.no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                employees_and_worker.workers.permanent_f.female.no_c_a,
+                employees_and_worker.workers.other_than_permanent_g.female
+                  .no_c_a
+              )
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Section -->
+
+  <div class="w-full mt-8">
+    <p>Differently abled Employees and workers:</p>
+    <br />
+    <table class="en-table">
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Total(A)</th>
+          <th>Male<br />No. (B)</th>
+          <th>Male<br />% (B / A)</th>
+          <th>Female<br />No. (C)</th>
+          <th>Female<br />% (C / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="7" class="table-subheader">
+            <u>DIFFERENTLY ABLED EMPLOYEES</u>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent (D)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .permanent_d.total
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled($event, 'added_employees', 'permanent_d')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .permanent_d.male.no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled($event, 'added_employees', 'permanent_d')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .permanent_d.male.no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .permanent_d.female.no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled($event, 'added_employees', 'permanent_d')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .permanent_d.female.no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (E)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .other_than_permanent_e.total
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled(
+                    $event,
+                    'added_employees',
+                    'other_than_permanent_e'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .other_than_permanent_e.male.no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled(
+                    $event,
+                    'added_employees',
+                    'other_than_permanent_e'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .other_than_permanent_e.male.no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .other_than_permanent_e.female.no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled(
+                    $event,
+                    'added_employees',
+                    'other_than_permanent_e'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_employees
+                    .other_than_permanent_e.female.no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total employees<br />
+              (D + E)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_employees
+                  .permanent_d.total,
+                diffrently_added_employees_and_worker.added_employees
+                  .other_than_permanent_e.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_employees
+                  .permanent_d.male.no_a,
+                diffrently_added_employees_and_worker.added_employees
+                  .other_than_permanent_e.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_employees
+                  .permanent_d.male.no_b_a,
+                diffrently_added_employees_and_worker.added_employees
+                  .other_than_permanent_e.male.no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_employees
+                  .permanent_d.female.no_c,
+                diffrently_added_employees_and_worker.added_employees
+                  .other_than_permanent_e.female.no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_employees
+                  .permanent_d.female.no_c_a,
+                diffrently_added_employees_and_worker.added_employees
+                  .other_than_permanent_e.female.no_c_a
+              )
+            }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" class="table-subheader">
+            <u>DIFFERENTLY ABLED WORKERS</u>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent (F)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .permanent_f.total
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled($event, 'added_workers', 'permanent_f')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .permanent_f.male.no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled($event, 'added_workers', 'permanent_f')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .permanent_f.male.no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .permanent_f.female.no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled($event, 'added_workers', 'permanent_f')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .permanent_f.female.no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Other than Permanent (G)</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .other_than_permanent_g.total
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled(
+                    $event,
+                    'added_workers',
+                    'other_than_permanent_g'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .other_than_permanent_g.male.no_a
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled(
+                    $event,
+                    'added_workers',
+                    'other_than_permanent_g'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .other_than_permanent_g.male.no_b_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .other_than_permanent_g.female.no_c
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataAbled(
+                    $event,
+                    'added_workers',
+                    'other_than_permanent_g'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  diffrently_added_employees_and_worker.added_workers
+                    .other_than_permanent_g.female.no_c_a
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b
+              >Total Workers<br />
+              (F + G)</b
+            >
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .total,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.total
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .male.no_a,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.male.no_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .male.no_b_a,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.male.no_b_a
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .female.no_c,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.female.no_c
+              )
+            }}
+          </td>
+          <td>
+            {{
+              getSum(
+                diffrently_added_employees_and_worker.added_workers.permanent_f
+                  .female.no_c_a,
+                diffrently_added_employees_and_worker.added_workers
+                  .other_than_permanent_g.female.no_c_a
+              )
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+  <div class="w-full mt-8">
+    <p>
+      Participation/Inclusion/Representation of women
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                Board of Directors or Board as defined under Sec 2(10) of the
+                Companies Act 2013, in relation to a company, means the
+                collective body of the directors of the company.
+              </li>
+              <li>
+                Key Management Personnel as defined under Sec 2(51) of the
+                Companies Act 2013, in relation to a company, means—
+                <ul>
+                  <li>
+                    the Chief Executive Officer or the managing director or the
+                    manager;
+                  </li>
+                  <li>the company secretary;</li>
+                  <li>the whole-time director;</li>
+                  <li>the Chief Financial Officer; and</li>
+                  <li>such other officer as may be prescribed</li>
+                </ul>
+                Ref.-<a
+                  href="http://ebook.mca.gov.in/default.aspx"
+                  target="_blank"
+                >
+                  http://ebook.mca.gov.in/default.aspx
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </p>
+    <br />
+    <table class="en-table">
+      <thead class="low-padding-head">
+        <tr>
+          <th rowspan="2">Role</th>
+          <th rowspan="2">Total(A)</th>
+          <th colspan="2">No. and percentage of Females</th>
+        </tr>
+        <tr>
+          <th>No. (B)</th>
+          <th>% (B / A)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Board of Directors</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="participation_or_representation_of_women.bod.total"
+                type="number"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="calculateDataRep($event, 'bod')"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="participation_or_representation_of_women.bod.no_a"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="calculateDataRep($event, 'bod')"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  participation_or_representation_of_women.bod.no_a_b
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Key Management Personnel</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="participation_or_representation_of_women.kmp.total"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="calculateDataRep($event, 'kmp')"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="participation_or_representation_of_women.kmp.no_a"
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="calculateDataRep($event, 'kmp')"
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  participation_or_representation_of_women.kmp.no_a_b
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+  <div class="w-full mt-8">
+    <p>
+      Turnover rate for permanent employees and workers (Disclose trends for the
+      past 3 years):
+      <span class="re-tooltip">
+        <mat-icon
+          svgIcon="heroicons_solid:information-circle"
+          class="icon-size-4"
+        ></mat-icon>
+        <div class="re-tooltiptext">
+          <div class="content">
+            <ol>
+              <li>
+                Under this field, the entity shall disclose turnover rates for
+                the specified categories.
+              </li>
+              <li>
+                The entity shall calculate the turnover rate for a financial
+                year, for a particular category, based on the following formula:
+                (No. of persons who have left the employment of the entity in
+                the FY *100) / Average no. of persons employed in the category
+              </li>
+              <li>
+                Average number of persons employed in a category shall be
+                calculated as (Persons employed in the category at the beginning
+                of FY + Persons employed in the category at the end of FY) / 2.
+                Further, persons leaving the employment of the entity shall
+                include those who leave the entity voluntarily or due to
+                dismissal, termination, retirement or death in service.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </span>
+    </p>
+    <br />
+    <table class="en-table">
+      <thead class="low-padding-head">
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="3">
+            FY
+            {{
+              turnover_rate_for_permanent_employees_and_workers
+                .permanent_employees.first_year.fy_year
+            }}<br />
+            (Turnover rate in current FY)
+          </th>
+          <th colspan="3">
+            FY
+            {{
+              turnover_rate_for_permanent_employees_and_workers
+                .permanent_employees.second_year.fy_year
+            }}<br />
+            (Turnover rate in previous FY)
+          </th>
+          <th colspan="3">
+            FY
+            {{
+              turnover_rate_for_permanent_employees_and_workers
+                .permanent_employees.third_year.fy_year
+            }}<br />
+            (Turnover rate in the year prior to the previous FY)
+          </th>
+        </tr>
+        <tr>
+          <th>Male</th>
+          <th>Female</th>
+          <th>Total</th>
+          <th>Male</th>
+          <th>Female</th>
+          <th>Total</th>
+          <th>Male</th>
+          <th>Female</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Permanent Employees</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.first_year.male
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_employees', 'first_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.first_year.female
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_employees', 'first_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.first_year.total
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.second_year.male
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn(
+                    $event,
+                    'permanent_employees',
+                    'second_year'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.second_year.female
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn(
+                    $event,
+                    'permanent_employees',
+                    'second_year'
+                  )
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.second_year.total
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.third_year.male
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_employees', 'third_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.third_year.female
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_employees', 'third_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_employees.third_year.total
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Permanent Workers</b></td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.first_year.male
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_workers', 'first_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.first_year.female
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_workers', 'first_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.first_year.total
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+            /></mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.second_year.male
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_workers', 'second_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.second_year.female
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_workers', 'second_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.second_year.total
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.third_year.male
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_workers', 'third_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.third_year.female
+                "
+                (keypress)="_utilities.numberOnly($event, 8, true)"
+                (ngModelChange)="
+                  calculateDataTurn($event, 'permanent_workers', 'third_year')
+                "
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="fuse-mat-no-subscript">
+              <input
+                [(ngModel)]="
+                  turnover_rate_for_permanent_employees_and_workers
+                    .permanent_workers.third_year.total
+                "
+                readonly
+                type="number"
+                min="0"
+                matInput
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Divider -->
+  <div class="mt-11 mb-10 border-t"></div>
+
+  <!-- Actions -->
+  <div class="flex items-center justify-end" *ngIf="!isMonthly">
+    <button
+      class="ml-4"
+      mat-flat-button
+      type="button"
+      [color]="'primary'"
+      (click)="updateProfile()"
+    >
+      Update profile
+    </button>
+  </div>
+</div>

@@ -1,0 +1,368 @@
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >4. Does the entity have an equal opportunity policy as per the Rights of
+      Persons with Disabilities Act, 2016?</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select
+        [(ngModel)]="is_does_entity_have_an_equal_opportunity_policy"
+        (selectionChange)="
+          setConditionValue('does_entity_have_an_equal_opportunity_policy')
+        "
+      >
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-5"
+    *ngIf="is_does_entity_have_an_equal_opportunity_policy == 'Yes'"
+  >
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-label>Provide a web-link to the policy</mat-label
+      ><input
+        [(ngModel)]="does_entity_have_an_equal_opportunity_policy"
+        (keypress)="_utilities.textLimit($event, 500)"
+        (blur)="_utilities.trimExtra($event, 500)"
+        matInput
+      />
+    </mat-form-field>
+  </div>
+</div>
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  5. Return to work and Retention rates of permanent employees and workers that
+  took parental leave.
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>Parental leave refers to maternity and paternity leave.</li>
+          <li>
+            The entity shall use the following formulas to calculate return to
+            work rate, for each category of employee (male / female / others):
+            <p>
+              (Total number of employees that did return to work after parental
+              leave in the reporting period * 100)/ (Total number of employees
+              due to return to work after taking parental leave in the reporting
+              period) = Return to work rate
+            </p>
+          </li>
+          <li>
+            Retention rate determines who returned to work after parental leave
+            ended and were still employed 12 months later. It shall be
+            calculated using the following formula: (Total number of employees
+            retained 12 months after returning to work following a period of
+            parental leave * 100)/ (Total number of employees returning from
+            parental leave in the prior reporting period)
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Gender</th>
+      <th colspan="2">Permanent employees</th>
+      <th colspan="2">Permanent workers</th>
+    </tr>
+    <tr>
+      <th>Return to work rate</th>
+      <th>Retention rate</th>
+      <th>Return to work rate</th>
+      <th>Retention rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Male</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_employees.male.return_to_work_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_employees', 'return_to_work_rate')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_employees.male.retention_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_employees', 'retention_rate')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_workers.male.return_to_work_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_workers', 'return_to_work_rate')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_workers.male.retention_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="sumUp('2', 'permanent_workers', 'retention_rate')"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--female-->
+    <tr>
+      <td>Female</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_employees.female.return_to_work_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_employees', 'return_to_work_rate')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_employees.female.retention_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_employees', 'retention_rate')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_workers.female.return_to_work_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="
+              sumUp('2', 'permanent_workers', 'return_to_work_rate')
+            "
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_workers.female.retention_rate
+            "
+            (keypress)="_utilities.numberOnly($event, 8)"
+            (blur)="_utilities.trimExtra($event, 8)"
+            type="number"
+            min="0"
+            (ngModelChange)="sumUp('2', 'permanent_workers', 'retention_rate')"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <!--Total-->
+    <tr>
+      <td>Total</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_employees.total.return_to_work_rate
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_employees.total.retention_rate
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_workers.total.return_to_work_rate
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              retention_rates_of_permanent_employees_and_workers
+                .permanent_workers.total.retention_rate
+            "
+            [disabled]="true"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  6. Is there a mechanism available to receive and redress grievances for the
+  following categories of employees and worker? If yes, give details of the
+  mechanism in brief.
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Yes/No (If Yes, then give details of the mechanism in brief)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Permanent Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              mechanism_available_to_receive_and_redress_grievances.permanent_workers
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Other than Permanent Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              mechanism_available_to_receive_and_redress_grievances.other_than_permanent_workers
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Permanent Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              mechanism_available_to_receive_and_redress_grievances.permanent_employees
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Other than Permanent Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <mat-select
+            [(ngModel)]="
+              mechanism_available_to_receive_and_redress_grievances.other_than_permanent_employees
+            "
+          >
+            <mat-option [value]="''">Select</mat-option>
+            <mat-option [value]="'Yes'">Yes</mat-option>
+            <mat-option [value]="'No'">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="mt-11 mb-4 border-t"></div>

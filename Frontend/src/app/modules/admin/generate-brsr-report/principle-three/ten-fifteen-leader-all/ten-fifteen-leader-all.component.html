@@ -1,0 +1,741 @@
+<div class="w-full">
+  <!-- Form -->
+  <hr />
+  <div>
+    <label style="font-weight: bold"
+      >10. Whether an occupational health and safety management system has been
+      implemented by the entity?
+    </label>
+    <p>{{ health_and_safety_management_system?.a || "--" }}</p>
+    <ng-container *ngIf="health_and_safety_management_system.a == 'Yes'">
+      <label style="font-weight: bold"
+        >Whether an occupational health and safety management system has been
+        implemented by the entity?
+      </label>
+      <p>{{ health_and_safety_management_system?.b || "--" }}</p>
+    </ng-container>
+    <label style="font-weight: bold"
+      >Whether you have processes for workers to report the work related hazards
+      and to remove themselves from such risks?
+    </label>
+    <p>
+      {{
+        health_and_safety_management_system?.c
+          ? "Yes"
+          : health_and_safety_management_system?.c == false
+          ? "No"
+          : "--"
+      }}
+    </p>
+    <label style="font-weight: bold"
+      >Do the employees/ worker of the entity have access to non-occupational
+      medical and healthcare services?
+    </label>
+    <p>
+      {{
+        health_and_safety_management_system?.d
+          ? "Yes"
+          : health_and_safety_management_system?.d == false
+          ? "No"
+          : "--"
+      }}
+    </p>
+    <hr />
+
+    <label style="font-weight: bold"
+      >11. Details of safety related incidents, in the following format:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th>Safety Incident/Number</th>
+          <th>Category</th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2">
+            <b
+              >Lost Time Injury Frequency Rate (LTIFR) (per one million-person
+              hours worked)</b
+            >
+          </th>
+          <td><b>Employees</b></td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.ltifr?.employees?.current_financial_year
+                  ?.numbers >= 0
+                  ? safety_incident_number?.ltifr?.employees
+                      ?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.ltifr?.employees
+                  ?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number?.ltifr?.employees
+                      ?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Workers</b></td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.ltifr?.workers?.current_financial_year
+                  ?.numbers >= 0
+                  ? safety_incident_number?.ltifr?.workers
+                      ?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.ltifr?.workers?.previous_financial_year
+                  ?.numbers >= 0
+                  ? safety_incident_number?.ltifr?.workers
+                      ?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2">Total recordable work-related injuries</th>
+          <td>Employees</td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.total_recordable_work_related_injuries
+                  ?.employees?.current_financial_year?.numbers >= 0
+                  ? safety_incident_number
+                      ?.total_recordable_work_related_injuries?.employees
+                      ?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.total_recordable_work_related_injuries
+                  ?.employees?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number
+                      ?.total_recordable_work_related_injuries?.employees
+                      ?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Workers</td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.total_recordable_work_related_injuries
+                  ?.workers?.current_financial_year?.numbers >= 0
+                  ? safety_incident_number
+                      ?.total_recordable_work_related_injuries?.workers
+                      ?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.total_recordable_work_related_injuries
+                  ?.workers?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number
+                      ?.total_recordable_work_related_injuries?.workers
+                      ?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2">No. of fatalities</th>
+          <td>Employees</td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.no_of_fatalities?.employees
+                  ?.current_financial_year?.numbers >= 0
+                  ? safety_incident_number?.no_of_fatalities?.employees
+                      ?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.no_of_fatalities?.employees
+                  ?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number?.no_of_fatalities?.employees
+                      ?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Workers</td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.no_of_fatalities?.workers
+                  ?.current_financial_year?.numbers >= 0
+                  ? safety_incident_number?.no_of_fatalities?.workers
+                      ?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.no_of_fatalities?.workers
+                  ?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number?.no_of_fatalities?.workers
+                      ?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2">
+            High consequence work-related injury or ill-health (excluding
+            fatalities)
+          </th>
+          <td>Employees</td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.high_consequence_work_related_injury
+                  ?.employees?.current_financial_year?.numbers >= 0
+                  ? safety_incident_number?.high_consequence_work_related_injury
+                      ?.employees?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.high_consequence_work_related_injury
+                  ?.employees?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number?.high_consequence_work_related_injury
+                      ?.employees?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Workers</td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.high_consequence_work_related_injury
+                  ?.workers?.current_financial_year?.numbers >= 0
+                  ? safety_incident_number?.high_consequence_work_related_injury
+                      ?.workers?.current_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                safety_incident_number?.high_consequence_work_related_injury
+                  ?.workers?.previous_financial_year?.numbers >= 0
+                  ? safety_incident_number?.high_consequence_work_related_injury
+                      ?.workers?.previous_financial_year?.numbers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >12. Describe the measures taken by the entity to ensure a safe and
+      healthy work place.
+    </label>
+    <p>
+      {{
+        measures_taken_by_the_entity_to_ensure_a_safe_and_healthy_work_place ||
+          "--"
+      }}
+    </p>
+
+    <hr />
+    <label style="font-weight: bold"
+      >13. Number of Complaints on the following made by employees and workers:
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="3">
+            FY {{ _utilities.selectedFinancialYear }}<br />Current Financial
+            Year
+          </th>
+          <th colspan="3">
+            FY {{ _utilities.previousFinancialYear }}<br />Previous Financial
+            Year
+          </th>
+        </tr>
+        <tr>
+          <th>Filed during the year</th>
+          <th>Pending resolution at the end of year</th>
+          <th>Remarks</th>
+          <th>Filed during the year</th>
+          <th>Pending resolution at the end of year</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Working Conditions</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.current_financial_year?.working_conditions
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints?.current_financial_year
+                      ?.working_conditions?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.current_financial_year?.working_conditions
+                  ?.pending_resolution_at_the_year_end >= 0
+                  ? number_of_complaints?.current_financial_year
+                      ?.working_conditions?.pending_resolution_at_the_year_end
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.current_financial_year?.working_conditions
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.previous_financial_year
+                  ?.working_conditions?.filed_during_the_year >= 0
+                  ? number_of_complaints?.previous_financial_year
+                      ?.working_conditions?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.previous_financial_year
+                  ?.working_conditions?.pending_resolution_at_the_year_end >= 0
+                  ? number_of_complaints?.previous_financial_year
+                      ?.working_conditions?.pending_resolution_at_the_year_end
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.previous_financial_year
+                  ?.working_conditions?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Health & Safety</b></td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.current_financial_year?.healthy_and_safety
+                  ?.filed_during_the_year >= 0
+                  ? number_of_complaints?.current_financial_year
+                      ?.healthy_and_safety?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.current_financial_year?.healthy_and_safety
+                  ?.pending_resolution_at_the_year_end >= 0
+                  ? number_of_complaints?.current_financial_year
+                      ?.healthy_and_safety?.pending_resolution_at_the_year_end
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.current_financial_year?.healthy_and_safety
+                  ?.remarks || "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.previous_financial_year
+                  ?.healthy_and_safety?.filed_during_the_year >= 0
+                  ? number_of_complaints?.previous_financial_year
+                      ?.healthy_and_safety?.filed_during_the_year
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.previous_financial_year
+                  ?.healthy_and_safety?.pending_resolution_at_the_year_end >= 0
+                  ? number_of_complaints?.previous_financial_year
+                      ?.healthy_and_safety?.pending_resolution_at_the_year_end
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                number_of_complaints?.previous_financial_year
+                  ?.healthy_and_safety?.remarks || "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <label style="font-weight: bold">14. Assessments for the year: </label>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+
+          <th>
+            % of your plants and offices that were assessed (by entity or
+            statutory authorities or third parties)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Health and safety practices</b></td>
+          <td>
+            <p>
+              {{
+                assessment_of_the_year?.health_and_safety_practices
+                  ?.percentage_of_your_plants >= 0
+                  ? assessment_of_the_year?.health_and_safety_practices
+                      ?.percentage_of_your_plants
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Working Conditions</b></td>
+          <td>
+            <p>
+              {{
+                assessment_of_the_year?.working_conditions
+                  ?.percentage_of_your_plants >= 0
+                  ? assessment_of_the_year?.working_conditions
+                      ?.percentage_of_your_plants
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <label style="font-weight: bold"
+      >15. Provide details of any corrective action taken or underway to address
+      safety-related incidents (if any) and on significant risks / concerns
+      arising from assessments of health & safety practices and working
+      conditions.
+    </label>
+    <p>
+      {{ details_of_any_corrective_action_taken || "--" }}
+    </p>
+    <hr />
+    <h6><u>Leadership Indicators</u></h6>
+    <label style="font-weight: bold"
+      >1. Does the entity extend any life insurance or any compensatory package
+      in the event of death of:
+    </label>
+    <label style="font-weight: bold">Employees </label>
+    <p>
+      {{ does_the_entity_extend_any_life_insurance_employees || "--" }}
+    </p>
+    <label style="font-weight: bold">Workers </label>
+    <p>
+      {{ does_the_entity_extend_any_life_insurance_workers || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >2. Provide the measures undertaken by the entity to ensure that statutory
+      dues have been deducted and deposited by the value chain partners.
+    </label>
+    <p>
+      {{ provide_the_measures_undertaken_by_the_entity || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >3. Provide the number of employees / workers having suffered high
+      consequence work- related injury / ill-health / fatalities (as reported in
+      Q11 of Essential Indicators above), who have been are rehabilitated and
+      placed in suitable employment or whose family members have been placed in
+      suitable employment:</label
+    >
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="2">Total no. of affected employees/ workers</th>
+          <th colspan="2">
+            No. of employees/workers that are rehabilitated and placed in
+            suitable employment or whose family members have been placed in
+            suitable employment
+          </th>
+        </tr>
+        <tr>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }} (Previous Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.selectedFinancialYear }} (Current Financial Year)
+          </th>
+          <th>
+            FY {{ _utilities.previousFinancialYear }} (Previous Financial Year)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Employees</b></td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.total_number_of_affected_employees_or_workers
+                  ?.current_financial_year?.employees >= 0
+                  ? high_consequence_work_related_injury
+                      ?.total_number_of_affected_employees_or_workers
+                      ?.current_financial_year?.employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.total_number_of_affected_employees_or_workers
+                  ?.previous_financial_year?.employees >= 0
+                  ? high_consequence_work_related_injury
+                      ?.total_number_of_affected_employees_or_workers
+                      ?.previous_financial_year?.employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.no_of_employees_or_workers_that_are_rehabilitated
+                  ?.current_financial_year?.employees >= 0
+                  ? high_consequence_work_related_injury
+                      ?.no_of_employees_or_workers_that_are_rehabilitated
+                      ?.current_financial_year?.employees
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.no_of_employees_or_workers_that_are_rehabilitated
+                  ?.previous_financial_year?.employees >= 0
+                  ? high_consequence_work_related_injury
+                      ?.no_of_employees_or_workers_that_are_rehabilitated
+                      ?.previous_financial_year?.employees
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Workers</b></td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.total_number_of_affected_employees_or_workers
+                  ?.current_financial_year?.workers >= 0
+                  ? high_consequence_work_related_injury
+                      ?.total_number_of_affected_employees_or_workers
+                      ?.current_financial_year?.workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.total_number_of_affected_employees_or_workers
+                  ?.previous_financial_year?.workers >= 0
+                  ? high_consequence_work_related_injury
+                      ?.total_number_of_affected_employees_or_workers
+                      ?.previous_financial_year?.workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.no_of_employees_or_workers_that_are_rehabilitated
+                  ?.current_financial_year?.workers >= 0
+                  ? high_consequence_work_related_injury
+                      ?.no_of_employees_or_workers_that_are_rehabilitated
+                      ?.current_financial_year?.workers
+                  : "--"
+              }}
+            </p>
+          </td>
+          <td>
+            <p>
+              {{
+                high_consequence_work_related_injury
+                  ?.no_of_employees_or_workers_that_are_rehabilitated
+                  ?.previous_financial_year?.workers >= 0
+                  ? high_consequence_work_related_injury
+                      ?.no_of_employees_or_workers_that_are_rehabilitated
+                      ?.previous_financial_year?.workers
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >4. Does the entity provide transition assistance programs to facilitate
+      continued employability and the management of career endings resulting
+      from retirement or termination of employment?
+    </label>
+    <p>
+      {{ does_the_entity_provide_transition_assistance_programs || "--" }}
+    </p>
+    <hr />
+    <label style="font-weight: bold"
+      >5. Details on assessment of value chain partners:</label
+    >
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+
+          <th>
+            % of value chain partners (by value of business done with such
+            partners) that were assessed
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Health and safety practices</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners
+                  ?.health_and_safety_practices?.percentage_of_value_partners >=
+                0
+                  ? details_on_assessment_of_value_chain_partners
+                      ?.health_and_safety_practices
+                      ?.percentage_of_value_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Working Conditions</b></td>
+          <td>
+            <p>
+              {{
+                details_on_assessment_of_value_chain_partners
+                  ?.working_conditions?.percentage_of_value_partners >= 0
+                  ? details_on_assessment_of_value_chain_partners
+                      ?.working_conditions?.percentage_of_value_partners
+                  : "--"
+              }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <label style="font-weight: bold"
+      >6. Provide details of any corrective actions taken or underway to address
+      significant risks / concerns arising from assessments of health and safety
+      practices and working conditions of value chain partners.
+    </label>
+    <p>
+      {{ details_of_any_corrective_actions_taken || "--" }}
+    </p>
+  </div>
+</div>

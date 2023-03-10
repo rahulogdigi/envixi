@@ -1,0 +1,446 @@
+<p class="header-p mt-4 mb-4">
+  10. Health and safety management system:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            Occupational health and safety risk refers to the combination of the
+            likelihood of occurrence of a work-related hazardous situation or
+            exposure, and the severity of injury or ill health that can be
+            caused by the situation or exposure. An occupational health and
+            safety system is a systematic approach to manage such risks.
+          </li>
+          <li>
+            The listed entity shall disclose the processes used to identify
+            work-related hazards and assess risks on a routine and non-routine
+            basis. Work-related hazards refer to a source or situation with the
+            potential to cause injury or ill health.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<div class="grid sm:grid-cols-9 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >Whether an occupational health and safety management system has been
+      implemented by the entity?</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="health_and_safety_management_system.a">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div
+    class="sm:col-span-5"
+    *ngIf="health_and_safety_management_system.a == 'Yes'"
+  >
+    <label style="font-size: 16px; font-weight: 500"
+      >Whether an occupational health and safety management system has been
+      implemented by the entity?</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="health_and_safety_management_system.b">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="'Yes'">Yes</mat-option>
+        <mat-option [value]="'No'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="grid sm:grid-cols-8 gap-6 w-full mt-8">
+  <!-- Title -->
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >Whether you have processes for workers to report the work related hazards
+      and to remove themselves from such risks?</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="health_and_safety_management_system.c">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="sm:col-span-4">
+    <label style="font-size: 16px; font-weight: 500"
+      >Do the employees/ worker of the entity have access to non-occupational
+      medical and healthcare services?</label
+    ><br />
+    <mat-form-field class="fuse-mat-no-subscript w-full">
+      <mat-select [(ngModel)]="health_and_safety_management_system.d">
+        <mat-option [value]="''">Select</mat-option>
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  11. Details of safety related incidents, in the following format:
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        <ol>
+          <li>
+            The listed entity shall calculate the Lost Time Injury Frequency
+            Rate (LTIFR) as follows: (No. of lost time injuries in FY x
+            1,000,000) / (Total hours worked by all staff in same FY)
+          </li>
+          <li>
+            Lost time is an indicator of the loss of productivity for an
+            organization as a result of a work-related injury or ill-health.
+            Work related injury and ill-health arise from exposure to hazards at
+            work and are directly related to performance of work-related tasks.
+          </li>
+          <li>
+            Recordable work-related injury or ill-health results in any of the
+            following: death, days away from work, restricted work or transfer
+            to another job, medical treatment beyond first aid, or loss of
+            consciousness. Under this disclosure, the listed entity shall
+            disclose the total number of employees / workers affected by
+            work-related injuries or ill-health, across all incidents during the
+            reporting period and the prior year. In case the same employee or
+            worker is injured multiple times, say thrice, in separate incidents,
+            the same shall be reported as 3.
+          </li>
+          <li>
+            The entity shall report the report the number of fatalities of
+            employees / workers during the reporting period and the prior year,
+            as a result of work-related injury.
+          </li>
+          <li>
+            High consequence work-related injury or ill- health results in an
+            injury from which the employee / worker cannot or is not expected to
+            recover fully to the previous health status. This disclosure
+            excludes fatalities.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </span>
+</p>
+<table class="en-table">
+  <thead>
+    <tr>
+      <th>Safety Incident/Number</th>
+      <th>Category</th>
+      <th>
+        FY {{ _utilities.selectedFinancialYear }}<br />Current Financial Year
+      </th>
+      <th>
+        FY {{ _utilities.previousFinancialYear }}<br />Previous Financial Year
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2">
+        Lost Time Injury Frequency Rate (LTIFR) (per one million-person hours
+        worked)
+      </th>
+      <td>Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.ltifr.employees.current_financial_year
+                .numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.ltifr.employees.previous_financial_year
+                .numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.ltifr.workers.current_financial_year
+                .numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.ltifr.workers.previous_financial_year
+                .numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="2">Total recordable work-related injuries</th>
+      <td>Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.total_recordable_work_related_injuries
+                .employees.current_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.total_recordable_work_related_injuries
+                .employees.previous_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.total_recordable_work_related_injuries
+                .workers.current_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.total_recordable_work_related_injuries
+                .workers.previous_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="2">No. of fatalities</th>
+      <td>Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.no_of_fatalities.employees
+                .current_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.no_of_fatalities.employees
+                .previous_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.no_of_fatalities.workers
+                .current_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.no_of_fatalities.workers
+                .previous_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th rowspan="2">
+        High consequence work-related injury or ill-health (excluding
+        fatalities)
+      </th>
+      <td>Employees</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.high_consequence_work_related_injury
+                .employees.current_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.high_consequence_work_related_injury
+                .employees.previous_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>Workers</td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.high_consequence_work_related_injury
+                .workers.current_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fuse-mat-no-subscript w-full">
+          <input
+            [(ngModel)]="
+              safety_incident_number.high_consequence_work_related_injury
+                .workers.previous_financial_year.numbers
+            "
+            (keypress)="_utilities.numberOnly($event, 12, true)"
+            type="number"
+            min="0"
+            matInput
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Divider -->
+<div class="mt-11 mb-4 border-t"></div>
+<p class="header-p mt-4 mb-4">
+  12. Describe the measures taken by the entity to ensure a safe and healthy
+  work place.
+  <span class="re-tooltip">
+    <mat-icon
+      svgIcon="heroicons_solid:information-circle"
+      class="icon-size-4"
+    ></mat-icon>
+    <div class="re-tooltiptext">
+      <div class="content">
+        Under this disclosure, the entity shall report the measures taken to
+        prevent or mitigate significant negative health and safety impacts that
+        are directly linked to its operations, products or services. Also
+        indicate whether these measures are taken for a specific set of
+        activities, employees / workers or facilities of the entity.
+      </div>
+    </div>
+  </span>
+</p>
+<mat-form-field class="fuse-mat-no-subscript w-full">
+  <textarea
+    matInput
+    [(ngModel)]="
+      measures_taken_by_the_entity_to_ensure_a_safe_and_healthy_work_place
+    "
+    (keypress)="_utilities.textLimit($event, 5000)"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="5"
+  ></textarea>
+</mat-form-field>
+<div class="mt-11 mb-4 border-t"></div>

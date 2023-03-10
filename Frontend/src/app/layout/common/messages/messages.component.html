@@ -1,0 +1,49 @@
+<!-- Messages toggle -->
+<button mat-icon-button (click)="openPanel()" #messagesOrigin>
+  <mat-icon [svgIcon]="'heroicons_outline:calendar'"></mat-icon>
+</button>
+
+<!-- Messages panel -->
+<ng-template #messagesPanel>
+  <div
+    class="fixed inset-0 sm:static sm:inset-auto flex flex-col sm:min-w-90 sm:w-90 sm:rounded-2xl overflow-hidden shadow-lg"
+  >
+    <!-- Header -->
+    <div
+      class="flex shrink-0 items-center py-4 pr-4 pl-6 bg-primary text-on-primary"
+    >
+      <div class="sm:hidden -ml-1 mr-3">
+        <button mat-icon-button (click)="closePanel()">
+          <mat-icon
+            class="icon-size-5 text-current"
+            [svgIcon]="'heroicons_solid:x'"
+          ></mat-icon>
+        </button>
+      </div>
+      <div class="text-lg font-medium leading-10">Financial Year</div>
+      <div class="ml-auto">
+        <button mat-icon-button>
+          <mat-icon
+            class="icon-size-5 text-current"
+            [svgIcon]="'heroicons_solid:calendar'"
+          ></mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div
+      class="relative flex flex-col flex-auto sm:max-h-120 divide-y overflow-y-auto bg-card"
+    >
+      <ul>
+        <li
+          *ngFor="let eachYear of _utilities?.allFinancialYears; let i = index"
+        >
+          <a href="javascript:void(0)" (click)="selectYear(eachYear, i)">{{
+            eachYear
+          }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
